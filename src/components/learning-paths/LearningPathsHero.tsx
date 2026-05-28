@@ -10,7 +10,7 @@ export function LearningPathsHero({
   stepsPerPath: number;
 }) {
   return (
-    <Card className="relative overflow-hidden p-6 sm:p-8">
+    <Card className="relative overflow-hidden p-6 sm:p-8 lg:p-10">
       <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
       <div className="relative grid gap-8 xl:grid-cols-[1fr_24rem] xl:items-end">
         <div className="max-w-4xl">
@@ -18,14 +18,12 @@ export function LearningPathsHero({
           <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-6xl">
             Rutas de aprendizaje
           </h1>
-          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[#adc6ff]">
-            Sigue recorridos guiados que combinan amenazas, simulaciones
-            visuales, consejos prácticos y retos interactivos.
+          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
+            Recorridos guiados para aprender sin saltarte pasos.
           </p>
           <p className="mt-4 max-w-3xl leading-7 text-[var(--app-text-secondary)]">
-            Cada ruta está diseñada para ayudarte a aprender un tema de
-            ciberseguridad de forma ordenada: primero entiendes el riesgo,
-            después lo ves en acción y finalmente compruebas lo aprendido.
+            Empieza entendiendo el riesgo, observa una simulación visual, revisa
+            consejos prácticos y valida lo aprendido con un reto.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -36,7 +34,7 @@ export function LearningPathsHero({
             </Link>
             <Link
               href="/retos"
-              className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+              className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
             >
               Ver Centro de retos
             </Link>
@@ -45,8 +43,8 @@ export function LearningPathsHero({
         <div className="grid gap-3">
           <Metric label="Rutas disponibles" value={String(availableCount)} />
           <Metric label="Pasos por ruta" value={String(stepsPerPath)} />
-          <Metric label="Formato" value="Visual" />
-          <Metric label="Retos" value="Incluidos" />
+          <Metric label="Formato" value="Guiado" />
+          <Metric label="Práctica" value="Incluida" />
         </div>
       </div>
     </Card>

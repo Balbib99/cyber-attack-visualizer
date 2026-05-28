@@ -47,18 +47,17 @@ export default function ScenariosPage() {
   );
 
   return (
-    <div className="space-y-10">
-      <section className="relative overflow-hidden rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-6 shadow-2xl shadow-[var(--app-shadow)] sm:p-8">
+    <div className="space-y-12">
+      <section className="relative overflow-hidden rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-6 shadow-2xl shadow-[var(--app-shadow)] sm:p-8 lg:p-10">
         <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
         <div className="relative grid gap-8 xl:grid-cols-[1fr_24rem] xl:items-end">
           <div className="max-w-4xl">
-            <Badge tone="orange">Practica</Badge>
+            <Badge tone="orange">Practica sin presión</Badge>
             <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-6xl">
               Escenarios prácticos
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
-              Entrena decisiones reales ante situaciones cotidianas de
-              ciberseguridad.
+              Practica decisiones reales sin miedo a equivocarte.
             </p>
             <p className="mt-4 max-w-3xl leading-7 text-[var(--app-text-secondary)]">
               Cada escenario te plantea una situación breve, varias decisiones
@@ -74,7 +73,7 @@ export default function ScenariosPage() {
               </Link>
               <Link
                 href="/retos"
-                className="rounded border border-[var(--app-border)] px-5 py-3 text-center text-sm font-bold text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
+                className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
               >
                 Ver Centro de retos
               </Link>
@@ -118,11 +117,11 @@ export default function ScenariosPage() {
 
       <Card className="p-6">
         <div className="flex items-start gap-4">
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
             <CheckCircle2 className="h-5 w-5" />
           </span>
           <div>
-            <Badge tone="green">Por qué practicar con escenarios</Badge>
+            <Badge tone="green">No pasa nada por equivocarse</Badge>
             <h2 className="mt-3 text-2xl font-black text-[var(--app-text-primary)]">
               Decidir bien también se entrena
             </h2>
@@ -187,7 +186,7 @@ function FlowStep({
   return (
     <Card className="p-5">
       <div className="flex items-center justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
           <Icon className="h-5 w-5" />
         </span>
         <span className="font-mono text-xs font-black text-[var(--app-text-muted)]">

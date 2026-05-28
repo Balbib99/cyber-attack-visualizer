@@ -6,7 +6,7 @@ import type { Threat } from "@/types/threat";
 
 export function ThreatCard({ threat }: { threat: Threat }) {
   return (
-    <Card className="flex h-full flex-col p-5 transition hover:border-[#4d8eff]/50 hover:bg-[#17191c]">
+    <Card className="flex h-full flex-col p-5 transition hover:border-[#4d8eff]/50 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap gap-2">
           <Badge tone="blue">{threat.category}</Badge>
@@ -15,12 +15,12 @@ export function ThreatCard({ threat }: { threat: Threat }) {
           </Badge>
           <Badge>{threat.difficulty}</Badge>
         </div>
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
           <IconByName name={threat.icon} className="h-5 w-5" />
         </span>
       </div>
-      <h3 className="mt-5 text-xl font-black text-white">{threat.name}</h3>
-      <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">
+      <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">{threat.name}</h3>
+      <p className="mt-3 flex-1 text-sm leading-6 text-[var(--app-text-secondary)]">
         {threat.shortDescription}
       </p>
       <div className="mt-6 flex flex-col gap-2 sm:flex-row">
@@ -33,12 +33,12 @@ export function ThreatCard({ threat }: { threat: Threat }) {
         {threat.simulatorAvailable ? (
           <Link
             href={`/simulador/${threat.id}`}
-            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
           >
             Abrir simulador
           </Link>
         ) : (
-          <span className="rounded border border-white/10 px-4 py-2 text-center text-sm font-bold text-slate-500">
+          <span className="rounded border border-[var(--app-border)] px-4 py-2 text-center text-sm font-bold text-[var(--app-text-muted)]">
             Simulador próximamente
           </span>
         )}

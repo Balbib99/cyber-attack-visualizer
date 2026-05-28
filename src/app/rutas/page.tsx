@@ -49,7 +49,7 @@ export default function LearningPathsPage() {
   const stepsPerPath = availablePaths[0]?.steps.length ?? 0;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       <LearningPathsHero
         availableCount={availablePaths.length}
         stepsPerPath={stepsPerPath}
@@ -59,7 +59,7 @@ export default function LearningPathsPage() {
         <SectionIntro
           eyebrow="Disponibles"
           title="Rutas disponibles"
-          description="Elige un recorrido completo para aprender, simular y practicar sin duplicar contenido."
+          description="Elige un recorrido completo para aprender, simular, decidir y practicar sin perderte."
         />
         <div className="grid gap-6 xl:grid-cols-2">
           {availablePaths.map((path) => (
@@ -72,7 +72,7 @@ export default function LearningPathsPage() {
         <SectionIntro
           eyebrow="Formato"
           title="Cómo funciona una ruta"
-          description="Cada módulo está pensado para avanzar de forma ordenada y cerrar con una validación práctica."
+          description="Cada módulo avanza con calma: primero entiendes, después observas y finalmente practicas."
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {howItWorks.map((item, index) => (
@@ -149,7 +149,7 @@ function HowItWorksCard({
   return (
     <Card className="p-5">
       <div className="flex items-center justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
           <Icon className="h-5 w-5" />
         </span>
         <span className="font-mono text-xs font-black text-[var(--app-text-muted)]">

@@ -48,10 +48,10 @@ export function AvailableSimulatorCard({
             Riesgo {simulator.riskLevel}
           </Badge>
         </div>
-        <h2 className="mt-5 text-2xl font-black text-white">
+        <h2 className="mt-5 text-2xl font-black text-[var(--app-text-primary)]">
           {simulator.title}
         </h2>
-        <p className="mt-3 text-sm leading-6 text-slate-300">
+        <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
           {simulator.description}
         </p>
 
@@ -75,14 +75,14 @@ export function AvailableSimulatorCard({
           <div className="flex flex-wrap gap-3 text-sm font-bold">
             <Link
               href={`/amenazas/${simulator.threatId}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#adc6ff]"
+              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#1d4ed8] dark:hover:text-[#adc6ff]"
             >
               Ver amenaza
             </Link>
             {simulator.relatedChallengeId ? (
               <Link
                 href={`/retos/${simulator.relatedChallengeId}`}
-                className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4edea3]/35 hover:bg-[#4edea3]/10 hover:text-[#6ffbbe]"
+                className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4edea3]/35 hover:bg-[#4edea3]/10 hover:text-[#047857] dark:hover:text-[#6ffbbe]"
               >
                 Hacer reto
               </Link>
@@ -111,11 +111,11 @@ function SmallMetric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#adc6ff]" />
-      <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>
-      <p className="mt-1 text-sm font-bold text-white">{value}</p>
+      <p className="mt-1 text-sm font-bold text-[var(--app-text-primary)]">{value}</p>
     </div>
   );
 }

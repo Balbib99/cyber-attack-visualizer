@@ -33,15 +33,17 @@ export function SimulationLearningSteps() {
         return (
           <Card key={step.title} className="p-5">
             <div className="flex items-center justify-between gap-4">
-              <span className="font-mono text-xs text-slate-500">
+              <span className="font-mono text-xs text-[var(--app-text-muted)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="grid h-10 w-10 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
                 <Icon className="h-5 w-5" />
               </span>
             </div>
-            <h3 className="mt-5 font-black text-white">{step.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
+            <h3 className="mt-5 font-black text-[var(--app-text-primary)]">
+              {step.title}
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
               {step.description}
             </p>
           </Card>
