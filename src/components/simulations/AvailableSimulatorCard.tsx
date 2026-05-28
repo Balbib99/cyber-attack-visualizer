@@ -24,8 +24,8 @@ export function AvailableSimulatorCard({
     simulator.previewImageAlt ?? simulator.steps[0]?.imageAlt ?? simulator.title;
 
   return (
-    <Card className="group overflow-hidden transition hover:border-[#4d8eff]/45 hover:bg-[#17191c]">
-      <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-[#050505]">
+    <Card className="group overflow-hidden transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-[var(--app-border)] bg-[#050505]">
         {previewImage ? (
           <Image
             src={previewImage}
@@ -64,28 +64,30 @@ export function AvailableSimulatorCard({
           />
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-3">
           <Link
             href={`/simulador/${simulator.id}`}
-            className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
           >
             <Play className="h-4 w-4" />
             Iniciar simulación
           </Link>
-          <Link
-            href={`/amenazas/${simulator.threatId}`}
-            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
-          >
-            Ver amenaza
-          </Link>
-          {simulator.relatedChallengeId ? (
+          <div className="flex flex-wrap gap-3 text-sm font-bold">
             <Link
-              href={`/retos/${simulator.relatedChallengeId}`}
-              className="rounded border border-[#4edea3]/35 px-4 py-2 text-center text-sm font-bold text-[#6ffbbe] transition hover:bg-[#4edea3]/10"
+              href={`/amenazas/${simulator.threatId}`}
+              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#adc6ff]"
             >
-              Hacer reto relacionado
+              Ver amenaza
             </Link>
-          ) : null}
+            {simulator.relatedChallengeId ? (
+              <Link
+                href={`/retos/${simulator.relatedChallengeId}`}
+                className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4edea3]/35 hover:bg-[#4edea3]/10 hover:text-[#6ffbbe]"
+              >
+                Hacer reto
+              </Link>
+            ) : null}
+          </div>
         </div>
       </div>
     </Card>
@@ -102,7 +104,7 @@ function SmallMetric({
   value: string;
 }) {
   return (
-    <div className="rounded border border-white/10 bg-[#050505] p-3">
+    <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
       <Icon className="h-4 w-4 text-[#adc6ff]" />
       <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
         {label}

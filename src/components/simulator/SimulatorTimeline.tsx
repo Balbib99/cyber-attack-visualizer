@@ -17,7 +17,7 @@ export function SimulatorTimeline({
   return (
     <nav
       aria-label="Pasos de la simulación"
-      className="rounded-lg border border-white/10 bg-[#121212]/80 p-4"
+      className="rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-4"
     >
       <div className="grid gap-3 md:grid-cols-4 xl:grid-cols-8">
         {steps.map((step, index) => {
@@ -30,12 +30,12 @@ export function SimulatorTimeline({
               type="button"
               onClick={() => onStepChange(index)}
               aria-current={isActive ? "step" : undefined}
-              className={`rounded border p-3 text-left transition ${
+              className={`rounded border p-3 text-left transition focus:outline-none focus:ring-2 focus:ring-[#4d8eff]/60 ${
                 isActive
                   ? "border-[#4d8eff] bg-[#4d8eff]/12 shadow-[0_0_24px_rgba(77,142,255,0.14)]"
                   : isDone
                     ? "border-[#4edea3]/35 bg-[#4edea3]/10"
-                    : "border-white/10 bg-[#050505] hover:border-[#4d8eff]/35"
+                    : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] hover:border-[#4d8eff]/35"
               }`}
             >
               <div className="flex items-center justify-between gap-2">
@@ -48,7 +48,7 @@ export function SimulatorTimeline({
                       ? "border-[#4edea3]/40 bg-[#4edea3]/10 text-[#6ffbbe]"
                       : isActive
                         ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#adc6ff]"
-                        : "border-white/10 bg-white/[0.04] text-slate-400"
+                        : "border-[var(--app-border)] bg-[var(--app-surface)] text-slate-400"
                   }`}
                 >
                   {isDone ? <Check className="h-4 w-4" /> : step.order}

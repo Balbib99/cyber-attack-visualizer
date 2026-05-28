@@ -28,11 +28,11 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
   const activeStep = simulator.steps[activeIndex];
 
   const progress = useMemo(() => {
-    if (simulator.steps.length === 0) {
+    if (simulator.steps.length <= 1) {
       return 0;
     }
 
-    return ((activeIndex + 1) / simulator.steps.length) * 100;
+    return (activeIndex / (simulator.steps.length - 1)) * 100;
   }, [activeIndex, simulator.steps.length]);
 
   return (
@@ -66,10 +66,13 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
           </div>
           <div className="min-w-48 rounded border border-white/10 bg-[#050505] p-4">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-              Progreso
+              Avance del recorrido
             </p>
             <p className="mt-2 font-mono text-2xl font-black text-white">
-              {formatPercent(progress)}
+              Paso {activeIndex + 1} de {simulator.steps.length}
+            </p>
+            <p className="mt-1 text-xs font-semibold text-slate-500">
+              {formatPercent(progress)} completado
             </p>
             <div className="mt-3 h-2 overflow-hidden rounded bg-white/10">
               <motion.div

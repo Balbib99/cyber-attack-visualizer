@@ -125,6 +125,16 @@ export default function HomePage() {
                 Ver simulaciones
               </Link>
             </div>
+
+            <div className="mt-6 max-w-xl rounded border border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] p-4">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#047857] dark:text-[var(--app-success)]">
+                Entorno educativo
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
+                Sin backend, sin datos reales y con ejemplos ficticios para
+                aprender de forma segura.
+              </p>
+            </div>
           </div>
 
           <Card className="relative overflow-hidden border-[#4d8eff]/25 p-5">

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const learnItems = [
@@ -42,19 +41,6 @@ export function Sidebar() {
         <NavGroup title="Aprende" items={learnItems} pathname={pathname} />
         <NavGroup title="Practica" items={practiceItems} pathname={pathname} />
       </nav>
-
-      <div className="mx-4 mb-3">
-        <ThemeToggle />
-      </div>
-
-      <div className="m-4 rounded-lg border border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] p-4">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#047857] dark:text-[var(--app-success)]">
-          Estado
-        </p>
-        <p className="mt-2 text-sm text-[var(--app-text-secondary)]">
-          Entorno educativo sin backend ni datos reales.
-        </p>
-      </div>
     </aside>
   );
 }
