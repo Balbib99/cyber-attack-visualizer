@@ -3,9 +3,12 @@ import {
   BookOpen,
   BrainCircuit,
   Lightbulb,
+  MessageSquareWarning,
   PlayCircle,
+  Route,
   type LucideIcon,
 } from "lucide-react";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { LearningPathCard } from "@/components/learning-paths/LearningPathCard";
 import { LearningPathRoadmap } from "@/components/learning-paths/LearningPathRoadmap";
 import { LearningPathsHero } from "@/components/learning-paths/LearningPathsHero";
@@ -36,6 +39,11 @@ const howItWorks = [
     icon: Lightbulb,
   },
   {
+    title: "Practica decisiones reales",
+    description: "Entrena situaciones cotidianas sin miedo a equivocarte.",
+    icon: MessageSquareWarning,
+  },
+  {
     title: "Completa el reto",
     description: "Valida lo aprendido con feedback inmediato y progreso local.",
     icon: BrainCircuit,
@@ -55,6 +63,12 @@ export default function LearningPathsPage() {
         stepsPerPath={stepsPerPath}
       />
 
+      <GuidingQuestionCard
+        question="¿Por dónde empiezo?"
+        description="Sigue recorridos guiados que conectan amenazas, simulaciones, consejos, escenarios y retos para aprender sin saltarte pasos."
+        icon={<Route className="h-6 w-6" />}
+      />
+
       <section className="space-y-5">
         <SectionIntro
           eyebrow="Disponibles"
@@ -71,8 +85,8 @@ export default function LearningPathsPage() {
       <section className="space-y-5">
         <SectionIntro
           eyebrow="Formato"
-          title="Cómo funciona una ruta"
-          description="Cada módulo avanza con calma: primero entiendes, después observas y finalmente practicas."
+          title="Una ruta combina varias formas de aprender"
+          description="Las rutas no sustituyen al resto de secciones: las ordenan para que avances con una secuencia clara."
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {howItWorks.map((item, index) => (

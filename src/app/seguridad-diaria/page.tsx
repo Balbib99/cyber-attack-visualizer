@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, ShieldCheck } from "lucide-react";
+import { Lightbulb, Search, ShieldCheck } from "lucide-react";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { FeaturedTipSection } from "@/components/home/FeaturedTipSection";
 import { SafetyTipCard } from "@/components/safety/SafetyTipCard";
 import { Badge } from "@/components/ui/Badge";
@@ -63,6 +64,9 @@ export default function DailySafetyPage() {
           Aprende a revisar enlaces, compartir documentos sensibles, reconocer
           páginas falsas y usar herramientas útiles con más tranquilidad.
         </p>
+        <p className="mt-5 text-sm font-bold text-[var(--app-text-muted)]">
+          Útil aunque no tengas conocimientos técnicos.
+        </p>
         <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/seguridad-diaria/dni-marca-agua"
@@ -78,6 +82,13 @@ export default function DailySafetyPage() {
           </Link>
         </div>
       </section>
+
+      <GuidingQuestionCard
+        question="¿Qué puedo hacer en mi día a día?"
+        description="Aplica hábitos concretos para revisar enlaces, proteger cuentas, compartir documentos y navegar con más tranquilidad."
+        icon={<Lightbulb className="h-6 w-6" />}
+        variant="green"
+      />
 
       <FeaturedTipSection />
 

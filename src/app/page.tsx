@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { LearningSectionsOverview } from "@/components/education/LearningSectionsOverview";
 import { DigitalHabitCards } from "@/components/home/DigitalHabitCards";
 import { FeaturedTipSection } from "@/components/home/FeaturedTipSection";
 import { FriendlyCyberHeroVisual } from "@/components/home/FriendlyCyberHeroVisual";
@@ -87,6 +88,15 @@ export default function HomePage() {
           description="La experiencia combina simulación, consejos prácticos, escenarios y retos breves para aprender sin saturarte."
         />
         <LearnByDoingCards />
+      </section>
+
+      <section className="space-y-6">
+        <HomeSectionHeader
+          eyebrow="Mapa de aprendizaje"
+          title="Cómo se organiza AttackFlow Lab"
+          description="Cada sección responde a una pregunta distinta para que sepas por dónde avanzar en cada momento."
+        />
+        <LearningSectionsOverview />
       </section>
 
       <FeaturedTipSection />

@@ -1,7 +1,9 @@
 import { ThreatCard } from "@/components/threats/ThreatCard";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { threats } from "@/data/threats";
+import { ShieldAlert } from "lucide-react";
 
 export default function ThreatExplorerPage() {
   return (
@@ -22,8 +24,18 @@ export default function ThreatExplorerPage() {
             defensivo, con contexto, dificultad y enlaces hacia simulaciones
             cuando están disponibles.
           </p>
+          <p className="mt-5 text-sm font-bold text-[var(--app-text-muted)]">
+            Empieza aquí si quieres entender el concepto.
+          </p>
         </div>
       </section>
+
+      <GuidingQuestionCard
+        question="¿Qué es esto y por qué importa?"
+        description="Entiende amenazas comunes, su impacto y las medidas que ayudan a reducir riesgos antes de pasar a la práctica."
+        icon={<ShieldAlert className="h-6 w-6" />}
+        variant="orange"
+      />
 
       <section className="space-y-5">
         <div className="max-w-3xl">

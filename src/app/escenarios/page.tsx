@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { ScenarioCard } from "@/components/scenarios/ScenarioCard";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -64,6 +65,9 @@ export default function ScenariosPage() {
               posibles y feedback inmediato para entender consecuencias y
               buenas prácticas.
             </p>
+            <p className="mt-5 text-sm font-bold text-[var(--app-text-muted)]">
+              Practica sin miedo a equivocarte.
+            </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/escenarios/email-urgente"
@@ -88,6 +92,13 @@ export default function ScenariosPage() {
           </div>
         </div>
       </section>
+
+      <GuidingQuestionCard
+        question="¿Qué decisión tomaría en esta situación?"
+        description="Practica situaciones cotidianas, elige cómo actuar y recibe feedback para reconocer señales antes de tomar decisiones."
+        icon={<MessageSquareWarning className="h-6 w-6" />}
+        variant="orange"
+      />
 
       <section className="space-y-5">
         <SectionIntro

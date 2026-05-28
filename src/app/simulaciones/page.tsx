@@ -1,4 +1,5 @@
 import { Clock, PlayCircle, Radar, ShieldCheck } from "lucide-react";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { AvailableSimulatorCard } from "@/components/simulations/AvailableSimulatorCard";
 import { ComingSoonSimulatorCard } from "@/components/simulations/ComingSoonSimulatorCard";
 import { SimulationLearningSteps } from "@/components/simulations/SimulationLearningSteps";
@@ -24,6 +25,12 @@ export default function SimulationsPage() {
       <SimulationsHero
         availableCount={availableSimulators.length}
         visualStepsCount={visualStepsCount}
+      />
+
+      <GuidingQuestionCard
+        question="¿Cómo ocurre paso a paso?"
+        description="Observa el flujo de una amenaza mediante escenas visuales y seguras, sin datos reales ni ejecución de ataques."
+        icon={<PlayCircle className="h-6 w-6" />}
       />
 
       <div className="flex flex-wrap gap-2">

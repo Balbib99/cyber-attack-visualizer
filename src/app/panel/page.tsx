@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DailySafetyCard } from "@/components/dashboard/DailySafetyCard";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { KnowledgeProgressCard } from "@/components/dashboard/KnowledgeProgressCard";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { PanelLearningPathCard } from "@/components/learning-paths/PanelLearningPathCard";
@@ -9,6 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { safetyTips } from "@/data/safetyTips";
 import { threats } from "@/data/threats";
+import { LayoutDashboard } from "lucide-react";
 
 export const metadata = {
   title: "Panel | AttackFlow Lab",
@@ -63,6 +65,13 @@ export default function PanelPage() {
 
         <KnowledgeProgressCard />
       </section>
+
+      <GuidingQuestionCard
+        question="¿Qué puedo hacer ahora?"
+        description="Encuentra rutas recomendadas, continúa simulaciones, revisa consejos y accede rápidamente a la siguiente actividad."
+        icon={<LayoutDashboard className="h-6 w-6" />}
+        variant="blue"
+      />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard label="Amenazas" value="6" detail="Casos educativos activos" />

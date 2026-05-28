@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { BrainCircuit } from "lucide-react";
 import { ChallengeCard } from "@/components/challenges/ChallengeCard";
 import { ChallengeHowItWorks } from "@/components/challenges/ChallengeHowItWorks";
 import { ChallengesHero } from "@/components/challenges/ChallengesHero";
 import { ComingSoonChallengeCard } from "@/components/challenges/ComingSoonChallengeCard";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -28,6 +30,13 @@ export default function ChallengesPage() {
       <ChallengesHero
         availableCount={availableChallenges.length}
         totalQuestions={totalQuestions}
+      />
+
+      <GuidingQuestionCard
+        question="¿He entendido lo aprendido?"
+        description="Comprueba tus conocimientos con ejercicios breves, feedback inmediato y retos relacionados con lo que has visto."
+        icon={<BrainCircuit className="h-6 w-6" />}
+        variant="purple"
       />
 
       <ChallengeHowItWorks />
