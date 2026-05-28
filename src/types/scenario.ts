@@ -39,5 +39,10 @@ export type CyberScenario = {
   options: ScenarioDecisionOption[];
   recommendedAction: string;
   defensiveTip: string;
+  relatedThreatId?: string;
+  relatedSimulatorId?: string;
+  relatedChallengeId?: string;
+  relatedTipIds?: string[];
+  relatedPathId?: string;
   relatedContent: ScenarioRelatedContent[];
 };

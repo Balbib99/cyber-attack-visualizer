@@ -30,5 +30,6 @@ export type LearningPath = {
   relatedSimulatorId?: string;
   relatedChallengeId?: string;
   relatedTipIds?: string[];
+  relatedScenarioIds?: string[];
   steps: LearningPathStep[];
 };

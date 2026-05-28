@@ -49,4 +49,5 @@ export type SafetyTip = {
   relatedThreatIds: string[];
   relatedSimulatorIds?: string[];
   relatedChallengeIds?: string[];
+  relatedScenarioIds?: string[];
 };

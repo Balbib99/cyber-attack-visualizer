@@ -3,6 +3,7 @@ import { SimulatorEmptyState } from "@/components/simulator/SimulatorEmptyState"
 import { VisualAttackSimulator } from "@/components/simulator/VisualAttackSimulator";
 import { getSimulatorById, simulators } from "@/data/simulators";
 import { getLearningContextBySimulatorId } from "@/lib/learningPaths";
+import { getScenariosForSimulator } from "@/lib/scenarioRelations";
 
 type SimulatorPageProps = {
   params: Promise<{ id: string }>;
@@ -50,13 +51,18 @@ export default async function SimulatorPage({ params }: SimulatorPageProps) {
   const learningContext = getLearningContextBySimulatorId(simulator.id);
   const challenge = learningContext.challenge;
   const firstTip = learningContext.tips[0];
+  const relatedScenarios = getScenariosForSimulator(simulator.id);
 
   return (
     <div className="space-y-8">
       <VisualAttackSimulator simulator={simulator} />
       <NextLearningStep
         title="Pon a prueba lo aprendido"
-        description="Después de ver el flujo visual, practica identificando señales de alerta y eligiendo defensas."
+        description={
+          relatedScenarios.length > 0
+            ? "Después de ver el flujo visual, toma una decisión realista antes de pasar al reto."
+            : "Después de ver el flujo visual, practica identificando señales de alerta y eligiendo defensas."
+        }
         actions={[
           ...(challenge?.status === "available"
             ? [
@@ -67,10 +73,21 @@ export default async function SimulatorPage({ params }: SimulatorPageProps) {
                 },
               ]
             : []),
-          {
-            label: firstTip ? "Ver consejos relacionados" : "Ver seguridad diaria",
-            href: firstTip ? `/seguridad-diaria/${firstTip.id}` : "/seguridad-diaria",
-          },
+          ...(relatedScenarios.length > 0
+            ? relatedScenarios.slice(0, 2).map((scenario) => ({
+                label: scenario.title,
+                href: `/escenarios/${scenario.id}`,
+              }))
+            : [
+                {
+                  label: firstTip
+                    ? "Ver consejos relacionados"
+                    : "Ver seguridad diaria",
+                  href: firstTip
+                    ? `/seguridad-diaria/${firstTip.id}`
+                    : "/seguridad-diaria",
+                },
+              ]),
         ]}
       />
     </div>

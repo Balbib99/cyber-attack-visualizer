@@ -14,9 +14,11 @@ import { RiskReductionGrid } from "@/components/safety/RiskReductionGrid";
 import { SafetySteps } from "@/components/safety/SafetySteps";
 import { TipDetailLayout } from "@/components/safety/TipDetailLayout";
 import { WatermarkComparison } from "@/components/safety/WatermarkComparison";
+import { ScenarioRecommendations } from "@/components/scenarios/ScenarioRecommendations";
 import { getSafetyTipById, safetyTips } from "@/data/safetyTips";
 import { getThreatById } from "@/data/threats";
 import { getLearningContextByTipId } from "@/lib/learningPaths";
+import { getScenariosByIds } from "@/lib/scenarioRelations";
 
 type SafetyDetailPageProps = {
   params: Promise<{ id: string }>;
@@ -50,6 +52,7 @@ export default async function SafetyDetailPage({
   const primaryThreat = learningContext.threat;
   const simulator = learningContext.simulator;
   const challenge = learningContext.challenge;
+  const relatedScenarios = getScenariosByIds(tip.relatedScenarioIds);
 
   return (
     <article className="space-y-10">
@@ -166,6 +169,12 @@ export default async function SafetyDetailPage({
           ]}
         />
       ) : null}
+
+      <ScenarioRecommendations
+        title="Escenario relacionado"
+        description="Pon este consejo en práctica con una decisión breve y realista."
+        scenarios={relatedScenarios}
+      />
 
       <ResponsibleNotice />
     </article>

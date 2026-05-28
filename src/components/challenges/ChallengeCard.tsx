@@ -5,11 +5,13 @@ import { Clock, ListChecks, Play, Trophy } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { useChallengeProgress } from "@/hooks/useChallengeProgress";
+import { getScenariosForChallenge } from "@/lib/scenarioRelations";
 import type { CyberChallenge } from "@/types/challenge";
 
 export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
   const { getProgress, isLoaded } = useChallengeProgress();
   const progress = isLoaded ? getProgress(challenge.id) : undefined;
+  const relatedScenario = getScenariosForChallenge(challenge.id)[0];
 
   return (
     <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
@@ -66,6 +68,14 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
           >
             Ver ruta completa
           </Link>
+          {relatedScenario ? (
+            <Link
+              href={`/escenarios/${relatedScenario.id}`}
+              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[color:var(--app-warning)]/35 hover:bg-[var(--app-warning-soft)] hover:text-[#b45309] dark:hover:text-[#ffddb8]"
+            >
+              Resolver escenario
+            </Link>
+          ) : null}
         </div>
       </div>
     </Card>

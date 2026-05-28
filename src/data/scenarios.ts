@@ -71,6 +71,11 @@ export const scenarios: CyberScenario[] = [
       "Accede siempre desde la web oficial escribiendo la dirección manualmente o usando un marcador de confianza.",
     defensiveTip:
       "Revisa remitente, URL, contexto y urgencia antes de interactuar con mensajes inesperados.",
+    relatedThreatId: "phishing",
+    relatedSimulatorId: "phishing",
+    relatedChallengeId: "phishing",
+    relatedTipIds: ["revisar-enlaces-sospechosos", "activar-2fa"],
+    relatedPathId: "phishing",
     relatedContent: [
       { label: "Ver amenaza: Phishing", href: "/amenazas/phishing", type: "amenaza" },
       { label: "Ver simulación de Phishing", href: "/simulador/phishing", type: "simulación" },
@@ -145,6 +150,7 @@ export const scenarios: CyberScenario[] = [
       "Verifica la legitimidad de la app, usa canales oficiales y añade una marca de agua visible que indique finalidad y fecha sin tapar datos necesarios.",
     defensiveTip:
       "Una marca de agua no elimina el riesgo, pero puede reducir la reutilización indebida si la imagen se filtra.",
+    relatedTipIds: ["dni-marca-agua"],
     relatedContent: [
       { label: "Ver consejo del DNI", href: "/seguridad-diaria/dni-marca-agua", type: "tip" },
       { label: "Ver consejos de seguridad diaria", href: "/seguridad-diaria", type: "tip" },
@@ -216,6 +222,7 @@ export const scenarios: CyberScenario[] = [
       "Verifica el remitente, no abras adjuntos inesperados y usa herramientas de análisis solo con archivos no confidenciales.",
     defensiveTip:
       "Si el archivo contiene información privada, consulta con soporte técnico o usa canales internos seguros antes de subirlo a servicios externos.",
+    relatedTipIds: ["revisar-enlaces-sospechosos"],
     relatedContent: [
       { label: "Ver consejos de seguridad diaria", href: "/seguridad-diaria", type: "tip" },
     ],
@@ -286,6 +293,11 @@ export const scenarios: CyberScenario[] = [
       "Cierra la página sospechosa, escribe manualmente la dirección oficial y verifica la URL antes de iniciar sesión.",
     defensiveTip:
       "Revisa dominio, contexto, HTTPS y señales de alerta. Si tienes dudas, no introduzcas credenciales.",
+    relatedThreatId: "phishing",
+    relatedSimulatorId: "phishing",
+    relatedChallengeId: "phishing",
+    relatedTipIds: ["reconocer-pagina-falsa", "revisar-enlaces-sospechosos"],
+    relatedPathId: "phishing",
     relatedContent: [
       { label: "Ver simulación de Phishing", href: "/simulador/phishing", type: "simulación" },
       { label: "Hacer reto de Phishing", href: "/retos/phishing", type: "reto" },

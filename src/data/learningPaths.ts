@@ -21,6 +21,7 @@ export const learningPaths: LearningPath[] = [
       "reconocer-pagina-falsa",
       "activar-2fa",
     ],
+    relatedScenarioIds: ["email-urgente", "login-dudoso"],
     steps: [
       {
         id: "phishing-threat",
@@ -80,6 +81,7 @@ export const learningPaths: LearningPath[] = [
     relatedSimulatorId: "sql-injection",
     relatedChallengeId: "sql-injection",
     relatedTipIds: ["verificar-app-fiable"],
+    relatedScenarioIds: [],
     steps: [
       {
         id: "sql-threat",

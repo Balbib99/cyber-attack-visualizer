@@ -90,6 +90,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["phishing", "man-in-the-middle"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["app-solicita-dni"],
   },
   {
     id: "verificar-app-fiable",
@@ -173,6 +174,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["phishing"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["app-solicita-dni"],
   },
   {
     id: "activar-2fa",
@@ -256,6 +258,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["brute-force", "phishing"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["email-urgente"],
   },
   {
     id: "revisar-enlaces-sospechosos",
@@ -342,6 +345,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["phishing", "man-in-the-middle"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["email-urgente", "login-dudoso", "archivo-adjunto"],
   },
   {
     id: "comprobar-email-filtraciones",
@@ -426,6 +430,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["phishing", "brute-force"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["email-urgente"],
   },
   {
     id: "reconocer-pagina-falsa",
@@ -510,6 +515,7 @@ export const safetyTips: SafetyTip[] = [
     relatedThreatIds: ["phishing", "man-in-the-middle"],
     relatedSimulatorIds: ["phishing"],
     relatedChallengeIds: ["phishing"],
+    relatedScenarioIds: ["login-dudoso"],
   },
 ];
 

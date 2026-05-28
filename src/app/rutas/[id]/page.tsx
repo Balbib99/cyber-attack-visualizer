@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { LearningPathProgress } from "@/components/learning-paths/LearningPathProgress";
 import { LearningPathTimeline } from "@/components/learning-paths/LearningPathTimeline";
+import { ScenarioRecommendations } from "@/components/scenarios/ScenarioRecommendations";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { getLearningPathById, learningPaths } from "@/data/learningPaths";
+import { getScenariosByIds } from "@/lib/scenarioRelations";
 
 type LearningPathDetailPageProps = {
   params: Promise<{ id: string }>;
@@ -36,6 +38,8 @@ export default async function LearningPathDetailPage({
   if (!path) {
     notFound();
   }
+
+  const relatedScenarios = getScenariosByIds(path.relatedScenarioIds);
 
   return (
     <div className="space-y-8">
@@ -85,6 +89,12 @@ export default async function LearningPathDetailPage({
         </div>
         <LearningPathTimeline path={path} />
       </section>
+
+      <ScenarioRecommendations
+        title="Escenarios relacionados"
+        description="Antes del reto, practica una decisión real conectada con esta ruta."
+        scenarios={relatedScenarios}
+      />
 
       <Card className="p-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
