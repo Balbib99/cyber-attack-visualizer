@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const learnItems = [
   { href: "/", label: "Inicio", icon: "I" },
   { href: "/panel", label: "Panel", icon: "P" },
+  { href: "/rutas", label: "Rutas", icon: "T" },
   { href: "/amenazas", label: "Amenazas", icon: "A" },
   { href: "/simulaciones", label: "Simulaciones", icon: "S" },
   { href: "/seguridad-diaria", label: "Seguridad diaria", icon: "V" },
@@ -14,6 +15,7 @@ const learnItems = [
 
 const practiceItems = [
   { href: "/retos", label: "Centro de retos", icon: "R" },
+  { href: "/escenarios", label: "Escenarios", icon: "E" },
 ];
 
 export function Sidebar() {

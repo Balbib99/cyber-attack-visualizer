@@ -2,6 +2,8 @@ import Link from "next/link";
 import { DailySafetyCard } from "@/components/dashboard/DailySafetyCard";
 import { KnowledgeProgressCard } from "@/components/dashboard/KnowledgeProgressCard";
 import { StatCard } from "@/components/dashboard/StatCard";
+import { PanelLearningPathCard } from "@/components/learning-paths/PanelLearningPathCard";
+import { PanelScenarioCard } from "@/components/scenarios/PanelScenarioCard";
 import { ThreatCard } from "@/components/threats/ThreatCard";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -83,6 +85,10 @@ export default function PanelPage() {
           tone="orange"
         />
       </section>
+
+      <PanelLearningPathCard />
+
+      <PanelScenarioCard />
 
       <section className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] 2xl:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="min-w-0">

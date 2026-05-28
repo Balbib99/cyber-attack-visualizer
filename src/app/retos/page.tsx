@@ -3,6 +3,8 @@ import { ChallengeCard } from "@/components/challenges/ChallengeCard";
 import { ChallengeHowItWorks } from "@/components/challenges/ChallengeHowItWorks";
 import { ChallengesHero } from "@/components/challenges/ChallengesHero";
 import { ComingSoonChallengeCard } from "@/components/challenges/ComingSoonChallengeCard";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { challenges, upcomingChallenges } from "@/data/challenges";
 
@@ -29,6 +31,27 @@ export default function ChallengesPage() {
       />
 
       <ChallengeHowItWorks />
+
+      <Card className="p-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <Badge tone="orange">Decisiones reales</Badge>
+            <h2 className="mt-3 text-2xl font-black text-[var(--app-text-primary)]">
+              Practica con escenarios cotidianos
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
+              Los retos validan conocimiento; los escenarios entrenan qué
+              decisión tomar ante una situación concreta.
+            </p>
+          </div>
+          <Link
+            href="/escenarios"
+            className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          >
+            Ver escenarios
+          </Link>
+        </div>
+      </Card>
 
       <section className="space-y-5">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">

@@ -60,6 +60,12 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
               Ver amenaza
             </Link>
           ) : null}
+          <Link
+            href={`/rutas/${challenge.id}`}
+            className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
+          >
+            Ver ruta completa
+          </Link>
         </div>
       </div>
     </Card>

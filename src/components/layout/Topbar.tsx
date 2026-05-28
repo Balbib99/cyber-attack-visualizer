@@ -4,10 +4,12 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 const mobileNavItems = [
   { href: "/", label: "Inicio" },
   { href: "/panel", label: "Panel" },
+  { href: "/rutas", label: "Rutas" },
   { href: "/amenazas", label: "Amenazas" },
   { href: "/simulaciones", label: "Simulaciones" },
   { href: "/seguridad-diaria", label: "Seguridad" },
   { href: "/retos", label: "Retos" },
+  { href: "/escenarios", label: "Escenarios" },
 ];
 
 export function Topbar() {

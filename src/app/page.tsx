@@ -65,7 +65,7 @@ const features = [
     icon: CheckCircle2,
   },
   {
-    title: "Rutas conectadas",
+    title: "Rutas guiadas",
     description: "Aprende, simula, consulta tips y practica en una misma ruta.",
     icon: Route,
   },
@@ -185,10 +185,10 @@ export default function HomePage() {
       <section className="grid gap-6 xl:grid-cols-2">
         <LearningModeCard
           title="Aprende"
-          description="Explora amenazas, simulaciones visuales, tips prácticos, herramientas recomendadas y buenas prácticas."
+          description="Explora rutas guiadas, amenazas, simulaciones visuales, tips prácticos, herramientas recomendadas y buenas prácticas."
           icon={BookOpen}
-          href="/simulaciones"
-          cta="Explorar contenido"
+          href="/rutas"
+          cta="Ver rutas guiadas"
           tone="blue"
           items={[
             "Amenazas comunes",
