@@ -1,5 +1,15 @@
 export type SimulatorRiskLevel = "bajo" | "medio" | "alto" | "crítico";
 
+export type SimulatorAnalysisQuestion = {
+  question: string;
+  options: {
+    id: string;
+    label: string;
+    isCorrect: boolean;
+  }[];
+  explanation: string;
+};
+
 export type SimulatorStep = {
   id: string;
   order: number;
@@ -11,6 +21,7 @@ export type SimulatorStep = {
   alertSignal: string;
   defenseTip: string;
   riskLevel: SimulatorRiskLevel;
+  analysisQuestion?: SimulatorAnalysisQuestion;
 };
 
 export type AttackSimulator = {

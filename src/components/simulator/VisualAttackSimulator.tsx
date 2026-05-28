@@ -5,10 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { AnalysisModeToggle } from "@/components/simulator/AnalysisModeToggle";
 import { SimulatorControls } from "@/components/simulator/SimulatorControls";
 import { SimulatorStepImage } from "@/components/simulator/SimulatorStepImage";
 import { SimulatorStepInfo } from "@/components/simulator/SimulatorStepInfo";
 import { SimulatorTimeline } from "@/components/simulator/SimulatorTimeline";
+import { StepAnalysisQuestion } from "@/components/simulator/StepAnalysisQuestion";
+import { getAnalysisQuestion } from "@/data/simulatorAnalysis";
 import { formatPercent } from "@/lib/utils";
 import type { AttackSimulator, SimulatorRiskLevel } from "@/types/simulator";
 
@@ -25,7 +28,11 @@ const riskTone: Record<SimulatorRiskLevel, "green" | "orange" | "red"> = {
 
 export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [analysisMode, setAnalysisMode] = useState(false);
   const activeStep = simulator.steps[activeIndex];
+  const analysisQuestion =
+    activeStep.analysisQuestion ??
+    getAnalysisQuestion(simulator.id, activeStep.id);
 
   const progress = useMemo(() => {
     if (simulator.steps.length <= 1) {
@@ -64,22 +71,28 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
               {simulator.description}
             </p>
           </div>
-          <div className="min-w-48 rounded border border-white/10 bg-[#050505] p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-              Avance del recorrido
-            </p>
-            <p className="mt-2 font-mono text-2xl font-black text-white">
-              Paso {activeIndex + 1} de {simulator.steps.length}
-            </p>
-            <p className="mt-1 text-xs font-semibold text-slate-500">
-              {formatPercent(progress)} completado
-            </p>
-            <div className="mt-3 h-2 overflow-hidden rounded bg-white/10">
-              <motion.div
-                className="h-full rounded bg-[#4d8eff]"
-                animate={{ width: formatPercent(progress) }}
-                transition={{ duration: 0.3 }}
-              />
+          <div className="grid min-w-56 gap-3">
+            <AnalysisModeToggle
+              enabled={analysisMode}
+              onChange={setAnalysisMode}
+            />
+            <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-text-muted)]">
+                Avance del recorrido
+              </p>
+              <p className="mt-2 font-mono text-2xl font-black text-[var(--app-text-primary)]">
+                Paso {activeIndex + 1} de {simulator.steps.length}
+              </p>
+              <p className="mt-1 text-xs font-semibold text-[var(--app-text-muted)]">
+                {formatPercent(progress)} completado
+              </p>
+              <div className="mt-3 h-2 overflow-hidden rounded bg-[var(--app-bg-muted)]">
+                <motion.div
+                  className="h-full rounded bg-[#4d8eff]"
+                  animate={{ width: formatPercent(progress) }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -93,7 +106,15 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
 
       <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_24rem]">
         <SimulatorStepImage step={activeStep} priority={activeIndex === 0} />
-        <SimulatorStepInfo step={activeStep} />
+        <div className="space-y-5">
+          <SimulatorStepInfo step={activeStep} />
+          {analysisMode ? (
+            <StepAnalysisQuestion
+              key={activeStep.id}
+              analysisQuestion={analysisQuestion}
+            />
+          ) : null}
+        </div>
       </section>
 
       <Card className="p-5">
