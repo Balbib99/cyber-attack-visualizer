@@ -1,22 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import { AlertTriangle, CheckCircle2, HelpCircle } from "lucide-react";
+import { AlertTriangle, CheckCircle2, HelpCircle, SearchCheck } from "lucide-react";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 import type { SimulatorAnalysisQuestion } from "@/types/simulator";
 
+export type AnalysisAnswer = {
+  stepId: string;
+  selectedOptionId: string;
+  isCorrect: boolean;
+};
+
 type StepAnalysisQuestionProps = {
+  stepId: string;
   analysisQuestion?: SimulatorAnalysisQuestion;
+  selectedOptionId?: string;
+  answer?: AnalysisAnswer;
+  onSelectOption: (optionId: string) => void;
+  onCheck: () => void;
+  onRetry: () => void;
 };
 
 export function StepAnalysisQuestion({
+  stepId,
   analysisQuestion,
+  selectedOptionId,
+  answer,
+  onSelectOption,
+  onCheck,
+  onRetry,
 }: StepAnalysisQuestionProps) {
-  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
-  const [checkedOptionId, setCheckedOptionId] = useState<string | null>(null);
-
   if (!analysisQuestion) {
     return (
       <Card className="p-5">
@@ -34,56 +49,66 @@ export function StepAnalysisQuestion({
   const selectedOption = analysisQuestion.options.find(
     (option) => option.id === selectedOptionId,
   );
-  const checkedOption = analysisQuestion.options.find(
-    (option) => option.id === checkedOptionId,
+  const answeredOption = analysisQuestion.options.find(
+    (option) => option.id === answer?.selectedOptionId,
   );
+  const isAnswered = Boolean(answer);
 
   return (
     <Card className="p-5">
-      <Badge tone="blue">Modo análisis</Badge>
-      <h2 className="mt-4 text-xl font-black text-[var(--app-text-primary)]">
-        {analysisQuestion.question}
-      </h2>
+      <div className="flex items-start gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+          <SearchCheck className="h-5 w-5" />
+        </span>
+        <div>
+          <Badge tone="blue">Modo análisis</Badge>
+          <h2 className="mt-3 text-xl font-black text-[var(--app-text-primary)]">
+            {analysisQuestion.question}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
+            Observa la escena y elige la señal, mala práctica o defensa clave.
+          </p>
+        </div>
+      </div>
 
       <div className="mt-5 grid gap-3">
         {analysisQuestion.options.map((option) => {
           const isSelected = selectedOptionId === option.id;
-          const isChecked = checkedOptionId === option.id;
+          const isAnsweredSelection = answer?.selectedOptionId === option.id;
+          const revealCorrect = isAnswered && option.isCorrect;
+          const revealWrong = isAnsweredSelection && !option.isCorrect;
 
           return (
-            <button
+            <motion.button
               key={option.id}
               type="button"
-              onClick={() => {
-                setSelectedOptionId(option.id);
-                setCheckedOptionId(null);
-              }}
+              layout
+              disabled={isAnswered}
+              onClick={() => onSelectOption(option.id)}
               className={cn(
                 "rounded border p-4 text-left text-sm font-semibold leading-6 transition focus:outline-none focus:ring-2 focus:ring-[#4d8eff]",
                 isSelected
                   ? "border-[#4d8eff] bg-[#4d8eff]/10 text-[var(--app-text-primary)]"
                   : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[var(--app-text-secondary)] hover:border-[#4d8eff]/45",
-                isChecked &&
-                  option.isCorrect &&
+                revealCorrect &&
                   "border-[color:var(--app-success)]/45 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]",
-                isChecked &&
-                  !option.isCorrect &&
+                revealWrong &&
                   "border-[color:var(--app-warning)]/45 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]",
+                isAnswered && "cursor-default",
               )}
+              whileTap={!isAnswered ? { scale: 0.985 } : undefined}
             >
               <span className="flex items-start gap-3">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-current">
-                  {isChecked ? (
-                    option.isCorrect ? (
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                    ) : (
-                      <AlertTriangle className="h-3.5 w-3.5" />
-                    )
+                  {revealCorrect ? (
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                  ) : revealWrong ? (
+                    <AlertTriangle className="h-3.5 w-3.5" />
                   ) : null}
                 </span>
-                {option.label}
+                <span>{option.label}</span>
               </span>
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -91,19 +116,16 @@ export function StepAnalysisQuestion({
       <div className="mt-5 flex flex-wrap gap-3">
         <button
           type="button"
-          disabled={!selectedOption}
-          onClick={() => setCheckedOptionId(selectedOptionId)}
+          disabled={!selectedOption || isAnswered}
+          onClick={onCheck}
           className="rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a] disabled:cursor-not-allowed disabled:opacity-50"
         >
           Comprobar
         </button>
-        {checkedOption ? (
+        {isAnswered ? (
           <button
             type="button"
-            onClick={() => {
-              setSelectedOptionId(null);
-              setCheckedOptionId(null);
-            }}
+            onClick={onRetry}
             className="rounded border border-[var(--app-border)] px-5 py-3 text-sm font-bold text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
           >
             Volver a elegir
@@ -111,19 +133,34 @@ export function StepAnalysisQuestion({
         ) : null}
       </div>
 
-      {checkedOption ? (
-        <div
+      {answer ? (
+        <motion.div
+          key={`${stepId}-${answer.selectedOptionId}`}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
           className={`mt-5 rounded border p-4 text-sm leading-6 ${
-            checkedOption.isCorrect
+            answer.isCorrect
               ? "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]"
               : "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]"
           }`}
         >
           <p className="font-black">
-            {checkedOption.isCorrect ? "Correcto" : "Revisa esta decisión"}
+            {answer.isCorrect ? "Buena observación" : "No exactamente"}
           </p>
+          {!answer.isCorrect && answeredOption ? (
+            <p className="mt-2">
+              Marcaste: <span className="font-bold">{answeredOption.label}</span>.
+            </p>
+          ) : null}
+          {!answer.isCorrect ? (
+            <p className="mt-2">
+              La opción correcta aparece resaltada en verde para que puedas
+              comparar la señal clave.
+            </p>
+          ) : null}
           <p className="mt-2">{analysisQuestion.explanation}</p>
-        </div>
+        </motion.div>
       ) : null}
     </Card>
   );
