@@ -64,6 +64,12 @@ export default function HomePage() {
               >
                 Entrar al panel
               </Link>
+              <Link
+                href="/proyecto"
+                className="inline-flex items-center justify-center px-2 py-3 text-sm font-bold text-[var(--app-text-secondary)] transition hover:text-[var(--app-text-primary)]"
+              >
+                Ver case study
+              </Link>
             </div>
           </div>
 
