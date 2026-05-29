@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RelatedInlineLinks } from "@/components/education/RelatedInlineLinks";
 import { Badge, riskTone } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { IconByName } from "@/components/ui/IconByName";
@@ -19,11 +20,13 @@ export function ThreatCard({ threat }: { threat: Threat }) {
           <IconByName name={threat.icon} className="h-5 w-5" />
         </span>
       </div>
-      <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">{threat.name}</h3>
+      <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">
+        {threat.name}
+      </h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-[var(--app-text-secondary)]">
         {threat.shortDescription}
       </p>
-      <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+      <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/amenazas/${threat.id}`}
           className="rounded bg-[#4d8eff] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
@@ -31,14 +34,12 @@ export function ThreatCard({ threat }: { threat: Threat }) {
           Ver detalles
         </Link>
         {threat.simulatorAvailable ? (
-          <Link
-            href={`/simulador/${threat.id}`}
-            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
-          >
-            Abrir simulador
-          </Link>
+          <RelatedInlineLinks
+            label="También puedes ver"
+            links={[{ label: "Simulador", href: `/simulador/${threat.id}` }]}
+          />
         ) : (
-          <span className="rounded border border-[var(--app-border)] px-4 py-2 text-center text-sm font-bold text-[var(--app-text-muted)]">
+          <span className="text-sm font-bold text-[var(--app-text-muted)]">
             Simulador próximamente
           </span>
         )}

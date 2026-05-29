@@ -34,7 +34,7 @@ export function LearningPathProgress({ path }: { path: LearningPath }) {
     <Card className="p-5">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-text-muted)]">
             Progreso de ruta
           </p>
           <p className="mt-2 text-3xl font-black text-[var(--app-text-primary)]">
@@ -42,24 +42,24 @@ export function LearningPathProgress({ path }: { path: LearningPath }) {
           </p>
         </div>
         {progress.completedChallenge ? (
-          <CheckCircle2 className="h-9 w-9 text-[#6ffbbe]" />
+          <CheckCircle2 className="h-9 w-9 text-[var(--app-success)]" />
         ) : (
-          <CircleDashed className="h-9 w-9 text-[#adc6ff]" />
+          <CircleDashed className="h-9 w-9 text-[#1d4ed8] dark:text-[#adc6ff]" />
         )}
       </div>
-      <div className="mt-4 h-2 overflow-hidden rounded bg-white/10">
+      <div className="mt-4 h-2 overflow-hidden rounded bg-[var(--app-surface-elevated)]">
         <div
           className="h-full rounded bg-[#4d8eff]"
           style={{ width: `${progress.percentage}%` }}
         />
       </div>
-      <p className="mt-4 text-sm leading-6 text-slate-400">
-        Completa el reto relacionado para validar esta ruta. Los pasos de
-        lectura y simulación se muestran como guía visual.
+      <p className="mt-4 text-sm leading-6 text-[var(--app-text-secondary)]">
+        Completa el reto relacionado para validar esta ruta. Las fases de
+        lectura, simulación, consejos y escenarios se muestran como guía visual.
       </p>
-      <p className="mt-3 text-xs font-bold text-slate-500">
-        {progress.completedRequiredSteps} de {progress.requiredSteps} pasos
-        obligatorios validados
+      <p className="mt-3 text-xs font-bold text-[var(--app-text-muted)]">
+        {progress.completedRequiredSteps} de {progress.requiredSteps} fases
+        obligatorias validadas
       </p>
     </Card>
   );

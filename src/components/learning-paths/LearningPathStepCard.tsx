@@ -4,6 +4,7 @@ import {
   BrainCircuit,
   CheckCircle2,
   Lightbulb,
+  MessageSquareWarning,
   PlayCircle,
   type LucideIcon,
 } from "lucide-react";
@@ -18,6 +19,11 @@ const stepMeta: Record<
   threat: { label: "Amenaza", cta: "Ver amenaza", icon: BookOpen },
   simulator: { label: "Simulación", cta: "Abrir simulación", icon: PlayCircle },
   tip: { label: "Tip práctico", cta: "Ver tips", icon: Lightbulb },
+  scenario: {
+    label: "Escenario",
+    cta: "Resolver escenario",
+    icon: MessageSquareWarning,
+  },
   challenge: { label: "Reto", cta: "Hacer reto", icon: BrainCircuit },
 };
 

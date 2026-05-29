@@ -91,7 +91,7 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
   return (
     <div className="space-y-6">
       <Card className="p-6">
-        <Link href="/retos" className="text-sm font-bold text-[#adc6ff]">
+        <Link href="/retos" className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]">
           Volver al Centro de retos
         </Link>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -99,10 +99,10 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
           <Badge>{challenge.difficulty}</Badge>
           <Badge>{challenge.estimatedTime}</Badge>
         </div>
-        <h1 className="mt-5 text-4xl font-black text-white">
+        <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)]">
           {challenge.title}
         </h1>
-        <p className="mt-3 max-w-3xl leading-7 text-slate-300">
+        <p className="mt-3 max-w-3xl leading-7 text-[var(--app-text-secondary)]">
           {challenge.description}
         </p>
         <div className="mt-6">
@@ -116,20 +116,20 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
       <Card className="border-[#4d8eff]/20 p-5">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#adc6ff]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1d4ed8] dark:text-[#adc6ff]">
               Antes de practicar
             </p>
-            <h2 className="mt-2 text-xl font-black text-white">
+            <h2 className="mt-2 text-xl font-black text-[var(--app-text-primary)]">
               Repasa la simulación visual si necesitas contexto
             </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
+            <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
               No es obligatorio, pero ver el flujo paso a paso ayuda a responder
               con más criterio.
             </p>
           </div>
           <Link
             href={challenge.relatedSimulatorPath}
-            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
           >
             Ver simulación
           </Link>

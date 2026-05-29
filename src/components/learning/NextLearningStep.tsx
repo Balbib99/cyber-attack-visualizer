@@ -24,13 +24,13 @@ export function NextLearningStep({
     <Card className="border-[#4edea3]/20 p-5 sm:p-6">
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-center">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[#4edea3]/30 bg-[#4edea3]/10 text-[#6ffbbe]">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[#4edea3]/30 bg-[#4edea3]/10 text-[#047857] dark:text-[#6ffbbe]">
             <Sparkles className="h-6 w-6" />
           </span>
           <div>
             <Badge tone="green">Siguiente paso recomendado</Badge>
-            <h2 className="mt-3 text-2xl font-black text-white">{title}</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+            <h2 className="mt-3 text-2xl font-black text-[var(--app-text-primary)]">{title}</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--app-text-secondary)]">
               {description}
             </p>
           </div>
@@ -43,7 +43,7 @@ export function NextLearningStep({
               className={
                 action.variant === "primary"
                   ? "inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
-                  : "inline-flex items-center justify-center gap-2 rounded border border-[#4d8eff]/40 px-4 py-2 text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+                  : "inline-flex items-center justify-center gap-2 rounded border border-[#4d8eff]/40 px-4 py-2 text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
               }
             >
               {action.label}

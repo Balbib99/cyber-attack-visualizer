@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { Clock, ListChecks, Play, Trophy } from "lucide-react";
+import { RelatedInlineLinks } from "@/components/education/RelatedInlineLinks";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { useChallengeProgress } from "@/hooks/useChallengeProgress";
-import { getScenariosForChallenge } from "@/lib/scenarioRelations";
 import type { CyberChallenge } from "@/types/challenge";
 
 export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
   const { getProgress, isLoaded } = useChallengeProgress();
   const progress = isLoaded ? getProgress(challenge.id) : undefined;
-  const relatedScenario = getScenariosForChallenge(challenge.id)[0];
 
   return (
     <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
@@ -20,8 +19,10 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
         <Badge tone="blue">{challenge.category}</Badge>
         <Badge>{challenge.difficulty}</Badge>
       </div>
-      <h2 className="mt-5 text-2xl font-black text-white">{challenge.title}</h2>
-      <p className="mt-3 text-sm leading-6 text-slate-300">
+      <h2 className="mt-5 text-2xl font-black text-[var(--app-text-primary)]">
+        {challenge.title}
+      </h2>
+      <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
         {challenge.description}
       </p>
 
@@ -47,36 +48,13 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
           <Play className="h-4 w-4" />
           {progress?.completed ? "Continuar" : "Iniciar reto"}
         </Link>
-        <div className="flex flex-wrap gap-3 text-sm font-bold">
-          <Link
-            href={challenge.relatedSimulatorPath}
-            className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#adc6ff]"
-          >
-            Ver simulación
-          </Link>
-          {challenge.relatedThreatId ? (
-            <Link
-              href={`/amenazas/${challenge.relatedThreatId}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-            >
-              Ver amenaza
-            </Link>
-          ) : null}
-          <Link
-            href={`/rutas/${challenge.id}`}
-            className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-          >
-            Ver ruta completa
-          </Link>
-          {relatedScenario ? (
-            <Link
-              href={`/escenarios/${relatedScenario.id}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[color:var(--app-warning)]/35 hover:bg-[var(--app-warning-soft)] hover:text-[#b45309] dark:hover:text-[#ffddb8]"
-            >
-              Resolver escenario
-            </Link>
-          ) : null}
-        </div>
+        <RelatedInlineLinks
+          label="También puedes ver"
+          links={[
+            { label: "Ruta completa", href: `/rutas/${challenge.id}` },
+            { label: "Simulación", href: challenge.relatedSimulatorPath },
+          ]}
+        />
       </div>
     </Card>
   );
@@ -93,11 +71,13 @@ function Metric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#adc6ff]" />
-      <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>
-      <p className="mt-1 text-sm font-bold text-white">{value}</p>
+      <p className="mt-1 text-sm font-bold text-[var(--app-text-primary)]">
+        {value}
+      </p>
     </div>
   );
 }

@@ -9,8 +9,13 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Inicio" },
+  { href: "/panel", label: "Panel" },
   { href: "/rutas", label: "Rutas" },
-  { href: "/simulaciones", label: "Simulaciones" },
+  {
+    href: "/simulaciones",
+    label: "Simulaciones",
+    matchPrefixes: ["/simulaciones", "/simulador"],
+  },
   { href: "/seguridad-diaria", label: "Tips" },
   { href: "/escenarios", label: "Escenarios" },
   { href: "/retos", label: "Retos" },
@@ -42,7 +47,9 @@ export function PublicNavbar() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href);
+                : (item.matchPrefixes ?? [item.href]).some((prefix) =>
+                    pathname.startsWith(prefix),
+                  );
 
             return (
               <Link

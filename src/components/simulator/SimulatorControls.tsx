@@ -28,7 +28,7 @@ export function SimulatorControls({
           type="button"
           onClick={onPrevious}
           disabled={!canGoBack}
-          className="inline-flex items-center justify-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-bold text-slate-200 transition hover:bg-white/[0.06] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex items-center justify-center gap-2 rounded border border-[var(--app-border)] px-4 py-2 text-sm font-bold text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           <ArrowLeft className="h-4 w-4" />
           Anterior
@@ -45,7 +45,7 @@ export function SimulatorControls({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center justify-center gap-2 rounded border border-[#ffb95f]/40 px-4 py-2 text-sm font-bold text-[#ffddb8] transition hover:bg-[#ffb95f]/10"
+          className="inline-flex items-center justify-center gap-2 rounded border border-[color:var(--app-warning)]/40 px-4 py-2 text-sm font-bold text-[#b45309] transition hover:bg-[var(--app-warning-soft)] dark:text-[#ffddb8]"
         >
           <RotateCcw className="h-4 w-4" />
           Reiniciar
@@ -53,7 +53,7 @@ export function SimulatorControls({
       </div>
 
       {currentStep && totalSteps ? (
-        <span className="rounded border border-white/10 bg-[#050505] px-3 py-2 text-center font-mono text-xs text-slate-300">
+        <span className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] px-3 py-2 text-center font-mono text-xs text-[var(--app-text-secondary)]">
           Paso {currentStep} de {totalSteps}
         </span>
       ) : null}

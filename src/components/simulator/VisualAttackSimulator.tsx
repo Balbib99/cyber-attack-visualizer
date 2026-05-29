@@ -49,10 +49,10 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
         <div className="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-4xl">
             <Link
-              href="/amenazas"
-              className="text-sm font-bold text-[#adc6ff] transition hover:text-white"
+              href="/simulaciones"
+              className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff] dark:hover:text-white"
             >
-              Volver al explorador
+              Volver a simulaciones
             </Link>
             <div className="mt-6 flex flex-wrap gap-2">
               <Badge tone="blue">{simulator.category}</Badge>
@@ -61,13 +61,13 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
               </Badge>
               <Badge>{simulator.estimatedTime}</Badge>
             </div>
-            <h1 className="mt-5 text-4xl font-black text-white sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-5xl">
               {simulator.title}
             </h1>
-            <p className="mt-4 text-xl font-semibold leading-8 text-[#adc6ff]">
+            <p className="mt-4 text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
               {simulator.subtitle}
             </p>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
+            <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--app-text-secondary)]">
               {simulator.description}
             </p>
           </div>

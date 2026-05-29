@@ -1,11 +1,34 @@
 import Link from "next/link";
 import { Clock, ShieldAlert } from "lucide-react";
+import {
+  RelatedInlineLinks,
+  type RelatedInlineLink,
+} from "@/components/education/RelatedInlineLinks";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import type { CyberScenario } from "@/types/scenario";
 import { scenarioCategoryLabel, scenarioRiskTone } from "./scenarioStyles";
 
 export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
+  const relatedLinks: RelatedInlineLink[] = [
+    ...(scenario.relatedTipIds?.[0]
+      ? [
+          {
+            label: "Ver tip",
+            href: `/seguridad-diaria/${scenario.relatedTipIds[0]}`,
+          },
+        ]
+      : []),
+    ...(scenario.relatedSimulatorId
+      ? [
+          {
+            label: "Ver simulación",
+            href: `/simulador/${scenario.relatedSimulatorId}`,
+          },
+        ]
+      : []),
+  ].slice(0, 2);
+
   return (
     <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex flex-wrap gap-2">
@@ -55,31 +78,8 @@ export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
       >
         Resolver escenario
       </Link>
-      <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
-        {scenario.relatedSimulatorId ? (
-          <Link
-            href={`/simulador/${scenario.relatedSimulatorId}`}
-            className="rounded border border-[var(--app-border)] px-3 py-2 text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-          >
-            Ver simulación
-          </Link>
-        ) : null}
-        {scenario.relatedTipIds?.[0] ? (
-          <Link
-            href={`/seguridad-diaria/${scenario.relatedTipIds[0]}`}
-            className="rounded border border-[var(--app-border)] px-3 py-2 text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-          >
-            Ver tip
-          </Link>
-        ) : null}
-        {scenario.relatedChallengeId ? (
-          <Link
-            href={`/retos/${scenario.relatedChallengeId}`}
-            className="rounded border border-[var(--app-border)] px-3 py-2 text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-          >
-            Hacer reto
-          </Link>
-        ) : null}
+      <div className="mt-3">
+        <RelatedInlineLinks links={relatedLinks} />
       </div>
     </Card>
   );

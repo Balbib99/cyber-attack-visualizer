@@ -79,7 +79,7 @@ export function FriendlyCyberHeroVisual() {
                     Progreso guiado
                   </p>
                   <p className="font-mono text-xs font-black text-[#1d4ed8] dark:text-[#adc6ff]">
-                    4 pasos
+                    5 fases
                   </p>
                 </div>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-[var(--app-bg-muted)]">

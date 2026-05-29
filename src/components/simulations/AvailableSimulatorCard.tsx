@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, ListChecks, Play } from "lucide-react";
+import { RelatedInlineLinks } from "@/components/education/RelatedInlineLinks";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import type { AttackSimulator, SimulatorRiskLevel } from "@/types/simulator";
@@ -72,28 +73,13 @@ export function AvailableSimulatorCard({
             <Play className="h-4 w-4" />
             Iniciar simulación
           </Link>
-          <div className="flex flex-wrap gap-3 text-sm font-bold">
-            <Link
-              href={`/amenazas/${simulator.threatId}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#1d4ed8] dark:hover:text-[#adc6ff]"
-            >
-              Ver amenaza
-            </Link>
-            {simulator.relatedChallengeId ? (
-              <Link
-                href={`/retos/${simulator.relatedChallengeId}`}
-                className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4edea3]/35 hover:bg-[#4edea3]/10 hover:text-[#047857] dark:hover:text-[#6ffbbe]"
-              >
-                Hacer reto
-              </Link>
-            ) : null}
-            <Link
-              href={`/rutas/${simulator.id}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:bg-[var(--app-surface-elevated)] hover:text-[var(--app-text-primary)]"
-            >
-              Ver ruta completa
-            </Link>
-          </div>
+          <RelatedInlineLinks
+            label="También puedes ver"
+            links={[
+              { label: "Ruta completa", href: `/rutas/${simulator.id}` },
+              { label: "Amenaza", href: `/amenazas/${simulator.threatId}` },
+            ]}
+          />
         </div>
       </div>
     </Card>

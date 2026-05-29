@@ -88,7 +88,7 @@ export default function LearningPathsPage() {
           title="Una ruta combina varias formas de aprender"
           description="Las rutas no sustituyen al resto de secciones: las ordenan para que avances con una secuencia clara."
         />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {howItWorks.map((item, index) => (
             <HowItWorksCard key={item.title} index={index} {...item} />
           ))}

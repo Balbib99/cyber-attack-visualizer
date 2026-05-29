@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { Clock, ListChecks, Route, Trophy } from "lucide-react";
+import {
+  RelatedInlineLinks,
+  type RelatedInlineLink,
+} from "@/components/education/RelatedInlineLinks";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { useChallengeProgress } from "@/hooks/useChallengeProgress";
@@ -15,6 +19,14 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
       ? getProgress(path.relatedChallengeId)
       : undefined;
   const progress = getPathProgressFromChallenge(path, challengeProgress?.percentage);
+  const relatedLinks: RelatedInlineLink[] = [
+    ...(path.relatedSimulatorId
+      ? [{ label: "Simulación", href: `/simulador/${path.relatedSimulatorId}` }]
+      : []),
+    ...(path.relatedChallengeId
+      ? [{ label: "Reto", href: `/retos/${path.relatedChallengeId}` }]
+      : []),
+  ];
 
   return (
     <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
@@ -33,7 +45,7 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
 
       <div className="mt-5 grid gap-3 sm:grid-cols-4">
         <Metric icon={Clock} label="Tiempo" value={path.estimatedTime} />
-        <Metric icon={ListChecks} label="Pasos" value={String(path.steps.length)} />
+        <Metric icon={ListChecks} label="Fases" value={String(path.steps.length)} />
         <Metric icon={Trophy} label="Progreso" value={`${progress.percentage}%`} />
         <Metric icon={Route} label="Nivel" value={path.level} />
       </div>
@@ -45,24 +57,7 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
         >
           Ver ruta
         </Link>
-        <div className="flex flex-wrap gap-3 text-sm font-bold">
-          {path.relatedSimulatorId ? (
-            <Link
-              href={`/simulador/${path.relatedSimulatorId}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10 hover:text-[#1d4ed8] dark:hover:text-[#adc6ff]"
-            >
-              Abrir simulación
-            </Link>
-          ) : null}
-          {path.relatedChallengeId ? (
-            <Link
-              href={`/retos/${path.relatedChallengeId}`}
-              className="rounded border border-[var(--app-border)] px-3 py-2 text-center text-[var(--app-text-secondary)] transition hover:border-[#4edea3]/35 hover:bg-[#4edea3]/10 hover:text-[#047857] dark:hover:text-[#6ffbbe]"
-            >
-              Hacer reto
-            </Link>
-          ) : null}
-        </div>
+        <RelatedInlineLinks label="También puedes ir a" links={relatedLinks} />
       </div>
     </Card>
   );

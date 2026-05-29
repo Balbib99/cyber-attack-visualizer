@@ -28,22 +28,22 @@ export function KnowledgeProgressCard() {
 
   return (
     <Card className="p-6">
-      <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-text-muted)]">
         Progreso de conocimiento
       </p>
       <p className="mt-4 text-4xl font-black text-[#6ffbbe]">
         {isLoaded ? `${globalProgress.averagePercentage}%` : "--"}
       </p>
-      <p className="mt-3 text-sm leading-6 text-slate-400">
+      <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
         {completedText}. Practica con pruebas cortas y feedback inmediato.
       </p>
-      <div className="mt-6 h-2 overflow-hidden rounded bg-white/10">
+      <div className="mt-6 h-2 overflow-hidden rounded bg-[var(--app-surface-elevated)]">
         <div
           className="h-full rounded bg-[#4edea3]"
           style={{ width: `${globalProgress.averagePercentage}%` }}
         />
       </div>
-      <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+      <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-[var(--app-text-muted)]">
         Siguiente paso sugerido
       </p>
       <Link

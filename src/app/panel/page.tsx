@@ -1,65 +1,58 @@
 import Link from "next/link";
+import { BookOpen, FlaskConical, LayoutDashboard, ShieldCheck, Trophy } from "lucide-react";
 import { DailySafetyCard } from "@/components/dashboard/DailySafetyCard";
-import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { KnowledgeProgressCard } from "@/components/dashboard/KnowledgeProgressCard";
-import { StatCard } from "@/components/dashboard/StatCard";
+import { GuidingQuestionCard } from "@/components/education/GuidingQuestionCard";
 import { PanelLearningPathCard } from "@/components/learning-paths/PanelLearningPathCard";
 import { PanelScenarioCard } from "@/components/scenarios/PanelScenarioCard";
-import { ThreatCard } from "@/components/threats/ThreatCard";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { safetyTips } from "@/data/safetyTips";
-import { threats } from "@/data/threats";
-import { LayoutDashboard } from "lucide-react";
 
 export const metadata = {
   title: "Panel | AttackFlow Lab",
   description:
-    "Panel de aprendizaje de AttackFlow Lab con amenazas, simulaciones, consejos y progreso.",
+    "Panel de aprendizaje de AttackFlow Lab con rutas, escenarios, consejos y progreso.",
 };
 
+const quickLinks = [
+  {
+    title: "Simulaciones",
+    description: "Observa amenazas paso a paso.",
+    href: "/simulaciones",
+    icon: FlaskConical,
+  },
+  {
+    title: "Retos",
+    description: "Comprueba lo aprendido.",
+    href: "/retos",
+    icon: Trophy,
+  },
+  {
+    title: "Seguridad diaria",
+    description: "Aplica consejos prácticos.",
+    href: "/seguridad-diaria",
+    icon: ShieldCheck,
+  },
+];
+
 export default function PanelPage() {
-  const criticalThreats = threats.filter(
-    (threat) => threat.riskLevel === "Crítico",
-  );
-  const recommendedThreats = threats.slice(0, 2);
   const featuredTip = safetyTips[0];
 
   return (
     <div className="space-y-8">
-      <section className="grid gap-6 xl:grid-cols-[1fr_22rem]">
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <Card className="relative overflow-hidden p-6 sm:p-8">
           <div className="absolute right-0 top-0 h-56 w-56 bg-[#4d8eff]/10 blur-3xl" />
           <div className="relative max-w-3xl">
             <Badge tone="blue">Panel central</Badge>
-            <h1 className="mt-5 text-4xl font-black text-white sm:text-5xl">
-              Bienvenido, Analista
+            <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-5xl">
+              Bienvenido a tu panel
             </h1>
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              AttackFlow Lab reúne simulaciones visuales, análisis de amenazas
-              y consejos prácticos para aprender ciberseguridad con contexto
-              real, sin manejar datos sensibles ni entornos productivos.
+            <p className="mt-5 text-lg leading-8 text-[var(--app-text-secondary)]">
+              Un punto de partida para continuar una ruta, resolver una decisión
+              práctica o revisar un consejo sin perderte entre todas las secciones.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/amenazas"
-                className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
-              >
-                Explorar amenazas
-              </Link>
-              <Link
-                href="/simulaciones"
-                className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
-              >
-                Ver simulaciones
-              </Link>
-              <Link
-                href="/retos"
-                className="rounded border border-[#4edea3]/35 px-5 py-3 text-center text-sm font-bold text-[#6ffbbe] transition hover:bg-[#4edea3]/10"
-              >
-                Practicar con retos
-              </Link>
-            </div>
           </div>
         </Card>
 
@@ -67,62 +60,53 @@ export default function PanelPage() {
       </section>
 
       <GuidingQuestionCard
-        question="¿Qué puedo hacer ahora?"
-        description="Encuentra rutas recomendadas, continúa simulaciones, revisa consejos y accede rápidamente a la siguiente actividad."
+        question={"\u00bfQué puedo hacer ahora?"}
+        description="Encuentra la siguiente actividad recomendada y accede rápido a las secciones clave."
         icon={<LayoutDashboard className="h-6 w-6" />}
         variant="blue"
       />
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <StatCard label="Amenazas" value="6" detail="Casos educativos activos" />
-        <StatCard
-          label="Simuladores"
-          value="2"
-          detail="Phishing y SQL Injection"
-          tone="green"
-        />
-        <StatCard
-          label="Riesgo crítico"
-          value={String(criticalThreats.length)}
-          detail="Amenazas destacadas"
-          tone="red"
-        />
-        <StatCard
-          label="Retos"
-          value="2"
-          detail="Pruebas interactivas iniciales"
-          tone="orange"
-        />
-      </section>
-
       <PanelLearningPathCard />
 
-      <PanelScenarioCard />
+      <section className="grid gap-6 xl:grid-cols-2">
+        <PanelScenarioCard />
+        <DailySafetyCard tip={featuredTip} />
+      </section>
 
-      <section className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] 2xl:grid-cols-[minmax(0,1fr)_22rem]">
-        <div className="min-w-0">
-          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Badge tone="red">Amenazas destacadas</Badge>
-              <h2 className="mt-3 text-2xl font-black text-white">
-                Simulaciones recomendadas
-              </h2>
-            </div>
-            <Link href="/amenazas" className="text-sm font-bold text-[#adc6ff]">
-              Ver biblioteca
-            </Link>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {recommendedThreats.map((threat) => (
-              <ThreatCard key={threat.id} threat={threat} />
-            ))}
+      <Card className="p-5">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <BookOpen className="h-5 w-5" />
+          </span>
+          <div>
+            <Badge tone="blue">Accesos rápidos</Badge>
+            <h2 className="mt-2 text-2xl font-black text-[var(--app-text-primary)]">
+              Explora cuando quieras profundizar
+            </h2>
           </div>
         </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          {quickLinks.map((item) => {
+            const Icon = item.icon;
 
-        <aside className="min-w-0 xl:pt-[3.15rem]">
-          <DailySafetyCard tip={featuredTip} />
-        </aside>
-      </section>
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4 transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10"
+              >
+                <Icon className="h-5 w-5 text-[#1d4ed8] dark:text-[#adc6ff]" />
+                <p className="mt-3 font-black text-[var(--app-text-primary)]">
+                  {item.title}
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[var(--app-text-secondary)]">
+                  {item.description}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+      </Card>
     </div>
   );
 }

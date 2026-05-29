@@ -19,9 +19,9 @@ export function SimulatorStepImage({
       initial={{ opacity: 0, y: 14, scale: 0.985 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
-      className="overflow-hidden rounded-lg border border-white/10 bg-[#090b10] p-3 shadow-2xl shadow-black/25"
+      className="overflow-hidden rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-3 shadow-2xl shadow-[var(--app-shadow)]"
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded border border-white/10 bg-[#050505]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded border border-[var(--app-border)] bg-[#050505]">
         <Image
           src={step.image}
           alt={step.imageAlt}
@@ -32,7 +32,7 @@ export function SimulatorStepImage({
         />
         <div className="pointer-events-none absolute inset-0 bg-[#06101f]/10" />
       </div>
-      <figcaption className="px-1 pt-3 text-sm font-semibold leading-6 text-slate-300">
+      <figcaption className="px-1 pt-3 text-sm font-semibold leading-6 text-[var(--app-text-secondary)]">
         {step.title}
       </figcaption>
     </motion.figure>

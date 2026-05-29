@@ -80,11 +80,11 @@ export default async function LearningPathDetailPage({
         <div className="max-w-3xl">
           <Badge tone="blue">Timeline</Badge>
           <h2 className="mt-4 text-3xl font-black text-[var(--app-text-primary)]">
-            Pasos de la ruta
+            Fases de la ruta
           </h2>
           <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
             Sigue los bloques en orden para conectar teoría, simulación visual,
-            consejos prácticos y validación final.
+            consejos prácticos, decisiones reales y validación final.
           </p>
         </div>
         <LearningPathTimeline path={path} />

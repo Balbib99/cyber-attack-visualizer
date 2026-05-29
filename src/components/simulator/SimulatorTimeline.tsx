@@ -39,22 +39,22 @@ export function SimulatorTimeline({
               }`}
             >
               <div className="flex items-center justify-between gap-2">
-                <span className="font-mono text-[11px] text-slate-500">
+                <span className="font-mono text-[11px] text-[var(--app-text-muted)]">
                   {String(step.order).padStart(2, "0")}
                 </span>
                 <span
                   className={`grid h-7 w-7 place-items-center rounded border text-xs ${
                     isDone
-                      ? "border-[#4edea3]/40 bg-[#4edea3]/10 text-[#6ffbbe]"
+                      ? "border-[#4edea3]/40 bg-[#4edea3]/10 text-[#047857] dark:text-[#6ffbbe]"
                       : isActive
-                        ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#adc6ff]"
-                        : "border-[var(--app-border)] bg-[var(--app-surface)] text-slate-400"
+                        ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]"
+                        : "border-[var(--app-border)] bg-[var(--app-surface)] text-[var(--app-text-muted)]"
                   }`}
                 >
                   {isDone ? <Check className="h-4 w-4" /> : step.order}
                 </span>
               </div>
-              <p className="mt-3 line-clamp-2 text-xs font-bold leading-5 text-slate-200">
+              <p className="mt-3 line-clamp-2 text-xs font-bold leading-5 text-[var(--app-text-primary)]">
                 {step.title}
               </p>
             </button>

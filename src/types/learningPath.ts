@@ -4,6 +4,7 @@ export type LearningPathStepType =
   | "threat"
   | "simulator"
   | "tip"
+  | "scenario"
   | "challenge";
 
 export type LearningPathStep = {

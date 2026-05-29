@@ -54,6 +54,16 @@ export const learningPaths: LearningPath[] = [
         required: false,
       },
       {
+        id: "phishing-scenario",
+        type: "scenario",
+        title: "Practica una decisión real",
+        description:
+          "Resuelve un escenario cotidiano para decidir qué hacer ante un email urgente o un login dudoso.",
+        href: "/escenarios/email-urgente",
+        estimatedTime: "3 min",
+        required: false,
+      },
+      {
         id: "phishing-challenge",
         type: "challenge",
         title: "Completa el reto",
@@ -111,6 +121,16 @@ export const learningPaths: LearningPath[] = [
           "Refuerza conceptos como validación, consultas seguras, mínimos privilegios y control de errores.",
         href: "/seguridad-diaria",
         estimatedTime: "5 min",
+        required: false,
+      },
+      {
+        id: "sql-scenario",
+        type: "scenario",
+        title: "Practica decisiones reales",
+        description:
+          "Explora escenarios cotidianos para entrenar criterio antes de pasar al reto de conocimiento.",
+        href: "/escenarios",
+        estimatedTime: "3 min",
         required: false,
       },
       {

@@ -23,7 +23,8 @@ export function LearningPathsHero({
           </p>
           <p className="mt-4 max-w-3xl leading-7 text-[var(--app-text-secondary)]">
             Empieza entendiendo el riesgo, observa una simulación visual, revisa
-            consejos prácticos y valida lo aprendido con un reto.
+            consejos prácticos, practica decisiones reales y valida lo aprendido
+            con un reto.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -42,7 +43,7 @@ export function LearningPathsHero({
         </div>
         <div className="grid gap-3">
           <Metric label="Rutas disponibles" value={String(availableCount)} />
-          <Metric label="Pasos por ruta" value={String(stepsPerPath)} />
+          <Metric label="Fases de aprendizaje" value={String(stepsPerPath)} />
           <Metric label="Formato" value="Guiado" />
           <Metric label="Práctica" value="Incluida" />
         </div>

@@ -33,7 +33,7 @@ export default function ChallengesPage() {
       />
 
       <GuidingQuestionCard
-        question="¿He entendido lo aprendido?"
+        question={"\u00bfHe entendido lo aprendido?"}
         description="Comprueba tus conocimientos con ejercicios breves, feedback inmediato y retos relacionados con lo que has visto."
         icon={<BrainCircuit className="h-6 w-6" />}
         variant="purple"
@@ -41,35 +41,17 @@ export default function ChallengesPage() {
 
       <ChallengeHowItWorks />
 
-      <Card className="p-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <Badge tone="orange">Decisiones reales</Badge>
-            <h2 className="mt-3 text-2xl font-black text-[var(--app-text-primary)]">
-              Practica con escenarios cotidianos
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
-              Los retos validan conocimiento; los escenarios entrenan qué
-              decisión tomar ante una situación concreta.
-            </p>
-          </div>
-          <Link
-            href="/escenarios"
-            className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
-          >
-            Ver escenarios
-          </Link>
-        </div>
-      </Card>
-
       <section className="space-y-5">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <SectionHeader
             eyebrow="Practica"
             title="Retos disponibles"
-            description="Ejercicios breves conectados con las simulaciones visuales para pasar de observar a decidir."
+            description="Ejercicios breves conectados con las simulaciones visuales para pasar de observar a comprobar."
           />
-          <Link href="/simulaciones" className="text-sm font-bold text-[#adc6ff]">
+          <Link
+            href="/simulaciones"
+            className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]"
+          >
             Repasar simulaciones
           </Link>
         </div>
@@ -80,11 +62,32 @@ export default function ChallengesPage() {
         </div>
       </section>
 
+      <Card className="p-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <Badge tone="orange">Decisiones reales</Badge>
+            <h2 className="mt-3 text-2xl font-black text-[var(--app-text-primary)]">
+              También puedes practicar con escenarios cotidianos
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--app-text-secondary)]">
+              Los retos comprueban conocimiento; los escenarios entrenan qué
+              decisión tomar ante una situación concreta.
+            </p>
+          </div>
+          <Link
+            href="/escenarios"
+            className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+          >
+            Ver escenarios
+          </Link>
+        </div>
+      </Card>
+
       <section className="space-y-5">
         <SectionHeader
           eyebrow="Roadmap"
           title="Próximos retos"
-          description="Nuevos escenarios para practicar identificación de señales, orden de fases y elección de defensas."
+          description="Nuevos ejercicios para practicar identificación de señales, orden de fases y elección de defensas."
         />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {upcomingChallenges.map((challenge) => (
