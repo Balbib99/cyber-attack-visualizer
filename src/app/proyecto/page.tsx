@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { ProjectProblemExpandableText } from "@/components/project/ProjectProblemExpandableText";
 
 export const metadata = {
   title: "Proyecto | AttackFlow Lab",
@@ -223,12 +224,9 @@ export default function ProjectCaseStudyPage() {
           <SectionIntro
             eyebrow="El problema"
             title="¿Qué problema quería resolver?"
-            description="Gran parte del contenido sobre ciberseguridad resulta demasiado técnico para usuarios sin experiencia. Muchos recursos se basan en explicaciones largas o conceptos difíciles de visualizar."
+            description="Durante mi formación en ciberseguridad llegué a una conclusión que se repetía en muchos casos de estudio e incidentes analizados: la tecnología por sí sola no es suficiente para protegernos."
           />
-          <p className="mt-5 text-lg leading-8 text-[var(--app-text-secondary)]">
-            AttackFlow Lab nace con el objetivo de acercar la ciberseguridad a
-            cualquier persona mediante experiencias visuales e interactivas.
-          </p>
+          <ProjectProblemExpandableText />
         </div>
       </section>
 
