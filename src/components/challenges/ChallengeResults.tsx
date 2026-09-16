@@ -45,7 +45,7 @@ export function ChallengeResults({
         </button>
         <Link
           href={challenge.relatedSimulatorPath}
-          className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+          className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Ver simulación relacionada
         </Link>

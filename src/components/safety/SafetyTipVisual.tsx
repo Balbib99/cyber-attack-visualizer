@@ -7,6 +7,7 @@ import {
   Link2,
   LockKeyhole,
   Search,
+  ShieldCheck,
   Smartphone,
   XCircle,
 } from "lucide-react";
@@ -33,6 +34,10 @@ export function SafetyTipVisual({ tip }: { tip: SafetyTip }) {
 
   if (tip.visualType === "breach-check") {
     return <BreachCheckVisual tip={tip} />;
+  }
+
+  if (tip.visualType === "query-safety") {
+    return <QuerySafetyVisual tip={tip} />;
   }
 
   return <LinkCheckVisual tip={tip} />;
@@ -223,6 +228,51 @@ function BreachCheckVisual({ tip }: { tip: SafetyTip }) {
           <LinkSignal label="No reutilices contraseñas antiguas" />
           <LinkSignal good label="Cambia credenciales en servicios afectados" />
           <LinkSignal good label="Activa MFA en cuentas importantes" />
+        </div>
+      </div>
+    </VisualShell>
+  );
+}
+
+function QuerySafetyVisual({ tip }: { tip: SafetyTip }) {
+  return (
+    <VisualShell tip={tip}>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="rounded-lg border border-[var(--app-danger)]/30 bg-[var(--app-surface-elevated)] p-4">
+          <div className="flex items-center gap-2 border-b border-white/10 pb-3">
+            <XCircle className="h-4 w-4 text-[var(--app-danger)]" />
+            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--app-danger)]">
+              Vulnerable
+            </span>
+          </div>
+          <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-words font-mono text-xs leading-6 text-slate-300">
+{`query =
+  "SELECT * FROM usuarios " +
+  "WHERE email = '" + entrada + "'"`}
+          </pre>
+          <p className="mt-3 text-xs leading-5 text-slate-400">
+            La entrada del usuario se concatena directamente: puede alterar la
+            estructura de la consulta.
+          </p>
+        </div>
+
+        <div className="rounded-lg border border-[var(--app-success)]/30 bg-[var(--app-surface-elevated)] p-4">
+          <div className="flex items-center gap-2 border-b border-white/10 pb-3">
+            <ShieldCheck className="h-4 w-4 text-[var(--app-success)]" />
+            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--app-success)]">
+              Parametrizada
+            </span>
+          </div>
+          <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-words font-mono text-xs leading-6 text-slate-300">
+{`query =
+  "SELECT * FROM usuarios " +
+  "WHERE email = ?"
+db.run(query, [entrada])`}
+          </pre>
+          <p className="mt-3 text-xs leading-5 text-slate-400">
+            La entrada viaja como parámetro separado: el motor de base de
+            datos nunca la interpreta como parte de la consulta.
+          </p>
         </div>
       </div>
     </VisualShell>

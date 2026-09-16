@@ -53,7 +53,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/rutas"
-                className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+                className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
               >
                 Empezar recorrido
                 <ArrowRight className="h-4 w-4" />
@@ -145,7 +145,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/rutas"
-              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Ver rutas
             </Link>

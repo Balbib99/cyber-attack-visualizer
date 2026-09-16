@@ -71,7 +71,7 @@ export default function ScenariosPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/escenarios/email-urgente"
-                className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+                className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
               >
                 Empezar con email sospechoso
               </Link>

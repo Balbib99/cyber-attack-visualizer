@@ -27,7 +27,7 @@ export function ThreatCard({ threat }: { threat: Threat }) {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/amenazas/${threat.id}`}
-          className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+          className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Ver detalles
         </Link>

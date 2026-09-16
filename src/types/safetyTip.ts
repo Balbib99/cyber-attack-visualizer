@@ -5,7 +5,8 @@ export type SafetyTipVisualType =
   | "app-trust"
   | "two-factor"
   | "link-check"
-  | "breach-check";
+  | "breach-check"
+  | "query-safety";
 
 export type SafetyTipInfoCard = {
   icon: string;

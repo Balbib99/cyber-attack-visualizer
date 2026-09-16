@@ -55,7 +55,7 @@ export function ScenarioDecisionRunner({
                     className={cn(
                       "mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border",
                       isSelected
-                        ? "border-[var(--app-primary)] bg-[var(--app-primary)] text-white"
+                        ? "border-[var(--app-primary)] bg-[var(--app-primary)] text-[var(--app-surface)]"
                         : "border-[var(--app-border)]",
                     )}
                   >
@@ -83,7 +83,7 @@ export function ScenarioDecisionRunner({
           type="button"
           disabled={!selectedOption}
           onClick={() => setCheckedOptionId(selectedOptionId)}
-          className="mt-5 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-5 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-50"
         >
           Comprobar decisión
         </button>

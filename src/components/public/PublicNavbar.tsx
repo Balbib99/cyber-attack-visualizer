@@ -109,7 +109,7 @@ export function PublicNavbar() {
             <Link
               href="/rutas"
               onClick={() => setOpen(false)}
-              className="rounded bg-[var(--app-primary)] px-4 py-3 text-center text-sm font-bold text-white"
+              className="rounded bg-[var(--app-primary)] px-4 py-3 text-center text-sm font-bold text-[var(--app-surface)]"
             >
               Empezar
             </Link>

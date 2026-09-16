@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   BadgeCheck,
+  Code2,
   FileBadge2,
   Link2,
   Search,
@@ -18,6 +19,7 @@ const visualIcons: Record<SafetyTipVisualType, typeof ShieldCheck> = {
   "two-factor": Smartphone,
   "link-check": Link2,
   "breach-check": BadgeCheck,
+  "query-safety": Code2,
 };
 
 export function SafetyTipCard({ tip }: { tip: SafetyTip }) {
@@ -58,7 +60,7 @@ export function SafetyTipCard({ tip }: { tip: SafetyTip }) {
 
       <Link
         href={`/seguridad-diaria/${tip.id}`}
-        className="mt-5 inline-flex w-fit rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+        className="mt-5 inline-flex w-fit rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
       >
         Ver consejo
       </Link>

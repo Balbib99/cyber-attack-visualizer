@@ -55,7 +55,7 @@ function EmailVisual() {
             <p className="mt-4 text-sm leading-6 text-[var(--app-text-secondary)]">
               Verifica tus datos en las próximas 24 horas para evitar el bloqueo.
             </p>
-            <div className="mt-4 inline-flex rounded bg-[var(--app-danger)] px-4 py-2 text-sm font-bold text-white">
+            <div className="mt-4 inline-flex rounded bg-[var(--app-danger)] px-4 py-2 text-sm font-bold text-[var(--app-surface)]">
               Iniciar sesión ahora
             </div>
           </div>

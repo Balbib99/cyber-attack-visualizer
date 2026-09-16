@@ -19,7 +19,7 @@ export function FeaturedTipSection() {
           </p>
           <Link
             href="/seguridad-diaria/dni-marca-agua"
-            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver consejo
           </Link>

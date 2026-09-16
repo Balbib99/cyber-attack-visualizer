@@ -46,7 +46,7 @@ export function GuidedRoutesPreview({ paths }: { paths: LearningPath[] }) {
           </div>
           <Link
             href={`/rutas/${path.id}`}
-            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver ruta
           </Link>

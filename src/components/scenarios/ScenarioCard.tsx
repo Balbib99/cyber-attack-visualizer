@@ -74,7 +74,7 @@ export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
 
       <Link
         href={`/escenarios/${scenario.id}`}
-        className="mt-6 inline-flex w-full justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+        className="mt-6 inline-flex w-full justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
       >
         Resolver escenario
       </Link>

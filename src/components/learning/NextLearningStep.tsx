@@ -42,7 +42,7 @@ export function NextLearningStep({
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+                  ? "inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
                   : "inline-flex items-center justify-center gap-2 rounded border border-[var(--app-primary)]/40 px-4 py-2 text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
               }
             >

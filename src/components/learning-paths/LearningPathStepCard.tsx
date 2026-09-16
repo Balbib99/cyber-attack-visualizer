@@ -81,7 +81,7 @@ export function LearningPathStepCard({
           ) : null}
           <Link
             href={step.href}
-            className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+            className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             {meta.cta}
           </Link>

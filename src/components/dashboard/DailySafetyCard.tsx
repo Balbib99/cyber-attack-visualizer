@@ -36,7 +36,7 @@ export function DailySafetyCard({ tip }: { tip: SafetyTip }) {
 
       <Link
         href={`/seguridad-diaria/${tip.id}`}
-        className="mt-5 inline-flex w-full items-center justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] sm:w-fit"
+        className="mt-5 inline-flex w-full items-center justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] sm:w-fit"
       >
         Ver consejo
       </Link>

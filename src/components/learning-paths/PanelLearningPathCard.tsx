@@ -61,7 +61,7 @@ export function PanelLearningPathCard() {
           </div>
           <Link
             href={`/rutas/${recommendedPath.id}`}
-            className="mt-4 inline-flex items-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+            className="mt-4 inline-flex items-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Continuar ruta
             <ArrowRight className="h-4 w-4" />

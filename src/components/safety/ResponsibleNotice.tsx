@@ -10,10 +10,10 @@ export function ResponsibleNotice() {
         <div>
           <h2 className="font-black text-white">Aviso responsable</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Esta recomendación no sustituye las instrucciones oficiales de la
-            plataforma ni el asesoramiento legal. Si una entidad exige una
-            imagen sin modificaciones, revisa sus condiciones y utiliza
-            únicamente canales oficiales.
+            Esta recomendación es orientativa y no sustituye la documentación
+            oficial de la plataforma, servicio o tecnología implicada, ni el
+            asesoramiento legal o de seguridad profesional para tu caso
+            concreto.
           </p>
         </div>
       </div>

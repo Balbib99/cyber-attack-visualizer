@@ -53,7 +53,7 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/rutas/${path.id}`}
-          className="inline-flex items-center justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+          className="inline-flex items-center justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Ver ruta
         </Link>

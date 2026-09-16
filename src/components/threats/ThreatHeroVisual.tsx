@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -20,11 +20,16 @@ export function ThreatHeroVisual({
 }: ThreatHeroVisualProps) {
   const [isOpen, setIsOpen] = useState(false);
   const titleId = useId();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!isOpen) {
       return;
     }
+
+    closeButtonRef.current?.focus();
+    const trigger = triggerRef.current;
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -33,12 +38,16 @@ export function ThreatHeroVisual({
     };
 
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      trigger?.focus();
+    };
   }, [isOpen]);
 
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
         className="group w-full text-left"
@@ -85,6 +94,7 @@ export function ThreatHeroVisual({
                 {caption}
               </h2>
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={() => setIsOpen(false)}
                 className="grid h-9 w-9 place-items-center rounded border border-white/10 text-slate-300 transition hover:bg-white/[0.06] hover:text-white"

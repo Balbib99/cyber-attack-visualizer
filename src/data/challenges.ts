@@ -102,7 +102,7 @@ export const challenges: CyberChallenge[] = [
     relatedThreatId: "sql-injection",
     relatedSimulatorId: "sql-injection",
     relatedSimulatorPath: "/simulador/sql-injection",
-    relatedTipIds: ["verificar-app-fiable"],
+    relatedTipIds: ["prevenir-sql-injection"],
     status: "available",
     questions: [
       {

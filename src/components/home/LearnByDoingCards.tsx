@@ -81,7 +81,7 @@ function LearningCard({
           </p>
           <Link
             href={href}
-            className="mt-5 inline-flex rounded border border-[var(--app-primary)]/35 px-4 py-2 text-sm font-bold text-[var(--app-primary)] transition group-hover:bg-[var(--app-primary)] group-hover:text-white dark:text-[var(--app-primary-dark)]"
+            className="mt-5 inline-flex rounded border border-[var(--app-primary)]/35 px-4 py-2 text-sm font-bold text-[var(--app-primary)] transition group-hover:bg-[var(--app-primary)] group-hover:text-[var(--app-surface)] dark:text-[var(--app-primary-dark)]"
           >
             {cta}
           </Link>

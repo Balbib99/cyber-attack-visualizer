@@ -517,6 +517,72 @@ export const safetyTips: SafetyTip[] = [
     relatedChallengeIds: ["phishing"],
     relatedScenarioIds: ["login-dudoso"],
   },
+  {
+    id: "prevenir-sql-injection",
+    title: "Prevenir SQL Injection en el lado del servidor",
+    subtitle:
+      "Defensas conceptuales: entradas validadas, consultas parametrizadas y mínimos privilegios.",
+    badge: "Buenas prácticas de desarrollo",
+    category: "Desarrollo seguro",
+    importance: "Alto",
+    summary:
+      "La diferencia entre una consulta segura y una vulnerable no está en la lógica de negocio, sino en cómo se incorpora la entrada del usuario a la consulta.",
+    scenario:
+      "Un formulario, filtro de búsqueda o parámetro de URL pasa directamente a una consulta SQL sin validar ni parametrizar.",
+    risk:
+      "Si la entrada del usuario se concatena en la consulta, un atacante puede alterar su estructura para leer, modificar o borrar datos fuera de lo previsto por la aplicación.",
+    whatToDo: [
+      "Usa siempre consultas parametrizadas o prepared statements, nunca concatenación de texto.",
+      "Valida cada entrada según el tipo de dato esperado (número, fecha, texto controlado) antes de usarla.",
+      "Aplica el principio de mínimo privilegio: el usuario de base de datos de la app no debería poder borrar tablas ni leer datos fuera de su alcance.",
+      "Registra los errores internamente, pero muestra al usuario mensajes genéricos sin detalles de la consulta o el motor de base de datos.",
+      "Usa un ORM o query builder que parametrice por defecto cuando sea posible.",
+    ],
+    whatToAvoid: [
+      "Concatenar directamente el texto introducido por el usuario dentro de una consulta SQL.",
+      "Confiar solo en la validación del lado del cliente (JavaScript).",
+      "Mostrar mensajes de error con el texto exacto de la consulta o el stack trace.",
+      "Usar una única cuenta de base de datos con permisos de administrador para toda la aplicación.",
+      "Dar por segura una entrada solo porque parece numérica o corta.",
+    ],
+    checklist: [
+      "Toda consulta con datos externos usa parámetros, no concatenación.",
+      "Cada entrada se valida contra el tipo de dato esperado.",
+      "El usuario de base de datos tiene solo los permisos que la app necesita.",
+      "Los mensajes de error no revelan detalles internos.",
+      "Se registran los intentos sospechosos para revisión.",
+    ],
+    imageLabel: "Mockup de consulta segura frente a consulta vulnerable",
+    visualExample: {
+      title: "Misma consulta, dos resultados distintos",
+      description:
+        "La única diferencia entre una consulta vulnerable y una segura está en cómo se incorpora la entrada del usuario, no en la lógica de negocio.",
+    },
+    visualType: "query-safety",
+    infoCards: [
+      {
+        icon: "ShieldAlert",
+        title: "Nunca concatenes",
+        description:
+          "La entrada del usuario debe viajar siempre como parámetro, separada del texto de la consulta.",
+      },
+      {
+        icon: "KeyRound",
+        title: "Mínimo privilegio",
+        description:
+          "La cuenta de base de datos de la app solo debería poder hacer lo que la app necesita, nada más.",
+      },
+      {
+        icon: "FileLock2",
+        title: "Errores genéricos",
+        description:
+          "El detalle técnico de un fallo se registra en el servidor, nunca se muestra al usuario final.",
+      },
+    ],
+    relatedThreatIds: ["sql-injection"],
+    relatedSimulatorIds: ["sql-injection"],
+    relatedChallengeIds: ["sql-injection"],
+  },
 ];
 
 export function getSafetyTipById(id: string) {

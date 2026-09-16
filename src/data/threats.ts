@@ -262,7 +262,7 @@ export const threats: Threat[] = [
       "Validar tipo, longitud y formato.",
       "Aplicar privilegios mínimos en base de datos.",
     ],
-    relatedSafetyTipIds: ["verificar-app-fiable"],
+    relatedSafetyTipIds: ["prevenir-sql-injection"],
     relatedSimulatorId: "sql-injection",
     relatedChallengeId: "sql-injection",
     simulatorAvailable: true,

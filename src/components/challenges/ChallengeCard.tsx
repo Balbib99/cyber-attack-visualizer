@@ -55,7 +55,7 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/retos/${challenge.id}`}
-          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           <Play className="h-4 w-4" />
           {progress?.completed ? "Continuar" : "Iniciar reto"}

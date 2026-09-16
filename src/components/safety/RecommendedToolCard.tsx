@@ -53,7 +53,7 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Abrir herramienta
               <ArrowUpRight className="h-4 w-4" />

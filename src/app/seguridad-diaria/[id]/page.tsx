@@ -197,7 +197,7 @@ function RelatedThreats({
       <SectionHeader
         eyebrow="Relación con amenazas"
         title="Por qué este hábito importa"
-        description="Este consejo se relaciona con técnicas que intentan engañar a usuarios, reutilizar información o aprovechar datos expuestos."
+        description="Este consejo reduce el riesgo de las amenazas documentadas con las que está relacionado. Revísalas para entender el contexto completo."
         icon={AlertTriangle}
         tone="orange"
       />

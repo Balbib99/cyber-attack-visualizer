@@ -63,7 +63,7 @@ export function AnalysisSessionSummary({
           {challengeHref ? (
             <Link
               href={challengeHref}
-              className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+              className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               {challengeLabel}
               <ArrowRight className="h-4 w-4" />

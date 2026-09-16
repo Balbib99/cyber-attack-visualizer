@@ -37,7 +37,7 @@ export function SimulatorControls({
           type="button"
           onClick={onNext}
           disabled={!canGoForward}
-          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-[var(--app-surface)] transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Siguiente
           <ArrowRight className="h-4 w-4" />

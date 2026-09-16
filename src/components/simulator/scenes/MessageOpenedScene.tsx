@@ -29,7 +29,7 @@ export function MessageOpenedScene(props: SceneProps) {
             className={`mt-6 inline-flex items-center gap-2 rounded px-4 py-2 text-sm font-black ${
               mode === "defense"
                 ? "border border-[var(--app-success)]/40 bg-[var(--app-success)]/10 text-[var(--app-success)]"
-                : "bg-[var(--app-primary)] text-white"
+                : "bg-[var(--app-primary)] text-[var(--app-surface)]"
             }`}
           >
             <MousePointerClick className="h-4 w-4" />
