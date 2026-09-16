@@ -29,9 +29,9 @@ function Shell({ children, label }: { children: React.ReactNode; label: string }
           {label}
         </span>
         <span className="flex gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#f59e0b]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#10b981]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[var(--app-danger)]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[var(--app-warning)]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[var(--app-success)]" />
         </span>
       </div>
       {children}
@@ -44,7 +44,7 @@ function EmailVisual() {
     <Shell label="Bandeja de entrada">
       <div className="rounded border border-[color:var(--app-danger)]/25 bg-[var(--app-danger-soft)] p-4">
         <div className="flex items-start gap-3">
-          <MailWarning className="mt-1 h-6 w-6 shrink-0 text-[#dc2626] dark:text-[#ffb4ab]" />
+          <MailWarning className="mt-1 h-6 w-6 shrink-0 text-[var(--app-danger)] dark:text-[var(--app-danger)]" />
           <div className="min-w-0 flex-1">
             <p className="text-sm font-black text-[var(--app-text-primary)]">
               Tu cuenta será bloqueada
@@ -55,7 +55,7 @@ function EmailVisual() {
             <p className="mt-4 text-sm leading-6 text-[var(--app-text-secondary)]">
               Verifica tus datos en las próximas 24 horas para evitar el bloqueo.
             </p>
-            <div className="mt-4 inline-flex rounded bg-[#ef4444] px-4 py-2 text-sm font-bold text-white">
+            <div className="mt-4 inline-flex rounded bg-[var(--app-danger)] px-4 py-2 text-sm font-bold text-white">
               Iniciar sesión ahora
             </div>
           </div>
@@ -68,13 +68,13 @@ function EmailVisual() {
 function IdCheckVisual() {
   return (
     <Shell label="Verificación de identidad">
-      <div className="relative overflow-hidden rounded-lg border border-[#4d8eff]/25 bg-[var(--app-surface-elevated)] p-5">
-        <div className="absolute inset-x-0 top-1/2 rotate-[-12deg] border-y border-[#4d8eff]/30 bg-[#4d8eff]/10 py-2 text-center text-xs font-black uppercase tracking-[0.16em] text-[#1d4ed8] dark:text-[#adc6ff]">
+      <div className="relative overflow-hidden rounded-lg border border-[var(--app-primary)]/25 bg-[var(--app-surface-elevated)] p-5">
+        <div className="absolute inset-x-0 top-1/2 rotate-[-12deg] border-y border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 py-2 text-center text-xs font-black uppercase tracking-[0.16em] text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           Uso exclusivo para verificación - Mayo 2026
         </div>
         <div className="relative flex items-start gap-4">
           <span className="grid h-16 w-16 place-items-center rounded border border-[var(--app-border)] bg-[var(--app-surface)]">
-            <IdCard className="h-8 w-8 text-[#1d4ed8] dark:text-[#adc6ff]" />
+            <IdCard className="h-8 w-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
           </span>
           <div className="space-y-2 text-sm">
             <p className="font-black text-[var(--app-text-primary)]">
@@ -101,7 +101,7 @@ function FileAttachmentVisual() {
           Abre el documento cuanto antes para evitar recargos.
         </p>
         <div className="mt-4 flex items-center gap-3 rounded border border-[var(--app-border)] bg-[var(--app-surface)] p-3">
-          <FileWarning className="h-6 w-6 text-[#b45309] dark:text-[#ffddb8]" />
+          <FileWarning className="h-6 w-6 text-[var(--app-warning)] dark:text-[var(--app-warning)]" />
           <div>
             <p className="text-sm font-bold text-[var(--app-text-primary)]">
               factura-pendiente
@@ -120,18 +120,18 @@ function FakeLoginVisual() {
   return (
     <Shell label="Navegador">
       <div className="rounded border border-[color:var(--app-danger)]/25 bg-[var(--app-surface-elevated)] p-4">
-        <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-xs font-bold text-[#dc2626] dark:text-[#ffb4ab]">
+        <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-xs font-bold text-[var(--app-danger)] dark:text-[var(--app-danger)]">
           https://login-servicio-ejemplo.invalid/verificar
         </div>
         <div className="mx-auto mt-5 max-w-sm rounded border border-[var(--app-border)] bg-[var(--app-surface)] p-5">
-          <LockKeyhole className="h-8 w-8 text-[#1d4ed8] dark:text-[#adc6ff]" />
+          <LockKeyhole className="h-8 w-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
           <p className="mt-3 text-lg font-black text-[var(--app-text-primary)]">
             Acceso seguro
           </p>
           <div className="mt-4 space-y-3">
             <div className="h-10 rounded border border-[var(--app-border)] bg-[var(--app-bg-muted)]" />
             <div className="h-10 rounded border border-[var(--app-border)] bg-[var(--app-bg-muted)]" />
-            <div className="h-10 rounded bg-[#4d8eff]" />
+            <div className="h-10 rounded bg-[var(--app-primary)]" />
           </div>
         </div>
       </div>

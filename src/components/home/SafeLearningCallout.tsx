@@ -13,7 +13,7 @@ export function SafeLearningCallout() {
   return (
     <Card className="border-[color:var(--app-success)]/25 p-6 sm:p-8">
       <div className="flex flex-col gap-5 md:flex-row md:items-start">
-        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]">
           <ShieldCheck className="h-7 w-7" />
         </span>
         <div className="min-w-0 flex-1">

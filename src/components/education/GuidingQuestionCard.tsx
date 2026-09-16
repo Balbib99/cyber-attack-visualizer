@@ -12,11 +12,11 @@ type GuidingQuestionCardProps = {
 };
 
 const variantStyles = {
-  blue: "border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]",
+  blue: "border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]",
   green:
-    "border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]",
+    "border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]",
   orange:
-    "border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]",
+    "border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]",
   purple:
     "border-violet-400/25 bg-violet-400/10 text-violet-700 dark:text-violet-200",
   neutral:

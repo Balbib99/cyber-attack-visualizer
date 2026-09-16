@@ -25,14 +25,14 @@ export function SafetyTipCard({ tip }: { tip: SafetyTip }) {
   const label = getSafetyTipLabel(tip);
 
   return (
-    <Card className="group flex h-full flex-col overflow-hidden p-5 transition hover:border-[#4edea3]/40 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="group flex h-full flex-col overflow-hidden p-5 transition hover:border-[var(--app-success)]/40 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap gap-2">
           <Badge tone="green">{tip.category}</Badge>
           <Badge tone={riskTone(tip.importance)}>{tip.importance}</Badge>
           <Badge tone="blue">{label}</Badge>
         </div>
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#4edea3]/30 bg-[#4edea3]/10 text-[#047857] transition group-hover:scale-[1.03] dark:text-[#6ffbbe]">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[var(--app-success)]/30 bg-[var(--app-success)]/10 text-[var(--app-success)] transition group-hover:scale-[1.03] dark:text-[var(--app-success)]">
           <Icon className="h-6 w-6" />
         </span>
       </div>
@@ -51,14 +51,14 @@ export function SafetyTipCard({ tip }: { tip: SafetyTip }) {
       </p>
 
       {tip.recommendedTool ? (
-        <p className="mt-4 text-xs font-bold text-[#1d4ed8] dark:text-[#adc6ff]">
+        <p className="mt-4 text-xs font-bold text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           Recurso: {tip.recommendedTool.name}
         </p>
       ) : null}
 
       <Link
         href={`/seguridad-diaria/${tip.id}`}
-        className="mt-5 inline-flex w-fit rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+        className="mt-5 inline-flex w-fit rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
       >
         Ver consejo
       </Link>

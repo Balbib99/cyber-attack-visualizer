@@ -30,12 +30,12 @@ export function SimulatorTimeline({
               type="button"
               onClick={() => onStepChange(index)}
               aria-current={isActive ? "step" : undefined}
-              className={`rounded border p-3 text-left transition focus:outline-none focus:ring-2 focus:ring-[#4d8eff]/60 ${
+              className={`rounded border p-3 text-left transition focus:outline-none focus:ring-2 focus:ring-[var(--app-primary)]/60 ${
                 isActive
-                  ? "border-[#4d8eff] bg-[#4d8eff]/12 shadow-[0_0_24px_rgba(77,142,255,0.14)]"
+                  ? "border-[var(--app-primary)] bg-[var(--app-primary)]/12 shadow-[0_0_24px_rgba(163,64,44,0.14)]"
                   : isDone
-                    ? "border-[#4edea3]/35 bg-[#4edea3]/10"
-                    : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] hover:border-[#4d8eff]/35"
+                    ? "border-[var(--app-success)]/35 bg-[var(--app-success)]/10"
+                    : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] hover:border-[var(--app-primary)]/35"
               }`}
             >
               <div className="flex items-center justify-between gap-2">
@@ -45,9 +45,9 @@ export function SimulatorTimeline({
                 <span
                   className={`grid h-7 w-7 place-items-center rounded border text-xs ${
                     isDone
-                      ? "border-[#4edea3]/40 bg-[#4edea3]/10 text-[#047857] dark:text-[#6ffbbe]"
+                      ? "border-[var(--app-success)]/40 bg-[var(--app-success)]/10 text-[var(--app-success)] dark:text-[var(--app-success)]"
                       : isActive
-                        ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]"
+                        ? "border-[var(--app-primary)]/40 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
                         : "border-[var(--app-border)] bg-[var(--app-surface)] text-[var(--app-text-muted)]"
                   }`}
                 >

@@ -14,9 +14,9 @@ export function SecurityChecklist({ title, items }: SecurityChecklistProps) {
         {items.map((item) => (
           <div
             key={item}
-            className="flex items-start gap-3 rounded border border-[#4edea3]/20 bg-[#4edea3]/10 p-4"
+            className="flex items-start gap-3 rounded border border-[var(--app-success)]/20 bg-[var(--app-success)]/10 p-4"
           >
-            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#6ffbbe]" />
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--app-success)]" />
             <span className="text-sm leading-6 text-slate-200">{item}</span>
           </div>
         ))}

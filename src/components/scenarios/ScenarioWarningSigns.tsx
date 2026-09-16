@@ -6,7 +6,7 @@ export function ScenarioWarningSigns({ signs }: { signs: string[] }) {
       {signs.map((sign) => (
         <div
           key={sign}
-          className="flex items-start gap-3 rounded border border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] p-3 text-sm leading-6 text-[#92400e] dark:text-[#ffddb8]"
+          className="flex items-start gap-3 rounded border border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] p-3 text-sm leading-6 text-[var(--app-warning)]"
         >
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <span>{sign}</span>

@@ -128,7 +128,7 @@ const technicalChallenges = [
   {
     title: "Tema claro y oscuro",
     description:
-      "La paleta soft cyber mantiene contraste y personalidad visual en ambos modos.",
+      "La paleta de expediente (papel/rust en claro, tablero cálido en oscuro) mantiene contraste y personalidad visual en ambos modos.",
     icon: MoonStar,
   },
   {
@@ -189,30 +189,26 @@ export default function ProjectCaseStudyPage() {
           <h1 className="mt-5 text-5xl font-black tracking-tight text-[var(--app-text-primary)] sm:text-7xl">
             AttackFlow Lab
           </h1>
-          <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
-            Plataforma educativa e interactiva para aprender ciberseguridad
-            mediante simulaciones visuales, escenarios prácticos y actividades
-            guiadas.
+          <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
+            Un laboratorio frontend sin backend: Next.js 16 con App Router,
+            datos mock tipados en TypeScript y estado de cliente para simular
+            6 amenazas, evaluar 6 retos y persistir progreso en localStorage.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/simulaciones"
-              className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Ver simulaciones
             </Link>
-            <span
-              aria-disabled="true"
-              className="rounded border border-[var(--app-border)] px-5 py-3 text-center text-sm font-bold text-[var(--app-text-muted)]"
+            <a
+              href="https://github.com/Balbib99/cyber-attack-visualizer"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded border border-[var(--app-border)] px-5 py-3 text-center text-sm font-bold text-[var(--app-text-secondary)] transition hover:border-[var(--app-primary)]/40 hover:text-[var(--app-text-primary)]"
             >
-              Ver GitHub · placeholder
-            </span>
-            <span
-              aria-disabled="true"
-              className="rounded border border-[var(--app-border)] px-5 py-3 text-center text-sm font-bold text-[var(--app-text-muted)]"
-            >
-              Ver demo · placeholder
-            </span>
+              Ver GitHub
+            </a>
           </div>
         </div>
         <HeroCaseStudyVisual />
@@ -293,7 +289,7 @@ export default function ProjectCaseStudyPage() {
         <SectionIntro
           eyebrow="Stack"
           title="Tecnologías utilizadas"
-          description="Stack frontend moderno orientado a producto, portfolio y despliegue estático."
+          description="Sin servidor ni base de datos: toda la lógica —progreso, tema, resultados de retos— vive en el cliente. Es una decisión deliberada, no una limitación: mantiene el proyecto desplegable como sitio estático y fuerza un modelo de datos tipado y disciplinado."
         />
         <div className="flex flex-wrap gap-3">
           {technologies.map((tech) => (
@@ -309,7 +305,7 @@ export default function ProjectCaseStudyPage() {
 
       <Card className="overflow-hidden p-6 sm:p-8">
         <div className="grid gap-6 lg:grid-cols-[3rem_minmax(0,1fr)]">
-          <span className="grid h-12 w-12 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+          <span className="grid h-12 w-12 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
             <Lightbulb className="h-6 w-6" />
           </span>
           <div>
@@ -318,11 +314,12 @@ export default function ProjectCaseStudyPage() {
               Lo que aprendí desarrollando AttackFlow Lab
             </h2>
             <p className="mt-4 text-lg leading-8 text-[var(--app-text-secondary)]">
-              Durante el desarrollo de AttackFlow Lab aprendí a diseñar
-              experiencias educativas interactivas, estructurar aplicaciones
-              React escalables y transformar conceptos complejos de
-              ciberseguridad en flujos visuales accesibles para usuarios no
-              técnicos.
+              Modelar una amenaza como dato tipado (Threat) en vez de como
+              texto suelto obligó a decidir, para cada una, qué es una &ldquo;señal
+              de alerta&rdquo; verificable y qué es una mitigación real, no solo
+              describir el ataque. Ese ejercicio de tipado terminó siendo más
+              un ejercicio de análisis de seguridad que de ingeniería de
+              software.
             </p>
           </div>
         </div>
@@ -342,7 +339,7 @@ export default function ProjectCaseStudyPage() {
       </section>
 
       <Card className="relative overflow-hidden p-6 text-center sm:p-10">
-        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-[#4d8eff]/10 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-[var(--app-primary)]/10 blur-3xl" />
         <div className="relative mx-auto max-w-3xl">
           <Badge tone="blue">Explora el producto</Badge>
           <h2 className="mt-5 text-4xl font-black text-[var(--app-text-primary)]">
@@ -355,13 +352,13 @@ export default function ProjectCaseStudyPage() {
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/simulaciones"
-              className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Ir a simulaciones
             </Link>
             <Link
               href="/rutas"
-              className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+              className="rounded border border-[var(--app-primary)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
             >
               Explorar rutas
             </Link>
@@ -411,7 +408,7 @@ function IconCard({
 }) {
   return (
     <Card className="p-5">
-      <span className="grid h-11 w-11 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+      <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
         <Icon className="h-5 w-5" />
       </span>
       <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">
@@ -436,7 +433,7 @@ function FlowStep({
   return (
     <div className="relative rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4">
       <div className="flex items-center justify-between gap-3">
-        <span className="grid h-10 w-10 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-10 w-10 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <Icon className="h-5 w-5" />
         </span>
         <span className="font-mono text-xs font-black text-[var(--app-text-muted)]">
@@ -493,7 +490,7 @@ function PlaceholderVisual({
   return (
     <div className="relative aspect-[16/10] overflow-hidden rounded border border-[var(--app-border)] bg-[var(--app-bg-muted)]">
       <div className="absolute inset-0 lab-grid opacity-[0.08]" />
-      <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 px-3 py-1 text-xs font-bold text-[#1d4ed8] dark:text-[#adc6ff]">
+      <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 px-3 py-1 text-xs font-bold text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
         <Icon className="h-4 w-4" />
         Placeholder captura
       </div>
@@ -501,8 +498,8 @@ function PlaceholderVisual({
         <p className="text-sm font-black text-[var(--app-text-primary)]">
           {title}
         </p>
-        <div className="mt-3 h-2 rounded-full bg-[#4d8eff]/20">
-          <div className="h-full w-2/3 rounded-full bg-[#4d8eff]" />
+        <div className="mt-3 h-2 rounded-full bg-[var(--app-primary)]/20">
+          <div className="h-full w-2/3 rounded-full bg-[var(--app-primary)]" />
         </div>
       </div>
     </div>
@@ -512,12 +509,12 @@ function PlaceholderVisual({
 function HeroCaseStudyVisual() {
   return (
     <Card className="relative overflow-hidden p-5">
-      <div className="absolute -right-10 top-0 h-40 w-40 bg-[#4d8eff]/20 blur-3xl" />
-      <div className="absolute -bottom-10 left-0 h-40 w-40 bg-[#4edea3]/20 blur-3xl" />
+      <div className="absolute -right-10 top-0 h-40 w-40 bg-[var(--app-primary)]/20 blur-3xl" />
+      <div className="absolute -bottom-10 left-0 h-40 w-40 bg-[var(--app-success)]/20 blur-3xl" />
       <div className="relative space-y-4">
         <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4">
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <span className="grid h-11 w-11 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               <Target className="h-5 w-5" />
             </span>
             <div>
@@ -558,7 +555,7 @@ function SoftIllustration() {
   return (
     <Card className="relative min-h-80 overflow-hidden p-6">
       <div className="absolute inset-0 lab-grid opacity-[0.08]" />
-      <div className="absolute right-6 top-8 h-28 w-28 rounded-full bg-[#4d8eff]/15 blur-2xl" />
+      <div className="absolute right-6 top-8 h-28 w-28 rounded-full bg-[var(--app-primary)]/15 blur-2xl" />
       <div className="relative flex h-full flex-col justify-between gap-8">
         <div>
           <Badge tone="orange">Antes</Badge>

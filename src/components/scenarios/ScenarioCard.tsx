@@ -30,7 +30,7 @@ export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
   ].slice(0, 2);
 
   return (
-    <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="p-5 transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex flex-wrap gap-2">
         <Badge tone="green">Disponible</Badge>
         <Badge tone="blue">{scenarioCategoryLabel[scenario.category]}</Badge>
@@ -42,7 +42,7 @@ export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
       <h2 className="mt-5 text-2xl font-black text-[var(--app-text-primary)]">
         {scenario.title}
       </h2>
-      <p className="mt-2 text-sm font-semibold leading-6 text-[#1d4ed8] dark:text-[#adc6ff]">
+      <p className="mt-2 text-sm font-semibold leading-6 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
         {scenario.subtitle}
       </p>
       <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
@@ -74,7 +74,7 @@ export function ScenarioCard({ scenario }: { scenario: CyberScenario }) {
 
       <Link
         href={`/escenarios/${scenario.id}`}
-        className="mt-6 inline-flex w-full justify-center rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+        className="mt-6 inline-flex w-full justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
       >
         Resolver escenario
       </Link>
@@ -96,7 +96,7 @@ function SmallMetric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <Icon className="h-4 w-4 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
       <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>

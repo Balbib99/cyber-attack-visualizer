@@ -43,7 +43,7 @@ export default function PanelPage() {
     <div className="space-y-8">
       <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <Card className="relative overflow-hidden p-6 sm:p-8">
-          <div className="absolute right-0 top-0 h-56 w-56 bg-[#4d8eff]/10 blur-3xl" />
+          <div className="absolute right-0 top-0 h-56 w-56 bg-[var(--app-primary)]/10 blur-3xl" />
           <div className="relative max-w-3xl">
             <Badge tone="blue">Panel central</Badge>
             <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-5xl">
@@ -75,7 +75,7 @@ export default function PanelPage() {
 
       <Card className="p-5">
         <div className="mb-4 flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
             <BookOpen className="h-5 w-5" />
           </span>
           <div>
@@ -93,9 +93,9 @@ export default function PanelPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4 transition hover:border-[#4d8eff]/40 hover:bg-[#4d8eff]/10"
+                className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4 transition hover:border-[var(--app-primary)]/40 hover:bg-[var(--app-primary)]/10"
               >
-                <Icon className="h-5 w-5 text-[#1d4ed8] dark:text-[#adc6ff]" />
+                <Icon className="h-5 w-5 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
                 <p className="mt-3 font-black text-[var(--app-text-primary)]">
                   {item.title}
                 </p>

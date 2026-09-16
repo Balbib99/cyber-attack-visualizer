@@ -11,9 +11,9 @@ export function RelatedScenarioCard({
   scenario: CyberScenario;
 }) {
   return (
-    <Card className="p-4 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="p-4 transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex items-start gap-3">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]">
           <MessageSquareWarning className="h-5 w-5" />
         </span>
         <div className="min-w-0 flex-1">
@@ -31,7 +31,7 @@ export function RelatedScenarioCard({
           </p>
           <Link
             href={`/escenarios/${scenario.id}`}
-            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
           >
             Resolver escenario
             <ArrowRight className="h-4 w-4" />

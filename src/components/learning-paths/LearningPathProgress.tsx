@@ -44,12 +44,12 @@ export function LearningPathProgress({ path }: { path: LearningPath }) {
         {progress.completedChallenge ? (
           <CheckCircle2 className="h-9 w-9 text-[var(--app-success)]" />
         ) : (
-          <CircleDashed className="h-9 w-9 text-[#1d4ed8] dark:text-[#adc6ff]" />
+          <CircleDashed className="h-9 w-9 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
         )}
       </div>
       <div className="mt-4 h-2 overflow-hidden rounded bg-[var(--app-surface-elevated)]">
         <div
-          className="h-full rounded bg-[#4d8eff]"
+          className="h-full rounded bg-[var(--app-primary)]"
           style={{ width: `${progress.percentage}%` }}
         />
       </div>

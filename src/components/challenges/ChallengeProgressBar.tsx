@@ -18,7 +18,7 @@ export function ChallengeProgressBar({ current, total }: ChallengeProgressBarPro
       </div>
       <div className="mt-3 h-2 overflow-hidden rounded bg-white/10">
         <div
-          className="h-full rounded bg-[#4d8eff] transition-all"
+          className="h-full rounded bg-[var(--app-primary)] transition-all"
           style={{ width: `${percentage}%` }}
         />
       </div>

@@ -27,7 +27,7 @@ export function DigitalHabitCards() {
 
         return (
           <Card key={habit.title} className="p-5">
-            <span className="grid h-12 w-12 place-items-center rounded-full border border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <span className="grid h-12 w-12 place-items-center rounded-full border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               <Icon className="h-5 w-5" />
             </span>
             <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">

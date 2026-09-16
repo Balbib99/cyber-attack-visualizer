@@ -9,13 +9,13 @@ type BadgeProps = {
 
 const toneStyles = {
   blue:
-    "border-[color:var(--app-primary)]/30 bg-[var(--app-primary-soft)] text-[var(--app-primary-dark)]",
+    "border-[color:var(--app-primary)]/40 bg-[var(--app-primary-soft)] text-[var(--app-primary)]",
   green:
-    "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]",
+    "border-[color:var(--app-success)]/40 bg-[var(--app-success-soft)] text-[var(--app-success)]",
   orange:
-    "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]",
+    "border-[color:var(--app-warning)]/40 bg-[var(--app-warning-soft)] text-[var(--app-warning)]",
   red:
-    "border-[color:var(--app-danger)]/30 bg-[var(--app-danger-soft)] text-[#dc2626] dark:text-[#ffb4ab]",
+    "border-[color:var(--app-danger)]/40 bg-[var(--app-danger-soft)] text-[var(--app-danger)]",
   neutral:
     "border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[var(--app-text-secondary)]",
 };
@@ -24,7 +24,7 @@ export function Badge({ children, tone = "neutral", className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded border px-2.5 py-1 text-xs font-semibold",
+        "inline-flex items-center rounded-sm border px-2.5 py-1 font-mono text-[0.68rem] uppercase tracking-[0.04em]",
         toneStyles[tone],
         className,
       )}

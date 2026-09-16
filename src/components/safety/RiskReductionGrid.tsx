@@ -31,8 +31,8 @@ export function RiskReductionGrid() {
         const Icon = risk.icon;
 
         return (
-          <Card key={risk.title} className="border-[#ffb95f]/20 p-5">
-            <span className="grid h-11 w-11 place-items-center rounded border border-[#ffb95f]/35 bg-[#ffb95f]/10 text-[#ffddb8]">
+          <Card key={risk.title} className="border-[var(--app-warning)]/20 p-5">
+            <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-warning)]/35 bg-[var(--app-warning)]/10 text-[var(--app-warning)]">
               <Icon className="h-5 w-5" />
             </span>
             <h3 className="mt-4 font-black text-white">{risk.title}</h3>

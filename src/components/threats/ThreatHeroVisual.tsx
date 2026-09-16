@@ -44,8 +44,8 @@ export function ThreatHeroVisual({
         className="group w-full text-left"
         aria-label="Ampliar imagen educativa de phishing"
       >
-        <figure className="overflow-hidden rounded-lg border border-white/10 bg-[#090b10] p-3 shadow-2xl shadow-black/30 transition duration-300 hover:border-[#4d8eff]/45 hover:shadow-[0_0_36px_rgba(77,142,255,0.16)]">
-          <div className="relative aspect-[16/10] overflow-hidden rounded border border-white/10 bg-[#050505]">
+        <figure className="overflow-hidden rounded-lg border border-white/10 bg-[var(--app-surface-elevated)] p-3 shadow-2xl shadow-black/30 transition duration-300 hover:border-[var(--app-primary)]/45 hover:shadow-[0_0_36px_rgba(163,64,44,0.16)]">
+          <div className="relative aspect-[16/10] overflow-hidden rounded border border-white/10 bg-[var(--app-surface-elevated)]">
             <Image
               src={imageSrc}
               alt={alt}
@@ -54,11 +54,11 @@ export function ThreatHeroVisual({
               sizes="(min-width: 1280px) 420px, (min-width: 1024px) 38vw, 100vw"
               className="object-cover transition duration-500 group-hover:scale-[1.035]"
             />
-            <div className="absolute inset-0 bg-[#06101f]/20" />
+            <div className="absolute inset-0 bg-[var(--app-surface-elevated)]/20" />
             <div className="absolute left-4 top-4 flex items-center gap-2">
               <Badge tone="blue">{label}</Badge>
             </div>
-            <span className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded border border-white/15 bg-black/50 text-[#adc6ff] backdrop-blur">
+            <span className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded border border-white/15 bg-black/50 text-[var(--app-primary-dark)] backdrop-blur">
               <Maximize2 className="h-4 w-4" />
             </span>
           </div>
@@ -77,7 +77,7 @@ export function ThreatHeroVisual({
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="w-full max-w-5xl rounded-lg border border-white/10 bg-[#090b10] p-4 shadow-2xl shadow-black"
+            className="w-full max-w-5xl rounded-lg border border-white/10 bg-[var(--app-surface-elevated)] p-4 shadow-2xl shadow-black"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-3 flex items-center justify-between gap-4">
@@ -93,7 +93,7 @@ export function ThreatHeroVisual({
                 <X className="h-4 w-4" />
               </button>
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded border border-white/10 bg-[#050505]">
+            <div className="relative aspect-[16/10] overflow-hidden rounded border border-white/10 bg-[var(--app-surface-elevated)]">
               <Image
                 src={imageSrc}
                 alt={alt}

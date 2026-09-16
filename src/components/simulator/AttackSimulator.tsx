@@ -28,7 +28,7 @@ export function AttackSimulator({ threat }: { threat: Threat }) {
 
   if (!activeStep) {
     return (
-      <div className="rounded-lg border border-white/10 bg-[#121212]/80 p-6">
+      <div className="rounded-lg border border-white/10 bg-[var(--app-surface-elevated)]/80 p-6">
         <p className="text-slate-300">
           Este simulador todavía no está disponible para esta amenaza.
         </p>
@@ -38,7 +38,7 @@ export function AttackSimulator({ threat }: { threat: Threat }) {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-lg border border-white/10 bg-[#121212]/80 p-5">
+      <section className="rounded-lg border border-white/10 bg-[var(--app-surface-elevated)]/80 p-5">
         <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
           <div>
             <Badge tone={mode === "defense" ? "green" : "blue"}>
@@ -55,10 +55,10 @@ export function AttackSimulator({ threat }: { threat: Threat }) {
           <AttackModeToggle mode={mode} onModeChange={setMode} />
         </div>
         <div className="mt-5 flex items-center gap-4">
-          <div className="h-3 flex-1 overflow-hidden rounded border border-white/10 bg-[#050505] p-0.5">
+          <div className="h-3 flex-1 overflow-hidden rounded border border-white/10 bg-[var(--app-surface-elevated)] p-0.5">
             <motion.div
               className={`h-full rounded ${
-                mode === "defense" ? "bg-[#4edea3]" : "bg-[#4d8eff]"
+                mode === "defense" ? "bg-[var(--app-success)]" : "bg-[var(--app-primary)]"
               }`}
               animate={{ width: formatPercent(progress) }}
               transition={{ duration: 0.35 }}
@@ -85,7 +85,7 @@ export function AttackSimulator({ threat }: { threat: Threat }) {
         </aside>
       </section>
 
-      <section className="rounded-lg border border-white/10 bg-[#121212]/80 p-5">
+      <section className="rounded-lg border border-white/10 bg-[var(--app-surface-elevated)]/80 p-5">
         <SimulatorControls
           canGoBack={activeIndex > 0}
           canGoForward={activeIndex < steps.length - 1}

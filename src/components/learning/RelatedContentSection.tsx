@@ -56,15 +56,15 @@ export function RelatedContentSection({
           const Icon = icons[item.type];
           const status = item.status ?? (item.href ? "available" : "coming-soon");
           const content = (
-            <div className="h-full rounded border border-white/10 bg-[#050505]/80 p-4 transition hover:border-[#4d8eff]/35">
-              <span className="grid h-10 w-10 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+            <div className="h-full rounded border border-white/10 bg-[var(--app-surface-elevated)]/80 p-4 transition hover:border-[var(--app-primary)]/35">
+              <span className="grid h-10 w-10 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
                 <Icon className="h-5 w-5" />
               </span>
               <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
                 {labels[item.type]}
               </p>
               <h3 className="mt-2 font-black text-white">{item.title}</h3>
-              <p className="mt-3 text-sm font-bold text-[#adc6ff]">
+              <p className="mt-3 text-sm font-bold text-[var(--app-primary-dark)]">
                 {status === "available" ? "Abrir contenido" : "Próximamente"}
               </p>
             </div>

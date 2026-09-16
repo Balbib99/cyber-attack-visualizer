@@ -9,10 +9,10 @@ type VisualCalloutProps = {
 };
 
 const toneStyles = {
-  blue: "border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]",
-  green: "border-[#4edea3]/30 bg-[#4edea3]/10 text-[#6ffbbe]",
-  orange: "border-[#ffb95f]/30 bg-[#ffb95f]/10 text-[#ffddb8]",
-  red: "border-[#ff6b5f]/30 bg-[#93000a]/20 text-[#ffb4ab]",
+  blue: "border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]",
+  green: "border-[var(--app-success)]/30 bg-[var(--app-success)]/10 text-[var(--app-success)]",
+  orange: "border-[var(--app-warning)]/30 bg-[var(--app-warning)]/10 text-[var(--app-warning)]",
+  red: "border-[var(--app-danger)]/30 bg-[var(--app-danger)]/20 text-[var(--app-danger)]",
 };
 
 export function VisualCallout({

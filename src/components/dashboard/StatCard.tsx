@@ -8,10 +8,10 @@ type StatCardProps = {
 };
 
 const toneStyles = {
-  blue: "text-[#adc6ff]",
-  green: "text-[#6ffbbe]",
-  orange: "text-[#ffddb8]",
-  red: "text-[#ffb4ab]",
+  blue: "text-[var(--app-primary-dark)]",
+  green: "text-[var(--app-success)]",
+  orange: "text-[var(--app-warning)]",
+  red: "text-[var(--app-danger)]",
 };
 
 export function StatCard({ label, value, detail, tone = "blue" }: StatCardProps) {

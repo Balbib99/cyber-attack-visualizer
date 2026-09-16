@@ -29,9 +29,9 @@ export function OrderStepsQuestion({
       {items.map((item, index) => (
         <div
           key={item.id}
-          className="flex items-center gap-3 rounded border border-white/10 bg-[#050505] p-3"
+          className="flex items-center gap-3 rounded border border-white/10 bg-[var(--app-surface-elevated)] p-3"
         >
-          <span className="grid h-8 w-8 shrink-0 place-items-center rounded bg-[#4d8eff]/10 font-mono text-xs font-bold text-[#adc6ff]">
+          <span className="grid h-8 w-8 shrink-0 place-items-center rounded bg-[var(--app-primary)]/10 font-mono text-xs font-bold text-[var(--app-primary-dark)]">
             {index + 1}
           </span>
           <p className="flex-1 text-sm font-semibold leading-6 text-slate-200">

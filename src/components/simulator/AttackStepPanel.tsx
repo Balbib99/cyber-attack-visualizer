@@ -54,9 +54,9 @@ function InfoBlock({
   tone: "orange" | "blue" | "green";
 }) {
   const styles = {
-    orange: "border-[#ffb95f]/25 bg-[#ffb95f]/10 text-[#ffddb8]",
-    blue: "border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#adc6ff]",
-    green: "border-[#4edea3]/25 bg-[#4edea3]/10 text-[#6ffbbe]",
+    orange: "border-[var(--app-warning)]/25 bg-[var(--app-warning)]/10 text-[var(--app-warning)]",
+    blue: "border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]",
+    green: "border-[var(--app-success)]/25 bg-[var(--app-success)]/10 text-[var(--app-success)]",
   };
 
   return (

@@ -77,9 +77,9 @@ export default async function ThreatDetailPage({
 
   return (
     <article className="space-y-10">
-      <header className="relative overflow-hidden rounded-lg border border-white/10 bg-[#121212]/80 p-6 shadow-2xl shadow-black/20 sm:p-8">
-        <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-56 w-56 bg-[#4edea3]/5 blur-3xl" />
+      <header className="relative overflow-hidden rounded-lg border border-white/10 bg-[var(--app-surface-elevated)]/80 p-6 shadow-2xl shadow-black/20 sm:p-8">
+        <div className="absolute right-0 top-0 h-72 w-72 bg-[var(--app-primary)]/10 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-56 w-56 bg-[var(--app-success)]/5 blur-3xl" />
 
         <div
           className={`relative grid gap-8 ${
@@ -89,7 +89,7 @@ export default async function ThreatDetailPage({
           <div>
             <Link
               href="/amenazas"
-              className="text-sm font-bold text-[#adc6ff] transition hover:text-white"
+              className="text-sm font-bold text-[var(--app-primary-dark)] transition hover:text-white"
             >
               Volver al explorador
             </Link>
@@ -103,7 +103,7 @@ export default async function ThreatDetailPage({
             </div>
 
             <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <span className="grid h-20 w-20 shrink-0 place-items-center rounded-lg border border-[#4d8eff]/35 bg-[#4d8eff]/10 text-[#adc6ff] shadow-[0_0_28px_rgba(77,142,255,0.12)]">
+              <span className="grid h-20 w-20 shrink-0 place-items-center rounded-lg border border-[var(--app-primary)]/35 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)] shadow-[0_0_28px_rgba(163,64,44,0.12)]">
                 <IconByName name={threat.icon} className="h-10 w-10" />
               </span>
               <div>
@@ -124,9 +124,9 @@ export default async function ThreatDetailPage({
                   return (
                     <div
                       key={metric.label}
-                      className="rounded border border-white/10 bg-[#050505]/70 p-4"
+                      className="rounded border border-white/10 bg-[var(--app-surface-elevated)]/70 p-4"
                     >
-                      <Icon className="h-5 w-5 text-[#adc6ff]" />
+                      <Icon className="h-5 w-5 text-[var(--app-primary-dark)]" />
                       <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
                         {metric.label}
                       </p>
@@ -143,7 +143,7 @@ export default async function ThreatDetailPage({
               {threat.simulatorAvailable ? (
                 <Link
                   href={`/simulador/${threat.id}`}
-                  className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+                  className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
                 >
                   Abrir simulador
                 </Link>
@@ -154,7 +154,7 @@ export default async function ThreatDetailPage({
               )}
               <a
                 href="#mitigaciones"
-                className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+                className="rounded border border-[var(--app-primary)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-primary-dark)] transition hover:bg-[var(--app-primary)]/10"
               >
                 Ver mitigaciones
               </a>
@@ -219,7 +219,7 @@ export default async function ThreatDetailPage({
                 <span className="font-mono text-xs text-slate-500">
                   Fase {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="grid h-9 w-9 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+                <span className="grid h-9 w-9 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
                   <IconByName name={step.icon} className="h-4 w-4" />
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default async function ThreatDetailPage({
       </section>
 
       <div className="grid gap-6 xl:grid-cols-2">
-        <Card className="border-[#ffb95f]/20 p-6">
+        <Card className="border-[var(--app-warning)]/20 p-6">
           <SectionHeader
             eyebrow="Señales de alerta"
             title="Qué observar"
@@ -244,7 +244,7 @@ export default async function ThreatDetailPage({
             {threat.warningSigns.map((sign) => (
               <div
                 key={sign}
-                className="rounded border border-[#ffb95f]/20 bg-[#ffb95f]/10 p-4 text-sm leading-6 text-slate-200"
+                className="rounded border border-[var(--app-warning)]/20 bg-[var(--app-warning)]/10 p-4 text-sm leading-6 text-slate-200"
               >
                 {sign}
               </div>
@@ -252,7 +252,7 @@ export default async function ThreatDetailPage({
           </div>
         </Card>
 
-        <Card id="mitigaciones" className="scroll-mt-24 border-[#4edea3]/20 p-6">
+        <Card id="mitigaciones" className="scroll-mt-24 border-[var(--app-success)]/20 p-6">
           <SectionHeader
             eyebrow="Mitigaciones"
             title="Controles recomendados"
@@ -263,7 +263,7 @@ export default async function ThreatDetailPage({
             {threat.mitigations.map((mitigation) => (
               <div
                 key={mitigation}
-                className="rounded border border-[#4edea3]/20 bg-[#4edea3]/10 p-4 text-sm leading-6 text-slate-200"
+                className="rounded border border-[var(--app-success)]/20 bg-[var(--app-success)]/10 p-4 text-sm leading-6 text-slate-200"
               >
                 {mitigation}
               </div>
@@ -286,7 +286,7 @@ export default async function ThreatDetailPage({
               <Link
                 key={tip.id}
                 href={`/seguridad-diaria/${tip.id}`}
-                className="rounded border border-[#4edea3]/20 bg-[#4edea3]/10 p-4 text-sm font-bold text-[#6ffbbe] transition hover:bg-[#4edea3]/15"
+                className="rounded border border-[var(--app-success)]/20 bg-[var(--app-success)]/10 p-4 text-sm font-bold text-[var(--app-success)] transition hover:bg-[var(--app-success)]/15"
               >
                 {tip.title}
               </Link>

@@ -50,7 +50,7 @@ export default function ChallengesPage() {
           />
           <Link
             href="/simulaciones"
-            className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]"
+            className="text-sm font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
           >
             Repasar simulaciones
           </Link>
@@ -76,7 +76,7 @@ export default function ChallengesPage() {
           </div>
           <Link
             href="/escenarios"
-            className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+            className="rounded border border-[var(--app-primary)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
           >
             Ver escenarios
           </Link>

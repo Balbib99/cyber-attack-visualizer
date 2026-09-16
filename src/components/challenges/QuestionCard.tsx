@@ -20,7 +20,7 @@ export function QuestionCard({
         <Badge>{question.type}</Badge>
       </div>
       {question.scenario ? (
-        <div className="mt-5 rounded border border-[#ffb95f]/25 bg-[#ffb95f]/10 p-4 text-sm leading-6 text-slate-200">
+        <div className="mt-5 rounded border border-[var(--app-warning)]/25 bg-[var(--app-warning)]/10 p-4 text-sm leading-6 text-slate-200">
           {question.scenario}
         </div>
       ) : null}

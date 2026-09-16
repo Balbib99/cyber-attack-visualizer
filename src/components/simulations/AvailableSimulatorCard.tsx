@@ -25,8 +25,8 @@ export function AvailableSimulatorCard({
     simulator.previewImageAlt ?? simulator.steps[0]?.imageAlt ?? simulator.title;
 
   return (
-    <Card className="group overflow-hidden transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
-      <div className="relative aspect-[16/9] overflow-hidden border-b border-[var(--app-border)] bg-[#050505]">
+    <Card className="group overflow-hidden transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]">
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-[var(--app-border)] bg-[var(--app-surface-elevated)]">
         {previewImage ? (
           <Image
             src={previewImage}
@@ -36,7 +36,7 @@ export function AvailableSimulatorCard({
             className="object-cover transition duration-500 group-hover:scale-[1.035]"
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090b10] via-transparent to-[#06101f]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--app-surface-elevated)] via-transparent to-[var(--app-surface-elevated)]/20" />
         <div className="absolute left-4 top-4">
           <Badge tone="green">Disponible</Badge>
         </div>
@@ -68,7 +68,7 @@ export function AvailableSimulatorCard({
         <div className="mt-6 flex flex-col gap-3">
           <Link
             href={`/simulador/${simulator.id}`}
-            className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             <Play className="h-4 w-4" />
             Iniciar simulación
@@ -97,7 +97,7 @@ function SmallMetric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <Icon className="h-4 w-4 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
       <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>

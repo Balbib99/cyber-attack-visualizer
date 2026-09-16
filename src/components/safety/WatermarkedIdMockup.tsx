@@ -16,26 +16,26 @@ export function WatermarkedIdMockup() {
             DNI con marca de agua visible
           </h2>
         </div>
-        <span className="grid h-11 w-11 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+        <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
           <FileText className="h-5 w-5" />
         </span>
       </div>
 
       <div className="mt-6 grid gap-6 xl:grid-cols-[1fr_18rem]">
-        <div className="rounded-lg border border-white/10 bg-[#050505] p-4">
-          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-lg border border-[#4d8eff]/35 bg-[#151a22] p-5 shadow-[0_0_40px_rgba(77,142,255,0.12)]">
+        <div className="rounded-lg border border-white/10 bg-[var(--app-surface-elevated)] p-4">
+          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-lg border border-[var(--app-primary)]/35 bg-[#16130d] p-5 shadow-[0_0_40px_rgba(163,64,44,0.14)]">
             <div className="absolute inset-0 lab-grid opacity-20" />
             <div className="relative z-10">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
-                  <p className="font-mono text-xs text-[#adc6ff]">
+                  <p className="font-mono text-xs text-[var(--app-primary-dark)]">
                     DOCUMENTO DE IDENTIDAD FICTICIO
                   </p>
                   <p className="mt-1 text-xs text-slate-500">
                     Uso educativo, sin datos reales
                   </p>
                 </div>
-                <BadgeCheck className="h-6 w-6 text-[#6ffbbe]" />
+                <BadgeCheck className="h-6 w-6 text-[var(--app-success)]" />
               </div>
 
               <div className="mt-5 grid gap-5 sm:grid-cols-[8rem_1fr]">
@@ -58,7 +58,7 @@ export function WatermarkedIdMockup() {
             </div>
 
             <div className="pointer-events-none absolute inset-0 z-20 grid place-items-center px-5">
-              <div className="-rotate-12 rounded border border-[#adc6ff]/70 bg-[#4d8eff]/20 px-5 py-3 text-center text-sm font-black uppercase leading-6 tracking-wide text-[#d8e2ff] shadow-[0_0_30px_rgba(77,142,255,0.35)]">
+              <div className="-rotate-12 rounded border border-[var(--app-primary-dark)]/70 bg-[var(--app-primary)]/20 px-5 py-3 text-center text-sm font-black uppercase leading-6 tracking-wide text-[var(--app-primary-soft)] shadow-[0_0_30px_rgba(163,64,44,0.35)]">
                 {watermarkText}
               </div>
             </div>
@@ -96,8 +96,8 @@ function Callout({
   text: string;
 }) {
   return (
-    <div className="rounded border border-[#4d8eff]/25 bg-[#4d8eff]/10 p-4">
-      <Icon className="h-5 w-5 text-[#adc6ff]" />
+    <div className="rounded border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 p-4">
+      <Icon className="h-5 w-5 text-[var(--app-primary-dark)]" />
       <h3 className="mt-3 font-black text-white">{title}</h3>
       <p className="mt-1 text-sm leading-6 text-slate-300">{text}</p>
     </div>

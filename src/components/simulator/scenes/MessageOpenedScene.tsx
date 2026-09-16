@@ -10,8 +10,8 @@ export function MessageOpenedScene(props: SceneProps) {
 
   return (
     <SceneFrame {...props}>
-      <div className="mx-auto max-w-2xl rounded-lg border border-white/10 bg-[#101319] p-5">
-        <div className="rounded border border-white/10 bg-[#050505] p-5">
+      <div className="mx-auto max-w-2xl rounded-lg border border-white/10 bg-[var(--app-surface-elevated)] p-5">
+        <div className="rounded border border-white/10 bg-[var(--app-surface-elevated)] p-5">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
             Mensaje abierto
           </p>
@@ -28,8 +28,8 @@ export function MessageOpenedScene(props: SceneProps) {
             transition={{ duration: 0.7, delay: 0.25 }}
             className={`mt-6 inline-flex items-center gap-2 rounded px-4 py-2 text-sm font-black ${
               mode === "defense"
-                ? "border border-[#4edea3]/40 bg-[#4edea3]/10 text-[#6ffbbe]"
-                : "bg-[#4d8eff] text-white"
+                ? "border border-[var(--app-success)]/40 bg-[var(--app-success)]/10 text-[var(--app-success)]"
+                : "bg-[var(--app-primary)] text-white"
             }`}
           >
             <MousePointerClick className="h-4 w-4" />
@@ -39,10 +39,10 @@ export function MessageOpenedScene(props: SceneProps) {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-4 rounded border border-[#ffb95f]/30 bg-[#ffb95f]/10 p-4"
+          className="mt-4 rounded border border-[var(--app-warning)]/30 bg-[var(--app-warning)]/10 p-4"
         >
           <div className="flex gap-3">
-            <AlertTriangle className="h-5 w-5 text-[#ffddb8]" />
+            <AlertTriangle className="h-5 w-5 text-[var(--app-warning)]" />
             <p className="text-sm leading-6 text-slate-300">
               La urgencia es una señal: intenta que actúes antes de verificar.
             </p>

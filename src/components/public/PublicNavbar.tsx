@@ -30,20 +30,20 @@ export function PublicNavbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--app-border)] bg-[var(--app-bg)]/82 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-[color:var(--app-primary)]/30 bg-[var(--app-primary-soft)] text-sm font-black text-[var(--app-primary-dark)]">
+          <span className="grid h-10 w-10 place-items-center rounded border-2 border-double border-[var(--app-primary)] font-mono text-sm font-bold text-[var(--app-primary)]">
             AF
           </span>
           <div>
-            <p className="font-black text-[var(--app-text-primary)]">
+            <p className="text-base text-[var(--app-text-primary)] [font-family:var(--font-display)]">
               AttackFlow Lab
             </p>
-            <p className="hidden text-xs text-[var(--app-text-muted)] sm:block">
-              Ciberseguridad paso a paso
+            <p className="hidden font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[var(--app-text-muted)] sm:block">
+              Expediente abierto
             </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 border-l border-[var(--app-border)] pl-1 lg:flex">
           {navItems.map((item) => {
             const active =
               item.href === "/"
@@ -57,10 +57,10 @@ export function PublicNavbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-bold transition",
+                  "rounded-sm px-3 py-2 font-mono text-xs uppercase tracking-[0.03em] transition",
                   active
-                    ? "bg-[var(--app-primary-soft)] text-[var(--app-primary-dark)]"
-                    : "text-[var(--app-text-secondary)] hover:bg-[var(--app-surface)] hover:text-[var(--app-text-primary)]",
+                    ? "border border-[var(--app-border-strong)] bg-[var(--app-bg)] font-bold text-[var(--app-text-primary)]"
+                    : "border border-transparent text-[var(--app-text-secondary)] hover:text-[var(--app-primary)]",
                 )}
               >
                 {item.label}
@@ -72,9 +72,9 @@ export function PublicNavbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/rutas"
-            className="rounded-full bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="rounded-sm border border-[var(--app-primary)] bg-[var(--app-primary)] px-4 py-2 font-mono text-xs uppercase tracking-[0.04em] text-[var(--app-surface)] transition hover:bg-transparent hover:text-[var(--app-primary)]"
           >
-            Empezar
+            Empezar →
           </Link>
           <ThemeToggle />
         </div>
@@ -109,7 +109,7 @@ export function PublicNavbar() {
             <Link
               href="/rutas"
               onClick={() => setOpen(false)}
-              className="rounded bg-[#4d8eff] px-4 py-3 text-center text-sm font-bold text-white"
+              className="rounded bg-[var(--app-primary)] px-4 py-3 text-center text-sm font-bold text-white"
             >
               Empezar
             </Link>

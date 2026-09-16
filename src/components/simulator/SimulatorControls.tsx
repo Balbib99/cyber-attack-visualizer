@@ -37,7 +37,7 @@ export function SimulatorControls({
           type="button"
           onClick={onNext}
           disabled={!canGoForward}
-          className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Siguiente
           <ArrowRight className="h-4 w-4" />
@@ -45,7 +45,7 @@ export function SimulatorControls({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center justify-center gap-2 rounded border border-[color:var(--app-warning)]/40 px-4 py-2 text-sm font-bold text-[#b45309] transition hover:bg-[var(--app-warning-soft)] dark:text-[#ffddb8]"
+          className="inline-flex items-center justify-center gap-2 rounded border border-[color:var(--app-warning)]/40 px-4 py-2 text-sm font-bold text-[var(--app-warning)] transition hover:bg-[var(--app-warning-soft)] dark:text-[var(--app-warning)]"
         >
           <RotateCcw className="h-4 w-4" />
           Reiniciar

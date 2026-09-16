@@ -39,7 +39,7 @@ export function LearningPathCard({
   };
 
   return (
-    <Card className="border-[#4d8eff]/20 p-5 sm:p-6">
+    <Card className="border-[var(--app-primary)]/20 p-5 sm:p-6">
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <Badge tone="blue">Ruta de aprendizaje recomendada</Badge>
@@ -62,13 +62,13 @@ export function LearningPathCard({
           return (
             <div
               key={step.key}
-              className="rounded border border-white/10 bg-[#050505]/80 p-4"
+              className="rounded border border-white/10 bg-[var(--app-surface-elevated)]/80 p-4"
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="font-mono text-xs text-slate-500">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="grid h-10 w-10 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+                <span className="grid h-10 w-10 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
                   <Icon className="h-5 w-5" />
                 </span>
               </div>
@@ -79,7 +79,7 @@ export function LearningPathCard({
               {href ? (
                 <Link
                   href={href}
-                  className="mt-4 inline-flex rounded border border-[#4d8eff]/40 px-3 py-2 text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+                  className="mt-4 inline-flex rounded border border-[var(--app-primary)]/40 px-3 py-2 text-sm font-bold text-[var(--app-primary-dark)] transition hover:bg-[var(--app-primary)]/10"
                 >
                   Abrir
                 </Link>

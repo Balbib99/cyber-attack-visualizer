@@ -36,7 +36,7 @@ export function SimulationLearningSteps() {
               <span className="font-mono text-xs text-[var(--app-text-muted)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
                 <Icon className="h-5 w-5" />
               </span>
             </div>

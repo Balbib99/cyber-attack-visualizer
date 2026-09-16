@@ -26,7 +26,7 @@ export function ChallengeResults({
 
   return (
     <Card className="p-6 sm:p-8">
-      <Trophy className="h-12 w-12 text-[#ffddb8]" />
+      <Trophy className="h-12 w-12 text-[var(--app-warning)]" />
       <h1 className="mt-5 text-4xl font-black text-white">Reto completado</h1>
       <p className="mt-3 text-lg leading-8 text-slate-300">{message}</p>
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -38,14 +38,14 @@ export function ChallengeResults({
         <button
           type="button"
           onClick={onRestart}
-          className="inline-flex items-center justify-center gap-2 rounded border border-[#ffb95f]/40 px-5 py-3 text-sm font-bold text-[#ffddb8] transition hover:bg-[#ffb95f]/10"
+          className="inline-flex items-center justify-center gap-2 rounded border border-[var(--app-warning)]/40 px-5 py-3 text-sm font-bold text-[var(--app-warning)] transition hover:bg-[var(--app-warning)]/10"
         >
           <RotateCcw className="h-4 w-4" />
           Repetir reto
         </button>
         <Link
           href={challenge.relatedSimulatorPath}
-          className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Ver simulación relacionada
         </Link>
@@ -62,7 +62,7 @@ export function ChallengeResults({
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded border border-white/10 bg-[#050505] p-4">
+    <div className="rounded border border-white/10 bg-[var(--app-surface-elevated)] p-4">
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
         {label}
       </p>

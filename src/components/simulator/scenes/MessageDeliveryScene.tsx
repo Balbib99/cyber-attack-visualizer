@@ -10,9 +10,9 @@ export function MessageDeliveryScene(props: SceneProps) {
 
   return (
     <SceneFrame {...props}>
-      <div className="mx-auto max-w-3xl rounded-lg border border-white/10 bg-[#101319] p-5">
+      <div className="mx-auto max-w-3xl rounded-lg border border-white/10 bg-[var(--app-surface-elevated)] p-5">
         <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-          <Inbox className="h-5 w-5 text-[#adc6ff]" />
+          <Inbox className="h-5 w-5 text-[var(--app-primary-dark)]" />
           <span className="font-bold text-white">Bandeja de entrada</span>
         </div>
         <div className="mt-4 space-y-3">
@@ -29,9 +29,9 @@ export function MessageDeliveryScene(props: SceneProps) {
                   className={`rounded border p-4 ${
                     suspicious
                       ? mode === "defense"
-                        ? "border-[#4edea3]/45 bg-[#4edea3]/10"
-                        : "border-[#ffb95f]/45 bg-[#ffb95f]/10"
-                      : "border-white/10 bg-[#050505]"
+                        ? "border-[var(--app-success)]/45 bg-[var(--app-success)]/10"
+                        : "border-[var(--app-warning)]/45 bg-[var(--app-warning)]/10"
+                      : "border-white/10 bg-[var(--app-surface-elevated)]"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
@@ -44,7 +44,7 @@ export function MessageDeliveryScene(props: SceneProps) {
                       </p>
                     </div>
                     {suspicious ? (
-                      <MailWarning className="h-5 w-5 text-[#ffddb8]" />
+                      <MailWarning className="h-5 w-5 text-[var(--app-warning)]" />
                     ) : null}
                   </div>
                 </motion.div>

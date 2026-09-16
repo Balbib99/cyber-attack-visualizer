@@ -32,10 +32,10 @@ export function SafetySteps() {
               className="rounded border border-white/10 bg-white/[0.03] p-4"
             >
               <div className="flex items-center justify-between gap-3">
-                <span className="font-mono text-xs text-[#adc6ff]">
+                <span className="font-mono text-xs text-[var(--app-primary-dark)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="grid h-9 w-9 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+                <span className="grid h-9 w-9 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
                   <Icon className="h-4 w-4" />
                 </span>
               </div>

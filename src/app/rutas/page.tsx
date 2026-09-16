@@ -117,7 +117,7 @@ export default function LearningPathsPage() {
           </div>
           <Link
             href="/retos"
-            className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver Centro de retos
           </Link>
@@ -163,7 +163,7 @@ function HowItWorksCard({
   return (
     <Card className="p-5">
       <div className="flex items-center justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <Icon className="h-5 w-5" />
         </span>
         <span className="font-mono text-xs font-black text-[var(--app-text-muted)]">

@@ -29,7 +29,7 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
   ];
 
   return (
-    <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="p-5 transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex flex-wrap gap-2">
         <Badge tone="green">Disponible</Badge>
         <Badge tone="blue">{path.category}</Badge>
@@ -53,7 +53,7 @@ export function LearningPathCard({ path }: { path: LearningPath }) {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/rutas/${path.id}`}
-          className="inline-flex items-center justify-center rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          className="inline-flex items-center justify-center rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Ver ruta
         </Link>
@@ -74,7 +74,7 @@ function Metric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <Icon className="h-4 w-4 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
       <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>

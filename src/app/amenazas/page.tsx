@@ -9,13 +9,13 @@ export default function ThreatExplorerPage() {
   return (
     <div className="space-y-10">
       <section className="relative overflow-hidden rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-6 shadow-2xl shadow-[var(--app-shadow)] sm:p-8 lg:p-10">
-        <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-72 w-72 bg-[var(--app-primary)]/10 blur-3xl" />
         <div className="relative max-w-4xl">
           <Badge tone="blue">Explorador de amenazas</Badge>
           <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-6xl">
             Entiende las amenazas más comunes
           </h1>
-          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
+          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
             Aprende cómo funcionan y qué señales conviene reconocer antes de
             actuar.
           </p>

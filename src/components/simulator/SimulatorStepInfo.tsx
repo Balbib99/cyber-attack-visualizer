@@ -68,11 +68,11 @@ function InfoTile({
 }) {
   const styles = {
     blue:
-      "border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]",
+      "border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]",
     orange:
-      "border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]",
+      "border-[color:var(--app-warning)]/25 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]",
     green:
-      "border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] text-[#047857] dark:text-[#6ffbbe]",
+      "border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]",
   };
 
   return (

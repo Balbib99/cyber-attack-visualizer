@@ -24,8 +24,8 @@ export function ScenarioFeedback({
         <span
           className={`grid h-11 w-11 shrink-0 place-items-center rounded border ${
             option.isBestChoice
-              ? "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]"
-              : "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]"
+              ? "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]"
+              : "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]"
           }`}
         >
           <Icon className="h-5 w-5" />
@@ -48,11 +48,11 @@ export function ScenarioFeedback({
       </div>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-2">
-        <div className="rounded border border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] p-4 text-sm leading-6 text-[#047857] dark:text-[var(--app-success)]">
+        <div className="rounded border border-[color:var(--app-success)]/25 bg-[var(--app-success-soft)] p-4 text-sm leading-6 text-[var(--app-success)] dark:text-[var(--app-success)]">
           <ShieldCheck className="mb-2 h-5 w-5" />
           <strong>Acción recomendada:</strong> {scenario.recommendedAction}
         </div>
-        <div className="rounded border border-[#4d8eff]/25 bg-[#4d8eff]/10 p-4 text-sm leading-6 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <div className="rounded border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 p-4 text-sm leading-6 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <strong>Consejo defensivo:</strong> {scenario.defensiveTip}
         </div>
       </div>

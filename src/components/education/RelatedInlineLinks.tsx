@@ -27,7 +27,7 @@ export function RelatedInlineLinks({
         <span key={link.href}>
           <Link
             href={link.href}
-            className="font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]"
+            className="font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
           >
             {link.label}
           </Link>

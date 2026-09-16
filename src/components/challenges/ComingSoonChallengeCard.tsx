@@ -15,7 +15,7 @@ export function ComingSoonChallengeCard({
 }: ComingSoonChallengeCardProps) {
   return (
     <Card className="p-5">
-      <div className="mb-5 h-24 rounded border border-white/10 bg-[#050505] lab-grid opacity-90" />
+      <div className="mb-5 h-24 rounded border border-white/10 bg-[var(--app-surface-elevated)] lab-grid opacity-90" />
       <div className="flex flex-wrap gap-2">
         <Badge>Próximamente</Badge>
         <Badge tone="blue">{category}</Badge>

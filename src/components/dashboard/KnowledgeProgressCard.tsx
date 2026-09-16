@@ -31,7 +31,7 @@ export function KnowledgeProgressCard() {
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-text-muted)]">
         Progreso de conocimiento
       </p>
-      <p className="mt-4 text-4xl font-black text-[#6ffbbe]">
+      <p className="mt-4 text-4xl font-black text-[var(--app-success)]">
         {isLoaded ? `${globalProgress.averagePercentage}%` : "--"}
       </p>
       <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
@@ -39,7 +39,7 @@ export function KnowledgeProgressCard() {
       </p>
       <div className="mt-6 h-2 overflow-hidden rounded bg-[var(--app-surface-elevated)]">
         <div
-          className="h-full rounded bg-[#4edea3]"
+          className="h-full rounded bg-[var(--app-success)]"
           style={{ width: `${globalProgress.averagePercentage}%` }}
         />
       </div>
@@ -48,7 +48,7 @@ export function KnowledgeProgressCard() {
       </p>
       <Link
         href={suggested.href}
-        className="mt-5 inline-flex rounded border border-[#4edea3]/35 px-4 py-2 text-sm font-bold text-[#6ffbbe] transition hover:bg-[#4edea3]/10"
+        className="mt-5 inline-flex rounded border border-[var(--app-success)]/35 px-4 py-2 text-sm font-bold text-[var(--app-success)] transition hover:bg-[var(--app-success)]/10"
       >
         {suggested.label}
       </Link>

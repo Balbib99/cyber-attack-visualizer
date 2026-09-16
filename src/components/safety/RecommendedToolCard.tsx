@@ -6,7 +6,7 @@ import type { RecommendedTool } from "@/types/safetyTip";
 
 export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
   return (
-    <Card className="overflow-hidden border-[#4d8eff]/25 p-5 sm:p-6">
+    <Card className="overflow-hidden border-[var(--app-primary)]/25 p-5 sm:p-6">
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_24rem]">
         <div>
           <div className="flex flex-wrap items-center gap-3">
@@ -15,7 +15,7 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
           </div>
 
           <div className="mt-5 flex items-start gap-4">
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[#4d8eff]/35 bg-[#4d8eff]/10 text-[#adc6ff]">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[var(--app-primary)]/35 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
               <Wrench className="h-6 w-6" />
             </span>
             <div>
@@ -34,7 +34,7 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
               {tool.useCases.map((useCase) => (
                 <span
                   key={useCase}
-                  className="rounded border border-[#4edea3]/25 bg-[#4edea3]/10 px-3 py-2 text-xs font-bold text-[#6ffbbe]"
+                  className="rounded border border-[var(--app-success)]/25 bg-[var(--app-success)]/10 px-3 py-2 text-xs font-bold text-[var(--app-success)]"
                 >
                   {useCase}
                 </span>
@@ -43,7 +43,7 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
           </div>
 
           {tool.note ? (
-            <div className="mt-5 rounded border border-[#4d8eff]/25 bg-[#4d8eff]/10 p-4 text-sm leading-6 text-slate-200">
+            <div className="mt-5 rounded border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 p-4 text-sm leading-6 text-slate-200">
               {tool.note}
             </div>
           ) : null}
@@ -53,7 +53,7 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Abrir herramienta
               <ArrowUpRight className="h-4 w-4" />
@@ -62,14 +62,14 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded border border-white/10 bg-[#050505]/80 p-4">
+          <div className="rounded border border-white/10 bg-[var(--app-surface-elevated)]/80 p-4">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
               Pasos prácticos
             </p>
             <ol className="mt-4 space-y-3">
               {tool.steps.map((step, index) => (
                 <li key={step} className="flex gap-3 text-sm leading-6">
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded border border-[#4d8eff]/35 bg-[#4d8eff]/10 font-mono text-xs font-black text-[#adc6ff]">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded border border-[var(--app-primary)]/35 bg-[var(--app-primary)]/10 font-mono text-xs font-black text-[var(--app-primary-dark)]">
                     {index + 1}
                   </span>
                   <span className="text-slate-300">{step}</span>
@@ -79,9 +79,9 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
           </div>
 
           {tool.warning ? (
-            <div className="rounded border border-[#ffb95f]/30 bg-[#ffb95f]/10 p-4">
+            <div className="rounded border border-[var(--app-warning)]/30 bg-[var(--app-warning)]/10 p-4">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[#ffddb8]" />
+                <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[var(--app-warning)]" />
                 <div>
                   <p className="font-bold text-white">Aviso responsable</p>
                   <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -91,9 +91,9 @@ export function RecommendedToolCard({ tool }: { tool: RecommendedTool }) {
               </div>
             </div>
           ) : (
-            <div className="rounded border border-[#4edea3]/25 bg-[#4edea3]/10 p-4">
+            <div className="rounded border border-[var(--app-success)]/25 bg-[var(--app-success)]/10 p-4">
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#6ffbbe]" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--app-success)]" />
                 <p className="text-sm leading-6 text-slate-300">
                   Usa este recurso como apoyo dentro de un proceso de revisión,
                   no como garantía absoluta de seguridad.

@@ -23,8 +23,8 @@ export function MultipleChoiceQuestion({
           onClick={() => onSelect(option.id)}
           className={`rounded border p-4 text-left text-sm font-semibold leading-6 transition ${
             selectedOptionId === option.id
-              ? "border-[#4d8eff] bg-[#4d8eff]/12 text-white"
-              : "border-white/10 bg-[#050505] text-slate-300 hover:border-[#4d8eff]/35"
+              ? "border-[var(--app-primary)] bg-[var(--app-primary)]/12 text-white"
+              : "border-white/10 bg-[var(--app-surface-elevated)] text-slate-300 hover:border-[var(--app-primary)]/35"
           } disabled:cursor-not-allowed`}
         >
           {option.text}

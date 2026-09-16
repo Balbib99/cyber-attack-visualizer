@@ -19,7 +19,7 @@ export function FeaturedTipSection() {
           </p>
           <Link
             href="/seguridad-diaria/dni-marca-agua"
-            className="mt-6 inline-flex rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver consejo
           </Link>
@@ -35,27 +35,27 @@ function CompactWatermarkedDocument() {
   const watermarkText = "Uso exclusivo para verificación - Mayo 2026";
 
   return (
-    <div className="rounded-lg border border-[#4d8eff]/25 bg-[var(--app-surface-elevated)] p-4">
+    <div className="rounded-lg border border-[var(--app-primary)]/25 bg-[var(--app-surface-elevated)] p-4">
       <div className="relative overflow-hidden rounded-lg border border-[var(--app-border)] bg-[var(--app-surface)] p-5">
         <div className="absolute inset-0 lab-grid opacity-[0.08]" />
         <div className="relative z-10">
           <div className="flex items-center justify-between border-b border-[var(--app-border)] pb-4">
             <div>
-              <p className="font-mono text-xs font-bold text-[#1d4ed8] dark:text-[#adc6ff]">
+              <p className="font-mono text-xs font-bold text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
                 DOCUMENTO FICTICIO
               </p>
               <p className="mt-1 text-xs text-[var(--app-text-muted)]">
                 Uso educativo, sin datos reales
               </p>
             </div>
-            <FileText className="h-6 w-6 text-[#1d4ed8] dark:text-[#adc6ff]" />
+            <FileText className="h-6 w-6 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
           </div>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-[7rem_1fr]">
             <div className="rounded border border-[var(--app-border)] bg-[var(--app-bg-muted)] p-3">
               <div className="h-24 rounded bg-[var(--app-surface-elevated)]" />
-              <div className="mt-3 h-2 rounded bg-[#4d8eff]/20" />
-              <div className="mt-2 h-2 w-2/3 rounded bg-[#4d8eff]/20" />
+              <div className="mt-3 h-2 rounded bg-[var(--app-primary)]/20" />
+              <div className="mt-2 h-2 w-2/3 rounded bg-[var(--app-primary)]/20" />
             </div>
             <div className="space-y-3">
               <Field label="Nombre" value="Persona Ejemplo" />
@@ -66,7 +66,7 @@ function CompactWatermarkedDocument() {
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-20 grid place-items-center px-5">
-          <div className="-rotate-12 rounded border border-[#4d8eff]/50 bg-[#4d8eff]/15 px-4 py-2 text-center text-xs font-black uppercase leading-5 tracking-wide text-[#1d4ed8] shadow-lg shadow-[#4d8eff]/10 dark:text-[#d8e2ff]">
+          <div className="-rotate-12 rounded border border-[var(--app-primary)]/50 bg-[var(--app-primary)]/15 px-4 py-2 text-center text-xs font-black uppercase leading-5 tracking-wide text-[var(--app-primary)] shadow-lg shadow-[var(--app-primary)]/10 dark:text-[var(--app-primary-soft)]">
             {watermarkText}
           </div>
         </div>
@@ -103,7 +103,7 @@ function MiniPoint({
 }) {
   return (
     <div className="flex items-center gap-2 rounded border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-xs font-bold text-[var(--app-text-secondary)]">
-      <Icon className="h-4 w-4 text-[#047857] dark:text-[#6ffbbe]" />
+      <Icon className="h-4 w-4 text-[var(--app-success)] dark:text-[var(--app-success)]" />
       {text}
     </div>
   );

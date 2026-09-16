@@ -78,7 +78,7 @@ export function LearningSectionsOverview() {
         <SectionOverviewCard key={section.href} {...section} />
       ))}
       <Card className="hidden p-5 xl:block">
-        <span className="grid h-11 w-11 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]">
           <BookOpen className="h-5 w-5" />
         </span>
         <h3 className="mt-5 text-xl font-black text-[var(--app-text-primary)]">
@@ -108,9 +108,9 @@ function SectionOverviewCard({
   icon: LucideIcon;
 }) {
   return (
-    <Card className="group p-5 transition hover:border-[#4d8eff]/40 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="group p-5 transition hover:border-[var(--app-primary)]/40 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <Icon className="h-5 w-5" />
         </span>
         <div>
@@ -125,7 +125,7 @@ function SectionOverviewCard({
           </p>
           <Link
             href={href}
-            className="mt-4 inline-flex text-sm font-bold text-[#1d4ed8] transition group-hover:text-[#4d8eff] dark:text-[#adc6ff]"
+            className="mt-4 inline-flex text-sm font-bold text-[var(--app-primary)] transition group-hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
           >
             {cta}
           </Link>

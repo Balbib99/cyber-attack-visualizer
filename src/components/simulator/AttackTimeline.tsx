@@ -20,7 +20,7 @@ export function AttackTimeline({
   onStepChange,
 }: AttackTimelineProps) {
   return (
-    <div className="rounded-lg border border-white/10 bg-[#121212]/80 p-4">
+    <div className="rounded-lg border border-white/10 bg-[var(--app-surface-elevated)]/80 p-4">
       <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-9">
         {steps.map((step, index) => {
           const isActive = index === activeIndex;
@@ -34,11 +34,11 @@ export function AttackTimeline({
               className={`relative rounded border p-3 text-left transition ${
                 isActive
                   ? mode === "defense"
-                    ? "border-[#4edea3] bg-[#4edea3]/12"
-                    : "border-[#4d8eff] bg-[#4d8eff]/12"
+                    ? "border-[var(--app-success)] bg-[var(--app-success)]/12"
+                    : "border-[var(--app-primary)] bg-[var(--app-primary)]/12"
                   : isComplete
-                    ? "border-[#4edea3]/30 bg-[#4edea3]/8"
-                    : "border-white/10 bg-[#050505] hover:border-[#4d8eff]/35"
+                    ? "border-[var(--app-success)]/30 bg-[var(--app-success)]/8"
+                    : "border-white/10 bg-[var(--app-surface-elevated)] hover:border-[var(--app-primary)]/35"
               }`}
             >
               {isActive ? (
@@ -46,8 +46,8 @@ export function AttackTimeline({
                   layoutId="active-step-ring"
                   className={`absolute inset-0 rounded border ${
                     mode === "defense"
-                      ? "border-[#4edea3]/50"
-                      : "border-[#4d8eff]/50"
+                      ? "border-[var(--app-success)]/50"
+                      : "border-[var(--app-primary)]/50"
                   }`}
                 />
               ) : null}
@@ -58,9 +58,9 @@ export function AttackTimeline({
                 <span
                   className={`grid h-8 w-8 place-items-center rounded border ${
                     isComplete
-                      ? "border-[#4edea3]/40 bg-[#4edea3]/10 text-[#6ffbbe]"
+                      ? "border-[var(--app-success)]/40 bg-[var(--app-success)]/10 text-[var(--app-success)]"
                       : isActive
-                        ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#adc6ff]"
+                        ? "border-[var(--app-primary)]/40 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]"
                         : "border-white/10 bg-white/[0.03] text-slate-400"
                   }`}
                 >

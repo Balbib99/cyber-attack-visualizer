@@ -37,7 +37,7 @@ export function StepAnalysisQuestion({
       <Card className="p-5">
         <Badge tone="blue">Modo análisis</Badge>
         <div className="mt-4 flex items-start gap-3 rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-4">
-          <HelpCircle className="mt-0.5 h-5 w-5 text-[#1d4ed8] dark:text-[#adc6ff]" />
+          <HelpCircle className="mt-0.5 h-5 w-5 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
           <p className="text-sm leading-6 text-[var(--app-text-secondary)]">
             Este paso no tiene análisis disponible todavía.
           </p>
@@ -57,7 +57,7 @@ export function StepAnalysisQuestion({
   return (
     <Card className="p-5">
       <div className="flex items-start gap-3">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <SearchCheck className="h-5 w-5" />
         </span>
         <div>
@@ -86,14 +86,14 @@ export function StepAnalysisQuestion({
               disabled={isAnswered}
               onClick={() => onSelectOption(option.id)}
               className={cn(
-                "rounded border p-4 text-left text-sm font-semibold leading-6 transition focus:outline-none focus:ring-2 focus:ring-[#4d8eff]",
+                "rounded border p-4 text-left text-sm font-semibold leading-6 transition focus:outline-none focus:ring-2 focus:ring-[var(--app-primary)]",
                 isSelected
-                  ? "border-[#4d8eff] bg-[#4d8eff]/10 text-[var(--app-text-primary)]"
-                  : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[var(--app-text-secondary)] hover:border-[#4d8eff]/45",
+                  ? "border-[var(--app-primary)] bg-[var(--app-primary)]/10 text-[var(--app-text-primary)]"
+                  : "border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[var(--app-text-secondary)] hover:border-[var(--app-primary)]/45",
                 revealCorrect &&
-                  "border-[color:var(--app-success)]/45 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]",
+                  "border-[color:var(--app-success)]/45 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]",
                 revealWrong &&
-                  "border-[color:var(--app-warning)]/45 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]",
+                  "border-[color:var(--app-warning)]/45 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]",
                 isAnswered && "cursor-default",
               )}
               whileTap={!isAnswered ? { scale: 0.985 } : undefined}
@@ -118,7 +118,7 @@ export function StepAnalysisQuestion({
           type="button"
           disabled={!selectedOption || isAnswered}
           onClick={onCheck}
-          className="rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a] disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-50"
         >
           Comprobar
         </button>
@@ -141,8 +141,8 @@ export function StepAnalysisQuestion({
           transition={{ duration: 0.2 }}
           className={`mt-5 rounded border p-4 text-sm leading-6 ${
             answer.isCorrect
-              ? "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]"
-              : "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]"
+              ? "border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]"
+              : "border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]"
           }`}
         >
           <p className="font-black">

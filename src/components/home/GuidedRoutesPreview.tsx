@@ -36,7 +36,7 @@ export function GuidedRoutesPreview({ paths }: { paths: LearningPath[] }) {
                   key={item.label}
                   className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3 text-center"
                 >
-                  <Icon className="mx-auto h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+                  <Icon className="mx-auto h-4 w-4 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
                   <p className="mt-2 text-xs font-bold text-[var(--app-text-secondary)]">
                     {item.label}
                   </p>
@@ -46,7 +46,7 @@ export function GuidedRoutesPreview({ paths }: { paths: LearningPath[] }) {
           </div>
           <Link
             href={`/rutas/${path.id}`}
-            className="mt-6 inline-flex rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver ruta
           </Link>

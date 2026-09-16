@@ -45,7 +45,7 @@ export default async function LearningPathDetailPage({
     <div className="space-y-8">
       <Link
         href="/rutas"
-        className="inline-flex items-center gap-2 text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]"
+        className="inline-flex items-center gap-2 text-sm font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a rutas
@@ -53,7 +53,7 @@ export default async function LearningPathDetailPage({
 
       <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <Card className="relative overflow-hidden p-6 sm:p-8">
-          <div className="absolute right-0 top-0 h-64 w-64 bg-[#4d8eff]/10 blur-3xl" />
+          <div className="absolute right-0 top-0 h-64 w-64 bg-[var(--app-primary)]/10 blur-3xl" />
           <div className="relative max-w-4xl">
             <div className="flex flex-wrap gap-2">
               <Badge tone="blue">{path.category}</Badge>
@@ -64,7 +64,7 @@ export default async function LearningPathDetailPage({
             <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-5xl">
               {path.title}
             </h1>
-            <p className="mt-4 text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <p className="mt-4 text-xl font-semibold leading-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               {path.subtitle}
             </p>
             <p className="mt-4 max-w-3xl leading-7 text-[var(--app-text-secondary)]">
@@ -112,7 +112,7 @@ export default async function LearningPathDetailPage({
             {path.relatedChallengeId ? (
               <Link
                 href={`/retos/${path.relatedChallengeId}`}
-                className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+                className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
               >
                 Hacer reto
               </Link>

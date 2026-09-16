@@ -28,10 +28,10 @@ export function AnalysisSessionSummary({
         : "Tómate otra vuelta con calma. La idea es entrenar la mirada, no acertar a la primera.";
 
   return (
-    <Card className="border-[#4edea3]/25 p-5 sm:p-6">
+    <Card className="border-[var(--app-success)]/25 p-5 sm:p-6">
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]">
             <Sparkles className="h-6 w-6" />
           </span>
           <div>
@@ -63,7 +63,7 @@ export function AnalysisSessionSummary({
           {challengeHref ? (
             <Link
               href={challengeHref}
-              className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               {challengeLabel}
               <ArrowRight className="h-4 w-4" />

@@ -67,9 +67,9 @@ function LearningCard({
   icon: LucideIcon;
 }) {
   return (
-    <Card className="group p-6 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
+    <Card className="group p-6 transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]">
       <div className="flex items-start gap-4">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#4d8eff]/25 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           <Icon className="h-6 w-6" />
         </span>
         <div>
@@ -81,7 +81,7 @@ function LearningCard({
           </p>
           <Link
             href={href}
-            className="mt-5 inline-flex rounded border border-[#4d8eff]/35 px-4 py-2 text-sm font-bold text-[#1d4ed8] transition group-hover:bg-[#4d8eff] group-hover:text-white dark:text-[#adc6ff]"
+            className="mt-5 inline-flex rounded border border-[var(--app-primary)]/35 px-4 py-2 text-sm font-bold text-[var(--app-primary)] transition group-hover:bg-[var(--app-primary)] group-hover:text-white dark:text-[var(--app-primary-dark)]"
           >
             {cta}
           </Link>

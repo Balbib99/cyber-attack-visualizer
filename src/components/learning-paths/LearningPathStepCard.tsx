@@ -42,16 +42,16 @@ export function LearningPathStepCard({
   return (
     <article
       className={cn(
-        "relative rounded border border-[var(--app-border)] bg-[var(--app-surface)] p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]",
+        "relative rounded border border-[var(--app-border)] bg-[var(--app-surface)] p-5 transition hover:border-[var(--app-primary)]/45 hover:bg-[var(--app-surface-elevated)]",
         completed && "border-[color:var(--app-success)]/35",
       )}
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
         <div className="flex items-center gap-3 sm:block">
-          <span className="grid h-11 w-11 place-items-center rounded border border-[#4d8eff]/30 bg-[#4d8eff]/10 font-mono text-sm font-black text-[#1d4ed8] dark:text-[#adc6ff]">
+          <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 font-mono text-sm font-black text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
             {index + 1}
           </span>
-          <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[#1d4ed8] dark:text-[#adc6ff] sm:mt-3">
+          <span className="grid h-11 w-11 place-items-center rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-[var(--app-primary)] dark:text-[var(--app-primary-dark)] sm:mt-3">
             <Icon className="h-5 w-5" />
           </span>
         </div>
@@ -81,7 +81,7 @@ export function LearningPathStepCard({
           ) : null}
           <Link
             href={step.href}
-            className="rounded bg-[#4d8eff] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             {meta.cta}
           </Link>

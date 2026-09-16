@@ -10,51 +10,57 @@ import { LearnByDoingCards } from "@/components/home/LearnByDoingCards";
 import { SafeLearningCallout } from "@/components/home/SafeLearningCallout";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { Stamp } from "@/components/ui/Stamp";
 import { learningPaths } from "@/data/learningPaths";
+import { threats } from "@/data/threats";
 
 export default function HomePage() {
   const featuredPaths = learningPaths.filter((path) => path.featured).slice(0, 2);
+  const simulatorCount = threats.filter((threat) => threat.simulatorAvailable).length;
 
   return (
     <div className="space-y-20 pb-6">
-      <section className="relative overflow-hidden rounded-lg border border-[var(--app-border)] bg-[linear-gradient(135deg,var(--app-surface),var(--app-surface-elevated))] px-6 py-10 shadow-2xl shadow-[var(--app-shadow)] sm:px-8 lg:px-10">
-        <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 h-72 w-72 bg-[#4edea3]/10 blur-3xl" />
+      <section className="relative overflow-hidden rounded border border-[var(--app-border)] bg-[var(--app-surface)] px-6 py-10 shadow-lg shadow-[var(--app-shadow)] sm:px-8 lg:px-10">
+        <div className="absolute right-0 top-0 h-72 w-72 bg-[var(--app-primary)]/10 blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 h-72 w-72 bg-[var(--app-success)]/10 blur-3xl" />
 
         <div className="relative grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(24rem,34rem)] xl:items-center">
           <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2">
-              <Badge tone="blue">Ciberseguridad cercana</Badge>
-              <Badge tone="green">Aprendizaje visual</Badge>
-              <Badge>Proyecto portfolio</Badge>
+            <div className="flex flex-wrap items-center gap-2">
+              <Stamp tone="accent">Enfoque defensivo</Stamp>
+              <Badge tone="blue">{threats.length} amenazas documentadas</Badge>
+              <Badge>{simulatorCount} simuladores interactivos</Badge>
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-5xl font-black tracking-tight text-[var(--app-text-primary)] sm:text-7xl">
-              Ciberseguridad para todos, paso a paso.
+            <h1 className="mt-6 max-w-4xl text-5xl tracking-tight text-[var(--app-text-primary)] sm:text-6xl">
+              Cada amenaza, abierta como un expediente.
             </h1>
 
-            <p className="mt-6 max-w-3xl text-xl font-semibold leading-9 text-[#1d4ed8] dark:text-[#adc6ff]">
-              Aprende a reconocer amenazas digitales, proteger tus datos y
-              tomar mejores decisiones online con simulaciones visuales, tips
-              prácticos y retos interactivos.
+            <p className="mt-6 max-w-3xl text-xl font-semibold leading-9 text-[var(--app-primary)]">
+              AttackFlow Lab documenta {threats.length} amenazas comunes —
+              phishing, SQL injection, fuerza bruta y más— con su flujo paso a
+              paso, señales de alerta reales y un reto para comprobar si sabes
+              defenderte.
             </p>
 
             <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--app-text-secondary)]">
-              AttackFlow Lab convierte conceptos de ciberseguridad en
-              experiencias claras, visuales y aplicables al día a día.
+              Cada expediente conecta cuatro piezas: qué es la amenaza, cómo se
+              ve paso a paso en el simulador, qué hacer si te pasa a ti, y un
+              reto corto para verificar que lo interiorizaste. Sin exploits,
+              sin payloads: solo lo que necesitas reconocer.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/rutas"
-                className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+                className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
               >
                 Empezar recorrido
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/simulaciones"
-                className="inline-flex items-center justify-center rounded border border-[#4d8eff]/40 px-5 py-3 text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+                className="inline-flex items-center justify-center rounded border border-[var(--app-primary)]/40 px-5 py-3 text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
               >
                 Ver simulaciones
               </Link>
@@ -119,10 +125,10 @@ export default function HomePage() {
       <SafeLearningCallout />
 
       <Card className="relative overflow-hidden p-6 sm:p-8">
-        <div className="absolute right-0 top-0 h-56 w-56 bg-[#4d8eff]/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-56 w-56 bg-[var(--app-primary)]/10 blur-3xl" />
         <div className="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           <div>
-            <div className="flex items-center gap-2 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <div className="flex items-center gap-2 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               <Sparkles className="h-5 w-5" />
               <span className="text-sm font-bold uppercase tracking-[0.16em]">
                 Empieza con calma
@@ -139,13 +145,13 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/rutas"
-              className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Ver rutas
             </Link>
             <Link
               href="/escenarios"
-              className="rounded border border-[color:var(--app-warning)]/40 px-5 py-3 text-center text-sm font-bold text-[#b45309] transition hover:bg-[var(--app-warning-soft)] dark:text-[#ffddb8]"
+              className="rounded border border-[color:var(--app-warning)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-warning)] transition hover:bg-[var(--app-warning-soft)] dark:text-[var(--app-warning)]"
             >
               Resolver escenario
             </Link>

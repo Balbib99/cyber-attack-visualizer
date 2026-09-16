@@ -15,15 +15,15 @@ export function SceneFrame({ children, mode }: SceneFrameProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.98, y: -8 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
-      className="relative min-h-[34rem] overflow-hidden rounded-lg border border-white/10 bg-[#07090d] p-5 sm:p-6"
+      className="relative min-h-[34rem] overflow-hidden rounded-lg border border-white/10 bg-[#16130d] p-5 sm:p-6"
     >
       <div className="absolute inset-0 lab-grid opacity-20" />
-      <div className="absolute right-0 top-0 h-52 w-52 bg-[#4d8eff]/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-52 w-52 bg-[var(--app-primary)]/10 blur-3xl" />
       {mode === "defense" ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute inset-0 border-2 border-[#4edea3]/35 bg-[#4edea3]/5"
+          className="absolute inset-0 border-2 border-[var(--app-success)]/35 bg-[var(--app-success)]/5"
         />
       ) : null}
       <div className="relative z-10">{children}</div>
@@ -31,7 +31,7 @@ export function SceneFrame({ children, mode }: SceneFrameProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded border border-[#4edea3]/35 bg-[#07130f]/90 px-3 py-2 text-xs font-bold text-[#6ffbbe]"
+          className="absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded border border-[var(--app-success)]/35 bg-[#16130d]/90 px-3 py-2 text-xs font-bold text-[var(--app-success)]"
         >
           <ShieldCheck className="h-4 w-4" />
           Defensa activa

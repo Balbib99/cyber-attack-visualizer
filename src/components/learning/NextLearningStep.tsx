@@ -21,10 +21,10 @@ export function NextLearningStep({
   actions,
 }: NextLearningStepProps) {
   return (
-    <Card className="border-[#4edea3]/20 p-5 sm:p-6">
+    <Card className="border-[var(--app-success)]/20 p-5 sm:p-6">
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-center">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[#4edea3]/30 bg-[#4edea3]/10 text-[#047857] dark:text-[#6ffbbe]">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded border border-[var(--app-success)]/30 bg-[var(--app-success)]/10 text-[var(--app-success)] dark:text-[var(--app-success)]">
             <Sparkles className="h-6 w-6" />
           </span>
           <div>
@@ -42,8 +42,8 @@ export function NextLearningStep({
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
-                  : "inline-flex items-center justify-center gap-2 rounded border border-[#4d8eff]/40 px-4 py-2 text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+                  ? "inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
+                  : "inline-flex items-center justify-center gap-2 rounded border border-[var(--app-primary)]/40 px-4 py-2 text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
               }
             >
               {action.label}

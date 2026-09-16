@@ -22,7 +22,7 @@ export function ComingSoonSimulatorCard({
         <div className="absolute left-4 top-4">
           <Badge>Próximamente</Badge>
         </div>
-        <Sparkles className="absolute bottom-4 right-4 h-8 w-8 text-[#1d4ed8]/50 dark:text-[#adc6ff]/60" />
+        <Sparkles className="absolute bottom-4 right-4 h-8 w-8 text-[var(--app-primary)]/50 dark:text-[var(--app-primary-dark)]/60" />
       </div>
       <Badge tone="blue">{category}</Badge>
       <h3 className="mt-4 text-xl font-black text-[var(--app-text-primary)]">

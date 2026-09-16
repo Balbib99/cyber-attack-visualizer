@@ -13,14 +13,14 @@ export function ChallengesHero({
 }: ChallengesHeroProps) {
   return (
     <Card className="relative overflow-hidden p-6 sm:p-8">
-      <div className="absolute right-0 top-0 h-72 w-72 bg-[#4d8eff]/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-72 w-72 bg-[var(--app-primary)]/10 blur-3xl" />
       <div className="relative grid gap-8 xl:grid-cols-[1fr_24rem] xl:items-end">
         <div className="max-w-4xl">
           <Badge tone="green">Zona Practica</Badge>
           <h1 className="mt-5 text-4xl font-black text-white sm:text-6xl">
             Centro de retos
           </h1>
-          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[#adc6ff]">
+          <p className="mt-5 max-w-3xl text-xl font-semibold leading-8 text-[var(--app-primary-dark)]">
             Pon a prueba lo que has aprendido con ejercicios interactivos de
             ciberseguridad.
           </p>
@@ -32,13 +32,13 @@ export function ChallengesHero({
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/retos/phishing"
-              className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+              className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
             >
               Empezar reto de phishing
             </Link>
             <Link
               href="/simulaciones"
-              className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/10"
+              className="rounded border border-[var(--app-primary)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-primary-dark)] transition hover:bg-[var(--app-primary)]/10"
             >
               Ver simulaciones
             </Link>
@@ -57,7 +57,7 @@ export function ChallengesHero({
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded border border-white/10 bg-[#050505]/80 p-4">
+    <div className="rounded border border-white/10 bg-[var(--app-surface-elevated)]/80 p-4">
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
         {label}
       </p>

@@ -21,7 +21,7 @@ export function SimulatorEmptyState({
   return (
     <Card className="p-8">
       <div className="max-w-2xl">
-        <span className="grid h-12 w-12 place-items-center rounded border border-[color:var(--app-warning)]/35 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]">
+        <span className="grid h-12 w-12 place-items-center rounded border border-[color:var(--app-warning)]/35 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]">
           {reason === "coming-soon" ? (
             <Clock className="h-6 w-6" />
           ) : (
@@ -32,7 +32,7 @@ export function SimulatorEmptyState({
         <p className="mt-3 leading-7 text-[var(--app-text-secondary)]">{message}</p>
         <Link
           href="/simulaciones"
-          className="mt-6 inline-flex rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          className="mt-6 inline-flex rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Volver a simulaciones
         </Link>

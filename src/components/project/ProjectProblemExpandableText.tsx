@@ -33,9 +33,9 @@ export function ProjectProblemExpandableText() {
           prevención basada en conocimiento, práctica y pequeñas decisiones
           cotidianas.
         </p>
-        <Card className="border-[#4d8eff]/25 bg-[var(--app-surface-elevated)] p-5">
+        <Card className="border-[var(--app-primary)]/25 bg-[var(--app-surface-elevated)] p-5">
           <div className="flex items-start gap-4">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               <ShieldCheck className="h-5 w-5" />
             </span>
             <p className="text-lg font-black leading-8 text-[var(--app-text-primary)]">
@@ -51,7 +51,7 @@ export function ProjectProblemExpandableText() {
         aria-expanded={isExpanded}
         aria-controls={contentId}
         onClick={() => setIsExpanded((current) => !current)}
-        className="mt-4 inline-flex items-center gap-1.5 text-sm font-black text-[#1d4ed8] underline-offset-4 transition hover:text-[#4d8eff] hover:underline focus:outline-none focus:ring-2 focus:ring-[#4d8eff]/35 dark:text-[#adc6ff] dark:hover:text-[#dbe7ff]"
+        className="mt-4 inline-flex items-center gap-1.5 text-sm font-black text-[var(--app-primary)] underline-offset-4 transition hover:text-[var(--app-primary)] hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--app-primary)]/35 dark:text-[var(--app-primary-dark)] dark:hover:text-[var(--app-primary-soft)]"
       >
         {isExpanded ? "Ver menos" : "Ver más"}
         <ChevronDown

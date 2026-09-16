@@ -34,7 +34,7 @@ export function Topbar() {
         </div>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <span className="hidden rounded border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] px-3 py-1 text-xs font-bold text-[#047857] sm:inline-flex dark:text-[var(--app-success)]">
+          <span className="hidden rounded border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] px-3 py-1 text-xs font-bold text-[var(--app-success)] sm:inline-flex dark:text-[var(--app-success)]">
             Seguro para aprender
           </span>
           <div className="grid h-9 w-9 place-items-center rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] text-sm font-bold text-[var(--app-text-primary)]">

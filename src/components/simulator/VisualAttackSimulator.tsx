@@ -133,12 +133,12 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
   return (
     <div className="space-y-6">
       <Card className="relative overflow-hidden p-6 sm:p-8">
-        <div className="absolute right-0 top-0 h-64 w-64 bg-[#4d8eff]/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-64 w-64 bg-[var(--app-primary)]/10 blur-3xl" />
         <div className="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-4xl">
             <Link
               href="/simulaciones"
-              className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff] dark:hover:text-white"
+              className="text-sm font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)] dark:hover:text-white"
             >
               Volver a simulaciones
             </Link>
@@ -152,7 +152,7 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
             <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-5xl">
               {simulator.title}
             </h1>
-            <p className="mt-4 text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
+            <p className="mt-4 text-xl font-semibold leading-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               {simulator.subtitle}
             </p>
             <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--app-text-secondary)]">
@@ -176,7 +176,7 @@ export function VisualAttackSimulator({ simulator }: VisualAttackSimulatorProps)
               </p>
               <div className="mt-3 h-2 overflow-hidden rounded bg-[var(--app-bg-muted)]">
                 <motion.div
-                  className="h-full rounded bg-[#4d8eff]"
+                  className="h-full rounded bg-[var(--app-primary)]"
                   animate={{ width: formatPercent(progress) }}
                   transition={{ duration: 0.3 }}
                 />

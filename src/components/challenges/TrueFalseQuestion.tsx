@@ -22,8 +22,8 @@ export function TrueFalseQuestion({
           onClick={() => onSelect(option.value)}
           className={`rounded border p-5 text-center text-lg font-black transition ${
             value === option.value
-              ? "border-[#4d8eff] bg-[#4d8eff]/12 text-white"
-              : "border-white/10 bg-[#050505] text-slate-300 hover:border-[#4d8eff]/35"
+              ? "border-[var(--app-primary)] bg-[var(--app-primary)]/12 text-white"
+              : "border-white/10 bg-[var(--app-surface-elevated)] text-slate-300 hover:border-[var(--app-primary)]/35"
           } disabled:cursor-not-allowed`}
         >
           {option.label}

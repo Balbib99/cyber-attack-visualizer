@@ -7,13 +7,13 @@ import type { SimulationStep } from "@/types/threat";
 
 export function DefenseInsightCard({ step }: { step: SimulationStep }) {
   return (
-    <Card className="border-[#4edea3]/25 p-5">
+    <Card className="border-[var(--app-success)]/25 p-5">
       <div className="flex items-center gap-3">
-        <span className="grid h-10 w-10 place-items-center rounded border border-[#4edea3]/40 bg-[#4edea3]/10 text-[#6ffbbe]">
+        <span className="grid h-10 w-10 place-items-center rounded border border-[var(--app-success)]/40 bg-[var(--app-success)]/10 text-[var(--app-success)]">
           <ShieldCheck className="h-5 w-5" />
         </span>
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#6ffbbe]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-success)]">
             Defensa relacionada
           </p>
           <h3 className="text-lg font-black text-white">Corta la cadena aquí</h3>

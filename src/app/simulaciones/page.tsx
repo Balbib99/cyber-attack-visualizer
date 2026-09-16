@@ -95,7 +95,7 @@ export default function SimulationsPage() {
 
       <Card className="border-[color:var(--app-success)]/25 p-6">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]">
             <ShieldCheck className="h-6 w-6" />
           </span>
           <div>

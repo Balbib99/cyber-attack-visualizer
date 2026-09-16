@@ -34,9 +34,9 @@ export function DefenseScene(props: SceneProps) {
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.12 }}
-              className="rounded-lg border border-[#4edea3]/25 bg-[#4edea3]/10 p-5"
+              className="rounded-lg border border-[var(--app-success)]/25 bg-[var(--app-success)]/10 p-5"
             >
-              <Icon className="h-7 w-7 text-[#6ffbbe]" />
+              <Icon className="h-7 w-7 text-[var(--app-success)]" />
               <h3 className="mt-4 font-black text-white">{title}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-300">{detail}</p>
             </motion.div>
@@ -45,10 +45,10 @@ export function DefenseScene(props: SceneProps) {
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-6 rounded border border-[#4d8eff]/25 bg-[#4d8eff]/10 p-5"
+          className="mt-6 rounded border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 p-5"
         >
           <div className="flex gap-3">
-            <ShieldCheck className="h-6 w-6 text-[#adc6ff]" />
+            <ShieldCheck className="h-6 w-6 text-[var(--app-primary-dark)]" />
             <p className="leading-7 text-slate-300">
               La defensa funciona mejor como cadena: detectar señales, evitar
               introducir datos, usar MFA y reportar el intento.

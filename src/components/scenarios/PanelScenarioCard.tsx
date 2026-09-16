@@ -8,7 +8,7 @@ export function PanelScenarioCard() {
     <Card className="p-5">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 place-items-center rounded border border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[#b45309] dark:text-[#ffddb8]">
+          <span className="grid h-12 w-12 place-items-center rounded border border-[color:var(--app-warning)]/30 bg-[var(--app-warning-soft)] text-[var(--app-warning)] dark:text-[var(--app-warning)]">
             <MessageSquareWarning className="h-6 w-6" />
           </span>
           <div>
@@ -24,7 +24,7 @@ export function PanelScenarioCard() {
         </div>
         <Link
           href="/escenarios/email-urgente"
-          className="rounded bg-[#4d8eff] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          className="rounded bg-[var(--app-primary)] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           Resolver escenario
         </Link>

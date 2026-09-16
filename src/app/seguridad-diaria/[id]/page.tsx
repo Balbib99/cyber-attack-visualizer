@@ -207,7 +207,7 @@ function RelatedThreats({
             <Link
               key={threat.id}
               href={`/amenazas/${threat.id}`}
-              className="rounded border border-[#4d8eff]/40 bg-[#4d8eff]/10 px-4 py-2 text-sm font-bold text-[#adc6ff] transition hover:bg-[#4d8eff]/20"
+              className="rounded border border-[var(--app-primary)]/40 bg-[var(--app-primary)]/10 px-4 py-2 text-sm font-bold text-[var(--app-primary-dark)] transition hover:bg-[var(--app-primary)]/20"
             >
               {threat.name}
             </Link>
@@ -228,7 +228,7 @@ function RelatedThreats({
 
 function BackLink() {
   return (
-    <Link href="/seguridad-diaria" className="text-sm font-bold text-[#adc6ff]">
+    <Link href="/seguridad-diaria" className="text-sm font-bold text-[var(--app-primary-dark)]">
       Volver a seguridad diaria
     </Link>
   );

@@ -5,21 +5,33 @@ import { Clock, ListChecks, Play, Trophy } from "lucide-react";
 import { RelatedInlineLinks } from "@/components/education/RelatedInlineLinks";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { Stamp } from "@/components/ui/Stamp";
 import { useChallengeProgress } from "@/hooks/useChallengeProgress";
 import type { CyberChallenge } from "@/types/challenge";
 
 export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
   const { getProgress, isLoaded } = useChallengeProgress();
   const progress = isLoaded ? getProgress(challenge.id) : undefined;
+  const statusTone = progress?.completed ? "success" : progress ? "accent" : "muted";
+  const statusLabel = progress?.completed
+    ? "Resuelto"
+    : progress
+      ? "En curso"
+      : "Sin abrir";
 
   return (
-    <Card className="p-5 transition hover:border-[#4d8eff]/45 hover:bg-[var(--app-surface-elevated)]">
-      <div className="flex flex-wrap gap-2">
-        <Badge tone="green">Disponible</Badge>
+    <Card
+      notch
+      className="relative p-5 transition hover:border-[var(--app-primary)]/45"
+    >
+      <div className="absolute right-4 top-4">
+        <Stamp tone={statusTone}>{statusLabel}</Stamp>
+      </div>
+      <div className="flex flex-wrap gap-2 pr-24">
         <Badge tone="blue">{challenge.category}</Badge>
         <Badge>{challenge.difficulty}</Badge>
       </div>
-      <h2 className="mt-5 text-2xl font-black text-[var(--app-text-primary)]">
+      <h2 className="mt-5 text-2xl text-[var(--app-text-primary)]">
         {challenge.title}
       </h2>
       <p className="mt-3 text-sm leading-6 text-[var(--app-text-secondary)]">
@@ -43,7 +55,7 @@ export function ChallengeCard({ challenge }: { challenge: CyberChallenge }) {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           href={`/retos/${challenge.id}`}
-          className="inline-flex items-center justify-center gap-2 rounded bg-[#4d8eff] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+          className="inline-flex items-center justify-center gap-2 rounded bg-[var(--app-primary)] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
         >
           <Play className="h-4 w-4" />
           {progress?.completed ? "Continuar" : "Iniciar reto"}
@@ -71,7 +83,7 @@ function Metric({
 }) {
   return (
     <div className="rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] p-3">
-      <Icon className="h-4 w-4 text-[#1d4ed8] dark:text-[#adc6ff]" />
+      <Icon className="h-4 w-4 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]" />
       <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--app-text-muted)]">
         {label}
       </p>

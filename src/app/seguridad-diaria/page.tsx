@@ -56,7 +56,7 @@ export default function DailySafetyPage() {
         <h1 className="mt-5 text-4xl font-black text-[var(--app-text-primary)] sm:text-6xl">
           Consejos prácticos de seguridad
         </h1>
-        <p className="mt-5 text-xl font-semibold leading-8 text-[#1d4ed8] dark:text-[#adc6ff]">
+        <p className="mt-5 text-xl font-semibold leading-8 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           Pequeños hábitos que te ayudan a proteger tus datos, tus cuentas y tus
           decisiones online.
         </p>
@@ -70,13 +70,13 @@ export default function DailySafetyPage() {
         <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/seguridad-diaria/dni-marca-agua"
-            className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver consejo destacado
           </Link>
           <Link
             href="/escenarios"
-            className="rounded border border-[#4d8eff]/40 px-5 py-3 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+            className="rounded border border-[var(--app-primary)]/40 px-5 py-3 text-center text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
           >
             Resolver escenario
           </Link>
@@ -101,7 +101,7 @@ export default function DailySafetyPage() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Buscar consejos, herramientas o situaciones..."
-              className="w-full rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] py-3 pl-12 pr-4 text-sm font-semibold text-[var(--app-text-primary)] outline-none transition placeholder:text-[var(--app-text-muted)] focus:border-[#4d8eff]"
+              className="w-full rounded border border-[var(--app-border)] bg-[var(--app-surface-elevated)] py-3 pl-12 pr-4 text-sm font-semibold text-[var(--app-text-primary)] outline-none transition placeholder:text-[var(--app-text-muted)] focus:border-[var(--app-primary)]"
             />
           </label>
           <div className="flex flex-wrap gap-2">
@@ -112,7 +112,7 @@ export default function DailySafetyPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`rounded-full border px-4 py-2 text-sm font-bold transition ${
                   activeFilter === filter
-                    ? "border-[#4d8eff]/40 bg-[#4d8eff]/10 text-[#1d4ed8] dark:text-[#adc6ff]"
+                    ? "border-[var(--app-primary)]/40 bg-[var(--app-primary)]/10 text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]"
                     : "border-[var(--app-border)] text-[var(--app-text-secondary)] hover:bg-[var(--app-surface-elevated)]"
                 }`}
               >
@@ -145,7 +145,7 @@ export default function DailySafetyPage() {
       <Card className="p-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
           <div className="flex items-start gap-4">
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[#047857] dark:text-[var(--app-success)]">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[color:var(--app-success)]/30 bg-[var(--app-success-soft)] text-[var(--app-success)] dark:text-[var(--app-success)]">
               <ShieldCheck className="h-6 w-6" />
             </span>
             <div>
@@ -161,7 +161,7 @@ export default function DailySafetyPage() {
           </div>
           <Link
             href="/escenarios"
-            className="rounded bg-[#4d8eff] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a]"
+            className="rounded bg-[var(--app-primary)] px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)]"
           >
             Ver escenarios
           </Link>

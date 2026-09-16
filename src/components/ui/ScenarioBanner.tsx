@@ -14,9 +14,9 @@ export function ScenarioBanner({
 }: ScenarioBannerProps) {
   return (
     <Card className="relative overflow-hidden p-6 sm:p-7">
-      <div className="absolute right-0 top-0 h-32 w-32 bg-[#4d8eff]/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-32 w-32 bg-[var(--app-primary)]/10 blur-3xl" />
       <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
-        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-lg border border-[#4d8eff]/30 bg-[#4d8eff]/10 text-[#adc6ff]">
+        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-lg border border-[var(--app-primary)]/30 bg-[var(--app-primary)]/10 text-[var(--app-primary-dark)]">
           <Icon className="h-7 w-7" />
         </span>
         <div>

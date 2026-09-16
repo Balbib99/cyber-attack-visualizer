@@ -91,7 +91,7 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
   return (
     <div className="space-y-6">
       <Card className="p-6">
-        <Link href="/retos" className="text-sm font-bold text-[#1d4ed8] transition hover:text-[#4d8eff] dark:text-[#adc6ff]">
+        <Link href="/retos" className="text-sm font-bold text-[var(--app-primary)] transition hover:text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
           Volver al Centro de retos
         </Link>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -113,10 +113,10 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
         </div>
       </Card>
 
-      <Card className="border-[#4d8eff]/20 p-5">
+      <Card className="border-[var(--app-primary)]/20 p-5">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1d4ed8] dark:text-[#adc6ff]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--app-primary)] dark:text-[var(--app-primary-dark)]">
               Antes de practicar
             </p>
             <h2 className="mt-2 text-xl font-black text-[var(--app-text-primary)]">
@@ -129,7 +129,7 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
           </div>
           <Link
             href={challenge.relatedSimulatorPath}
-            className="rounded border border-[#4d8eff]/40 px-4 py-2 text-center text-sm font-bold text-[#1d4ed8] transition hover:bg-[#4d8eff]/10 dark:text-[#adc6ff]"
+            className="rounded border border-[var(--app-primary)]/40 px-4 py-2 text-center text-sm font-bold text-[var(--app-primary)] transition hover:bg-[var(--app-primary)]/10 dark:text-[var(--app-primary-dark)]"
           >
             Ver simulación
           </Link>
@@ -186,7 +186,7 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
             type="button"
             onClick={checkAnswer}
             disabled={!canCheck || isAnswered}
-            className="rounded bg-[#4d8eff] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#adc6ff] hover:text-[#002e6a] disabled:cursor-not-allowed disabled:opacity-40"
+            className="rounded bg-[var(--app-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--app-primary-dark)] hover:text-[var(--app-surface)] disabled:cursor-not-allowed disabled:opacity-40"
           >
             Comprobar respuesta
           </button>
@@ -194,7 +194,7 @@ export function ChallengeRunner({ challenge }: { challenge: CyberChallenge }) {
             type="button"
             onClick={goNext}
             disabled={!isAnswered}
-            className="rounded border border-[#4edea3]/40 px-5 py-3 text-sm font-bold text-[#6ffbbe] transition hover:bg-[#4edea3]/10 disabled:cursor-not-allowed disabled:opacity-40"
+            className="rounded border border-[var(--app-success)]/40 px-5 py-3 text-sm font-bold text-[var(--app-success)] transition hover:bg-[var(--app-success)]/10 disabled:cursor-not-allowed disabled:opacity-40"
           >
             {activeIndex === challenge.questions.length - 1
               ? "Ver resultados"

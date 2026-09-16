@@ -2,9 +2,9 @@ import { Info } from "lucide-react";
 
 export function ResponsibleNotice() {
   return (
-    <div className="rounded-lg border border-[#4d8eff]/25 bg-[#4d8eff]/10 p-5">
+    <div className="rounded-lg border border-[var(--app-primary)]/25 bg-[var(--app-primary)]/10 p-5">
       <div className="flex gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[#4d8eff]/35 bg-black/20 text-[#adc6ff]">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded border border-[var(--app-primary)]/35 bg-black/20 text-[var(--app-primary-dark)]">
           <Info className="h-5 w-5" />
         </span>
         <div>
